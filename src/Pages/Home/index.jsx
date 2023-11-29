@@ -16,11 +16,14 @@ import homeico2 from "../../Assets/img/home-ico-2.png"
 import homeico3 from "../../Assets/img/home-ico-3.png"
 import tmico6 from "../../Assets/img/tmico-6.png"
 import homefaqsidimg from "../../Assets/img/home-faq-sidimg.png"
-import com1 from "../../Assets/com-1.png"
-import com2 from "../../Assets/com-2.png"
-import com3 from "../../Assets/com-3.png"
-import com4 from "../../Assets/com-4.png"
-import com5 from "../../Assets/com-5.png"
+import com1 from "../../Assets/img/com-1.png"
+import com2 from "../../Assets/img/com-2.png"
+import com3 from "../../Assets/img/com-3.png"
+import com4 from "../../Assets/img/com-4.png"
+import com5 from "../../Assets/img/com-5.png"
+import ftr1 from "../../Assets/img/ftr-1.png"
+import ftr2 from "../../Assets/img/ftr-2.png"
+import ftr3 from "../../Assets/img/ftr-3.png"
 
 
 export default function Home() {
@@ -927,28 +930,28 @@ export default function Home() {
                 <div className="row justify-content-center text-center srk_mt_1dot5">
                   <div className="col-md col-6">
                     <a href="#">
-                      <img src="assets/img/com-1.png" className="ts_hm_com_ico" />
+                      <img src={com1} className="ts_hm_com_ico" />
                       <div className="srk srk_fs_1 srk_fw_400 srk_clr_white_1 srk_mb_1">Discord</div>
                     </a>
                   </div>
                   <div className="col-md col-6">
                     <a href="#">
-                      <img src="assets/img/com-2.png" className="ts_hm_com_ico" />
+                      <img src={com2} className="ts_hm_com_ico" />
                       <div className="srk srk_fs_1 srk_fw_400 srk_clr_white_1 srk_mb_1">Reddit</div>
                     </a></div>
                   <div className="col-md col-6">
                     <a href="#">
-                      <img src="assets/img/com-3.png" className="ts_hm_com_ico" />
+                      <img src={com3} className="ts_hm_com_ico" />
                       <div className="srk srk_fs_1 srk_fw_400 srk_clr_white_1 srk_mb_1">Telegram</div>
                     </a></div>
                   <div className="col-md col-6">
                     <a href="#">
-                      <img src="assets/img/com-4.png" className="ts_hm_com_ico" />
+                      <img src={com4} className="ts_hm_com_ico" />
                       <div className="srk srk_fs_1 srk_fw_400 srk_clr_white_1 srk_mb_1">Twitter</div>
                     </a></div>
                   <div className="col-md col-6">
                     <a href="#">
-                      <img src="assets/img/com-5.png" className="ts_hm_com_ico" />
+                      <img src={com5} className="ts_hm_com_ico" />
                       <div className="srk srk_fs_1 srk_fw_400 srk_clr_white_1 srk_mb_1">Tiktok</div>
                     </a></div>
                 </div>
@@ -967,13 +970,13 @@ export default function Home() {
                   </p>
                   <div className="ts_ftr_scico">
                     <a href="#" className="ts_ftr_sico_a">
-                      <img src="assets/img/ftr-1.png" className="ts_ftr_sico" />
+                      <img src={ftr1} className="ts_ftr_sico" />
                     </a>
                     <a href="#" className="ts_ftr_sico_a">
-                      <img src="assets/img/ftr-2.png" className="ts_ftr_sico" />
+                      <img src={ftr2} className="ts_ftr_sico" />
                     </a>
                     <a href="#" className="ts_ftr_sico_a">
-                      <img src="assets/img/ftr-3.png" className="ts_ftr_sico" />
+                      <img src={ftr3} className="ts_ftr_sico" />
                     </a></div>
                 </div>
                 <div className="col-md-7">
