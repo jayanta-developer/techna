@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Box, Typography } from '@mui/material'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import { sBitIcon } from "../../Assets/Data"
 
 import "./style.css"
@@ -13,7 +14,7 @@ import NavBar from '../../Components/NavBar'
 import { LineChart } from "../../Components/LineChart"
 import CandlestickChart from "../../Components/TradingChart"
 
-export default function Spot() {
+export default function StakeAndTake() {
   const [sideTab, setSideTab] = useState(1)
   const [graphBtn, setGraphBtn] = useState(true)
 
@@ -48,6 +49,24 @@ export default function Spot() {
         <Box className="tableRowItem">
           <Typography>{Status}</Typography>
         </Box>
+      </Box>
+    )
+  }
+
+  const CategoriCard = () => {
+    return (
+      <Box className="CategoriCard">
+        <Box className="CCardIconBox">
+          {sBitIcon}
+          <Typography>BBB</Typography>
+        </Box>
+        <Typography className='CCardMText'>Metaverse</Typography>
+        <Typography className='CCardSText'>$22</Typography>
+        <Box className="TText">
+          <ExpandLessIcon sx={{ color: "#50cd89", width: "10px" }} />
+          <Typography>2.2%</Typography>
+        </Box>
+
       </Box>
     )
   }
@@ -314,7 +333,7 @@ export default function Spot() {
 
 
 
-          <Box className="spotGraphBox">
+          <Box className="spotGraphBox spotGraphBoxSAT">
             <Box className="graphBtnBox">
 
               <Box onClick={() => setGraphBtn(true)} sx={{ background: graphBtn ? "#41f8f8" : "#18141c" }} className="graphBtn lineBtn">
@@ -326,7 +345,7 @@ export default function Spot() {
 
             </Box>
 
-            <Box className="lineGraphBox">
+            <Box className="lineGraphBoxSAT">
               {
                 graphBtn ?
                   <LineChart /> :
@@ -335,72 +354,94 @@ export default function Spot() {
               }
             </Box>
           </Box>
+          <Box className="categoriBox">
+            <Box sx={{ width: "110px" }} className="navMenuItem">
+              <Typography>Categories</Typography>
+              <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+            </Box>
+            <Box className="CategoriesItemBox">
+              {CategoriCard()}
+              {CategoriCard()}
+              {CategoriCard()}
+              {CategoriCard()}
+              {CategoriCard()}
+              {CategoriCard()}
+            </Box>
+
+          </Box>
         </Box>
 
         {/* Table */}
-        <Box className="spotOderBox">
-          <Box className="spotLBoxHeader">
-            <Typography className='spotTabelHeaderText'>Open Orders</Typography>
-            <Box className="oderDropBox">
-              <Typography>Open Orders</Typography>
-              <KeyboardArrowDownIcon className='dwonArrow' sx={{ color: "#fff" }} />
+        <Box className="SATLBoxTable">
+          <Box className="spotOderBox">
+            <Box className="spotLBoxHeader">
+              <Typography className='spotTabelHeaderText'>Open Orders</Typography>
+              <Box className="oderDropBox">
+                <Typography>Open Orders</Typography>
+                <KeyboardArrowDownIcon className='dwonArrow' sx={{ color: "#fff" }} />
+              </Box>
             </Box>
+
+            <Box className="spotLBoxTable">
+              {tableRow(
+                {
+                  Time: "Time",
+                  Pay: "Pay",
+                  Receive: "Receive",
+                  Amount: "Amount",
+                  Type: "Type",
+                  TriggerPrice: "Trigger Price",
+                  Price: "Price",
+                  Expiry: "Expiry",
+                  Status: "Status"
+                }
+              )}
+              {tableRow(
+                {
+                  Time: "4.7.23.18.58",
+                  Pay: "USDT",
+                  Receive: "BTC",
+                  Amount: "2",
+                  Type: "Limit",
+                  TriggerPrice: "--",
+                  Price: "54",
+                  Expiry: "1 Day",
+                  Status: "2/0"
+                }
+              )}
+              {tableRow(
+                {
+                  Time: "4.7.23.18.58",
+                  Pay: "USDT",
+                  Receive: "BTC",
+                  Amount: "2",
+                  Type: "Limit",
+                  TriggerPrice: "--",
+                  Price: "54",
+                  Expiry: "1 Day",
+                  Status: "2/0"
+                }
+              )}
+              {tableRow(
+                {
+                  Time: "4.7.23.18.58",
+                  Pay: "USDT",
+                  Receive: "BTC",
+                  Amount: "2",
+                  Type: "Limit",
+                  TriggerPrice: "--",
+                  Price: "54",
+                  Expiry: "1 Day",
+                  Status: "2/0"
+                }
+              )}
+            </Box>
+
+
           </Box>
-          <Box className="spotLBoxTable">
-            {tableRow(
-              {
-                Time: "Time",
-                Pay: "Pay",
-                Receive: "Receive",
-                Amount: "Amount",
-                Type: "Type",
-                TriggerPrice: "Trigger Price",
-                Price: "Price",
-                Expiry: "Expiry",
-                Status: "Status"
-              }
-            )}
-            {tableRow(
-              {
-                Time: "4.7.23.18.58",
-                Pay: "USDT",
-                Receive: "BTC",
-                Amount: "2",
-                Type: "Limit",
-                TriggerPrice: "--",
-                Price: "54",
-                Expiry: "1 Day",
-                Status: "2/0"
-              }
-            )}
-            {tableRow(
-              {
-                Time: "4.7.23.18.58",
-                Pay: "USDT",
-                Receive: "BTC",
-                Amount: "2",
-                Type: "Limit",
-                TriggerPrice: "--",
-                Price: "54",
-                Expiry: "1 Day",
-                Status: "2/0"
-              }
-            )}
-            {tableRow(
-              {
-                Time: "4.7.23.18.58",
-                Pay: "USDT",
-                Receive: "BTC",
-                Amount: "2",
-                Type: "Limit",
-                TriggerPrice: "--",
-                Price: "54",
-                Expiry: "1 Day",
-                Status: "2/0"
-              }
-            )}
-
-
+          <Box className="infoBox">
+            <Typography className='infoBoxHeader'>information</Typography>
+            <Typography className='infoBoxSubText'>Cards with choosable tokens. Please also show what happens when we click on the card. The card includes a symbol, name, price, percentage of up/down, and category.</Typography>
 
 
           </Box>

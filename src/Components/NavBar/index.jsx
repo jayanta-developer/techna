@@ -1,5 +1,10 @@
-import React from 'react';
+import React from 'react'
+import { useNavigate } from 'react-router-dom';
+import { Box, Typography } from '@mui/material'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import "./style.css"
+
+import { NavIcon, BitIcon } from "../../Assets/Data"
 
 
 //images
@@ -7,33 +12,46 @@ import Logo from "../../Assets/img/logo.png"
 
 
 export default function NavBar() {
+  const navigate = useNavigate();
+
+
   return (
     <>
-      <div className="s_nav_set">
-        <div className="container-fluid s_container_hdr_ftr">
-          <div className="d-flex justify-content-between">
-            <a href="#" className="s_nav_logo">
-              <img src={Logo} className="s_nav_logo_img" alt="" />
-            </a>
-            <i className="far fa-bars s_nav_ul_cls"></i>
-            <div className="s_nav_ul">
-              <a href="#" className="s_nav_logo_mbl">
-                <img src={Logo} className="s_nav_logo_img" alt="" />
-              </a>
-              <div className="s_nav_ul_in">
-                <a className="s_nav_li ">Products </a>
-                <a className="s_nav_li ">FAQ's </a>
-                <a className="s_nav_li ">Roadmap </a>
-                <a className="s_nav_li ">Tokenomics </a>
-                <a className="s_nav_li ">Community </a>
-              </div>
-            </div>
-            <div className="s_nav_right">
-              <a href="#" className="s_btn_outline s_ftr_contact_btn">Whitepaper</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Box className="navBar">
+        <Box onClick={() => navigate("/")} className="logoBox">
+          {NavIcon}
+          <Typography>TechNa</Typography>
+        </Box>
+        <Box className="MenuBox">
+          <Box className="navMenuItem">
+            <Typography>Spot</Typography>
+            <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+          </Box>
+          <Box className="navMenuItem">
+            <Typography>S&T</Typography>
+            <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+          </Box>
+          <Box className="navMenuItem">
+            <Typography>Futures</Typography>
+            <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+          </Box>
+          <Box className="navMenuItem">
+            <Typography>Options Beginners</Typography>
+            <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+          </Box>
+          <Box className="navMenuItem">
+            <Typography>Options Pro</Typography>
+            <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+          </Box>
+        </Box>
+        <Box className="currencyBox">
+          <Box>{BitIcon}</Box>
+          <Box>
+            <Typography className='bitCountText'>$ 2.71 M</Typography>
+            <Typography className='btcText'>~94.58 BTC  </Typography>
+          </Box>
+        </Box>
+      </Box>
     </>
   )
 }

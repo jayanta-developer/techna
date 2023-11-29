@@ -4,7 +4,7 @@ import "./style.css"
 
 //components
 import SideFloatingBar from "../../Components/SideFloatingBar"
-import NavBar from "../../Components/NavBar"
+import HomeNav from "../Home/HomeNav"
 import Footer from "../../Components/Footer"
 
 //images
@@ -20,7 +20,7 @@ export default function TokemSale() {
       <div className="s_web_wrapper">
         <div className="s_hm_bg_line"></div>
         <div className="s_web_wrapper_in">
-          <NavBar />
+          <HomeNav />
           <section className="ts_mid_sec">
             <div className="container">
               <h1 className="srk_fw_700 ts_hm1_sec_hdng w-100 text-center srk_mb_2dot5">Earn More With TechNa</h1>

@@ -4,7 +4,7 @@ import "./style.css"
 
 //components
 import SideFloatingBar from "../../Components/SideFloatingBar"
-import NavBar from "../../Components/NavBar"
+import HomeNav from "./HomeNav"
 import Footer from "../../Components/Footer"
 
 //images
@@ -28,7 +28,7 @@ export default function Home() {
       <div className="s_web_wrapper">
         <div className="s_hm_bg_line"></div>
         <div className="s_web_wrapper_in">
-          <NavBar />
+          <HomeNav />
           <section className=" ts_hm1_sec">
             <div className="container">
               <div className="row g-5">
@@ -498,7 +498,7 @@ export default function Home() {
           </section>
           <Footer />
         </div>
-      </div>    
+      </div>
     </>
   )
 }
