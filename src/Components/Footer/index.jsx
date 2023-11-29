@@ -16,20 +16,20 @@ export default function Footer() {
           <div className="row g-5">
             <div className="col-md-5">
               <a href="#" className="">
-                <img src={Logo} className="ts_ftr_sec_logo" />
+                <img src={Logo} className="ts_ftr_sec_logo" alt="" />
               </a>
               <p className="srk srk_fs_1 srk_fw_400 ts_ftr_sec_logo_p srk_ln_1dot6 srk_clr_white_1 srk_mb_1dot5">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed purus accumsan, dapibus diam eget, congue nibh. Fusce eu pulvinar est. Pellentesque eleifend vel ex eu iaculis.
               </p>
               <div className="ts_ftr_scico">
                 <a href="#" className="ts_ftr_sico_a">
-                  <img src={ftr1} className="ts_ftr_sico" />
+                  <img src={ftr1} className="ts_ftr_sico" alt="" />
                 </a>
                 <a href="#" className="ts_ftr_sico_a">
-                  <img src={ftr2} className="ts_ftr_sico" />
+                  <img src={ftr2} className="ts_ftr_sico" alt="" />
                 </a>
                 <a href="#" className="ts_ftr_sico_a">
-                  <img src={ftr3} className="ts_ftr_sico" />
+                  <img src={ftr3} className="ts_ftr_sico" alt="" />
                 </a></div>
             </div>
             <div className="col-md-7">

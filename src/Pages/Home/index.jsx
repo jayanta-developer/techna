@@ -3,11 +3,12 @@ import "./style.css"
 
 
 //components
+import SideFloatingBar from "../../Components/SideFloatingBar"
 import NavBar from "../../Components/NavBar"
 import Footer from "../../Components/Footer"
 
 //images
-import bitcoinLogo from "../../Assets/img/bitcoin logo.png"
+
 import homeico1 from "../../Assets/img/home-ico-1.png"
 import homeico2 from "../../Assets/img/home-ico-2.png"
 import homeico3 from "../../Assets/img/home-ico-3.png"
@@ -23,440 +24,7 @@ import com5 from "../../Assets/img/com-5.png"
 export default function Home() {
   return (
     <>
-      <div className="tn_sid_bar_totset">
-        <div className="tn_right_sid_bar">
-          <i className="fab fa-bitcoin tn_right_sid_bar_i" data-navn="t1"></i>
-          <i className="fas fa-volume tn_right_sid_bar_i" data-navn="t2"></i>
-          <i className="fas fa-presentation-screen tn_right_sid_bar_i" data-navn="t3"></i>
-          <i className="fas fa-chart-line-up tn_right_sid_bar_i" data-navn="t4"></i>
-          <i className="fas fa-droplet tn_right_sid_bar_i" data-navn="t5"></i>
-          <i className="fas fa-messages-question tn_right_sid_bar_i" data-navn="t6"></i>
-        </div>
-        <div className="tn_right_sid_bar_tab " data-navn="t1">
-          <div className="tn_right_sid_bar_tab_innn">
-            <div className="tn_right_sid_bar_tab_hd">Chat
-              <i className="tn_right_sid_bar_tab_cls_ico fas fa-times"></i>
-            </div>
-            <div className="tn_rs_chatbox mCustomScrollbar" data-mcs-theme="minimal">
-              <div className="tn_rs_chatbox_in">
-                <div className="tn_rs_chatbox_chatting_out">
-                  <div className="tn_rs_chatbox_chatting">Lorem ipsum donea kdjhfkjhd sdfhdfkjhdf sdfd sfsdfsdfsdf
-                    <div className="tn_rs_chatbox_chatting_date">1.05 Pm</div>
-                  </div>
-                </div>
-                <div className="tn_rs_chatbox_chatting_out">
-                  <div className="tn_rs_chatbox_chatting">Lorem ipsum donea kdjhfkjhd sdfhdfkjhdf sdfd sfsdfsdfsdf
-                    <div className="tn_rs_chatbox_chatting_date">1.05 Pm</div>
-                  </div>
-                </div>
-                <div className="tn_rs_chatbox_chatting_out tn_rs_chatbox_chatting_out_left">
-                  <div className="tn_rs_chatbox_chatting">Lorem ipsum donea kdjhfkjhd sdfhdfkjhdf sdfd sfsdfsdfsdf
-                    <div className="tn_rs_chatbox_chatting_date">1.05 Pm</div>
-                  </div>
-                </div>
-                <div className="tn_rs_chatbox_chatting_out">
-                  <div className="tn_rs_chatbox_chatting">Lorem ipsum donea kdjhfkjhd sdfhdfkjhdf sdfd sfsdfsdfsdf
-                    <div className="tn_rs_chatbox_chatting_date">1.05 Pm</div>
-                  </div>
-                </div>
-                <div className="tn_rs_chatbox_chatting_out tn_rs_chatbox_chatting_out_left">
-                  <div className="tn_rs_chatbox_chatting">Lorem ipsum donea kdjhfkjhd sdfhdfkjhdf sdfd sfsdfsdfsdf
-                    <div className="tn_rs_chatbox_chatting_date">1.05 Pm</div>
-                  </div>
-                </div>
-                <div className="tn_rs_chatbox_chatting_out">
-                  <div className="tn_rs_chatbox_chatting">Lorem ipsum donea kdjhfkjhd sdfhdfkjhdf sdfd sfsdfsdfsdf
-                    <div className="tn_rs_chatbox_chatting_date">1.05 Pm</div>
-                  </div>
-                </div>
-                <div className="tn_rs_chatbox_chatting_out tn_rs_chatbox_chatting_out_left">
-                  <div className="tn_rs_chatbox_chatting">Lorem ipsum donea kdjhfkjhd sdfhdfkjhdf sdfd sfsdfsdfsdf
-                    <div className="tn_rs_chatbox_chatting_date">1.05 Pm</div>
-                  </div>
-                </div>
-                <div className="tn_rs_chatbox_chatting_out">
-                  <div className="tn_rs_chatbox_chatting">Lorem ipsum donea kdjhfkjhd sdfhdfkjhdf sdfd sfsdfsdfsdf
-                    <div className="tn_rs_chatbox_chatting_date">1.05 Pm</div>
-                  </div>
-                </div>
-                <div className="tn_rs_chatbox_chatting_out">
-                  <div className="tn_rs_chatbox_chatting">Lorem ipsum donea kdjhfkjhd sdfhdfkjhdf sdfd sfsdfsdfsdf
-                    <div className="tn_rs_chatbox_chatting_date">1.05 Pm</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="tn_rs_chatbox_input">
-              <a href="#">
-                <i className="tn_rs_chatbox_input_in_ico fas fa-paper-plane-top"></i>
-              </a>
-              <input type="text" placeholder="Type here" className="tn_rs_chatbox_input_in" />
-            </div>
-          </div>
-        </div>
-        <div className="tn_right_sid_bar_tab" data-navn="t2">
-          <div className="tn_right_sid_bar_tab_hd">Liqutation
-            <i className="tn_right_sid_bar_tab_cls_ico fas fa-times"></i>
-          </div>
-          <div className="tn_rs_ld_set_scrl mCustomScrollbar" data-mcs-theme="minimal">
-            <div className="tn_rs_ld_set">
-              <div className="row">
-                <div className="col-auto">
-                  <img src={bitcoinLogo} className="tn_rs_ld_ico" />
-                </div>
-                <div className="col">
-                  <div className="srk srk_fs_1dot5 srk_fw_800 srk_clr_white_1 srk_mb_0dot8">$ 6767.45</div>
-                  <div className="srk srk_fs_1 srk_fw_400 srk_clr_white_1">~ $ 6767.45</div>
-                </div>
-              </div>
-            </div>
-            <div className="tn_rs_ld_set">
-              <div className="row">
-                <div className="col-auto">
-                  <img src={bitcoinLogo} className="tn_rs_ld_ico" />
-                </div>
-                <div className="col">
-                  <div className="srk srk_fs_1dot5 srk_fw_800 srk_clr_white_1 srk_mb_0dot8">$ 6767.45</div>
-                  <div className="srk srk_fs_1 srk_fw_400 srk_clr_white_1">~ $ 6767.45</div>
-                </div>
-              </div>
-            </div>
-            <div className="tn_rs_ld_set">
-              <div className="row">
-                <div className="col-auto">
-                  <img src={bitcoinLogo} className="tn_rs_ld_ico" />
-                </div>
-                <div className="col">
-                  <div className="srk srk_fs_1dot5 srk_fw_800 srk_clr_white_1 srk_mb_0dot8">$ 6767.45</div>
-                  <div className="srk srk_fs_1 srk_fw_400 srk_clr_white_1">~ $ 6767.45</div>
-                </div>
-              </div>
-            </div>
-            <div className="tn_rs_ld_set">
-              <div className="row">
-                <div className="col-auto">
-                  <img src={bitcoinLogo} className="tn_rs_ld_ico" />
-                </div>
-                <div className="col">
-                  <div className="srk srk_fs_1dot5 srk_fw_800 srk_clr_white_1 srk_mb_0dot8">$ 6767.45</div>
-                  <div className="srk srk_fs_1 srk_fw_400 srk_clr_white_1">~ $ 6767.45</div>
-                </div>
-              </div>
-            </div>
-            <div className="tn_rs_ld_set">
-              <div className="row">
-                <div className="col-auto">
-                  <img src={bitcoinLogo} className="tn_rs_ld_ico" />
-                </div>
-                <div className="col">
-                  <div className="srk srk_fs_1dot5 srk_fw_800 srk_clr_white_1 srk_mb_0dot8">$ 6767.45</div>
-                  <div className="srk srk_fs_1 srk_fw_400 srk_clr_white_1">~ $ 6767.45</div>
-                </div>
-              </div>
-            </div>
-            <div className="tn_rs_ld_set">
-              <div className="row">
-                <div className="col-auto">
-                  <img src={bitcoinLogo} className="tn_rs_ld_ico" />
-                </div>
-                <div className="col">
-                  <div className="srk srk_fs_1dot5 srk_fw_800 srk_clr_white_1 srk_mb_0dot8">$ 6767.45</div>
-                  <div className="srk srk_fs_1 srk_fw_400 srk_clr_white_1">~ $ 6767.45</div>
-                </div>
-              </div>
-            </div>
-            <div className="tn_rs_ld_set">
-              <div className="row">
-                <div className="col-auto">
-                  <img src={bitcoinLogo} className="tn_rs_ld_ico" />
-                </div>
-                <div className="col">
-                  <div className="srk srk_fs_1dot5 srk_fw_800 srk_clr_white_1 srk_mb_0dot8">$ 6767.45</div>
-                  <div className="srk srk_fs_1 srk_fw_400 srk_clr_white_1">~ $ 6767.45</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="tn_right_sid_bar_tab " data-navn="t3">
-          <div className="tn_right_sid_bar_tab_hd mb-0">
-            <i className="tn_right_sid_bar_tab_cls_ico fas fa-times"></i>
-          </div>
-          <select className="tn_rs_chs_select">
-            <option value="0">Choose Token</option>
-            <option value="0">BTC</option>
-            <option value="0">ETH</option>
-          </select>
-          <div className="row g-2 srk_mb_1">
-            <div className="col-4"> <div className="tn_rs_chs_txt">SYMBOL</div></div>
-            <div className="col-4 text-center"> <div className="tn_rs_chs_txt">OI</div></div>
-            <div className="col-4 text-end"> <div className="tn_rs_chs_txt">RATE</div></div>
-          </div>
-          <div className="tn_rs_chs_list_scrl2 mCustomScrollbar" data-mcs-theme="minimal">
-            <div className="tn_rs_chs_list">
-              <div className="row g-2">
-                <div className="col-4"> <div className="tn_rs_chs_txt">103.332</div></div>
-                <div className="col-4 text-center"> <div className="tn_rs_chs_txt">103.332</div></div>
-                <div className="col-4 text-end"> <div className="tn_rs_chs_txt">- 24%</div></div>
-              </div>
-            </div>
-            <div className="tn_rs_chs_list">
-              <div className="row g-2">
-                <div className="col-4"> <div className="tn_rs_chs_txt">103.332</div></div>
-                <div className="col-4 text-center"> <div className="tn_rs_chs_txt">103.332</div></div>
-                <div className="col-4 text-end"> <div className="tn_rs_chs_txt">- 24%</div></div>
-              </div>
-            </div>
-            <div className="tn_rs_chs_list">
-              <div className="row g-2">
-                <div className="col-4"> <div className="tn_rs_chs_txt">103.332</div></div>
-                <div className="col-4 text-center"> <div className="tn_rs_chs_txt">103.332</div></div>
-                <div className="col-4 text-end"> <div className="tn_rs_chs_txt">- 24%</div></div>
-              </div>
-            </div>
-            <div className="tn_rs_chs_list">
-              <div className="row g-2">
-                <div className="col-4"> <div className="tn_rs_chs_txt">103.332</div></div>
-                <div className="col-4 text-center"> <div className="tn_rs_chs_txt">103.332</div></div>
-                <div className="col-4 text-end"> <div className="tn_rs_chs_txt">- 24%</div></div>
-              </div>
-            </div>
-            <div className="tn_rs_chs_list">
-              <div className="row g-2">
-                <div className="col-4"> <div className="tn_rs_chs_txt">103.332</div></div>
-                <div className="col-4 text-center"> <div className="tn_rs_chs_txt">103.332</div></div>
-                <div className="col-4 text-end"> <div className="tn_rs_chs_txt">- 24%</div></div>
-              </div>
-            </div>
-            <div className="tn_rs_chs_list">
-              <div className="row g-2">
-                <div className="col-4"> <div className="tn_rs_chs_txt">103.332</div></div>
-                <div className="col-4 text-center"> <div className="tn_rs_chs_txt">103.332</div></div>
-                <div className="col-4 text-end"> <div className="tn_rs_chs_txt">- 24%</div></div>
-              </div>
-            </div>
-            <div className="tn_rs_chs_list">
-              <div className="row g-2">
-                <div className="col-4"> <div className="tn_rs_chs_txt">103.332</div></div>
-                <div className="col-4 text-center"> <div className="tn_rs_chs_txt">103.332</div></div>
-                <div className="col-4 text-end"> <div className="tn_rs_chs_txt">- 24%</div></div>
-              </div>
-            </div>
-            <div className="tn_rs_chs_list">
-              <div className="row g-2">
-                <div className="col-4"> <div className="tn_rs_chs_txt">103.332</div></div>
-                <div className="col-4 text-center"> <div className="tn_rs_chs_txt">103.332</div></div>
-                <div className="col-4 text-end"> <div className="tn_rs_chs_txt">- 24%</div></div>
-              </div>
-            </div>
-            <div className="tn_rs_chs_list">
-              <div className="row g-2">
-                <div className="col-4"> <div className="tn_rs_chs_txt">103.332</div></div>
-                <div className="col-4 text-center"> <div className="tn_rs_chs_txt">103.332</div></div>
-                <div className="col-4 text-end"> <div className="tn_rs_chs_txt">- 24%</div></div>
-              </div>
-            </div>
-            <div className="tn_rs_chs_list">
-              <div className="row g-2">
-                <div className="col-4"> <div className="tn_rs_chs_txt">103.332</div></div>
-                <div className="col-4 text-center"> <div className="tn_rs_chs_txt">103.332</div></div>
-                <div className="col-4 text-end"> <div className="tn_rs_chs_txt">- 24%</div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="tn_right_sid_bar_tab" data-navn="t4">
-          <div className="tn_right_sid_bar_tab_hd mb-0">
-            <i className="tn_right_sid_bar_tab_cls_ico fas fa-times"></i>
-          </div>
-          <div className="row g-2 srk_mb_1 tn_right_sid_bar_tab_tbhd">
-            <div className="col-3"> <div className="tn_rs_chs_txt">SYMBOL</div></div>
-            <div className="col-3 text-center"> <div className="tn_rs_chs_txt">Last</div></div>
-            <div className="col-3 text-center"> <div className="tn_rs_chs_txt">%</div></div>
-            <div className="col-3 text-end"> <div className="tn_rs_chs_txt">Vol</div></div>
-          </div>
-          <div className="tn_rs_chs_list_scrl mCustomScrollbar" data-mcs-theme="minimal">
-            <div className="tn_rs_chs_list">
-              <div className="row g-2">
-                <div className="col-3"> <img src={bitcoinLogo} className="tn_hh_chs_list_ico" /></div>
-                <div className="col-3 text-center"> <div className="tn_rs_chs_txt">133.222</div></div>
-                <div className="col-3 text-center"> <div className="tn_rs_chs_txt">20</div></div>
-                <div className="col-3 text-end"> <div className="tn_rs_chs_txt srk_fw_800">- 30%</div></div>
-              </div>
-            </div>
-            <div className="tn_rs_chs_list">
-              <div className="row g-2">
-                <div className="col-3"> <img src={bitcoinLogo} className="tn_hh_chs_list_ico" /></div>
-                <div className="col-3 text-center"> <div className="tn_rs_chs_txt">133.222</div></div>
-                <div className="col-3 text-center"> <div className="tn_rs_chs_txt">20</div></div>
-                <div className="col-3 text-end"> <div className="tn_rs_chs_txt srk_fw_800">- 30%</div></div>
-              </div>
-            </div>
-            <div className="tn_rs_chs_list">
-              <div className="row g-2">
-                <div className="col-3"> <img src={bitcoinLogo} className="tn_hh_chs_list_ico" /></div>
-                <div className="col-3 text-center"> <div className="tn_rs_chs_txt">133.222</div></div>
-                <div className="col-3 text-center"> <div className="tn_rs_chs_txt">20</div></div>
-                <div className="col-3 text-end"> <div className="tn_rs_chs_txt srk_fw_800">- 30%</div></div>
-              </div>
-            </div>
-            <div className="tn_rs_chs_list">
-              <div className="row g-2">
-                <div className="col-3"> <img src={bitcoinLogo} className="tn_hh_chs_list_ico" /></div>
-                <div className="col-3 text-center"> <div className="tn_rs_chs_txt">133.222</div></div>
-                <div className="col-3 text-center"> <div className="tn_rs_chs_txt">20</div></div>
-                <div className="col-3 text-end"> <div className="tn_rs_chs_txt srk_fw_800">- 30%</div></div>
-              </div>
-            </div>
-            <div className="tn_rs_chs_list">
-              <div className="row g-2">
-                <div className="col-3"> <img src={bitcoinLogo} className="tn_hh_chs_list_ico" /></div>
-                <div className="col-3 text-center"> <div className="tn_rs_chs_txt">133.222</div></div>
-                <div className="col-3 text-center"> <div className="tn_rs_chs_txt">20</div></div>
-                <div className="col-3 text-end"> <div className="tn_rs_chs_txt srk_fw_800">- 30%</div></div>
-              </div>
-            </div>
-            <div className="tn_rs_chs_list">
-              <div className="row g-2">
-                <div className="col-3"> <img src={bitcoinLogo} className="tn_hh_chs_list_ico" /></div>
-                <div className="col-3 text-center"> <div className="tn_rs_chs_txt">133.222</div></div>
-                <div className="col-3 text-center"> <div className="tn_rs_chs_txt">20</div></div>
-                <div className="col-3 text-end"> <div className="tn_rs_chs_txt srk_fw_800">- 30%</div></div>
-              </div>
-            </div>
-            <div className="tn_rs_chs_list">
-              <div className="row g-2">
-                <div className="col-3"> <img src={bitcoinLogo} className="tn_hh_chs_list_ico" /></div>
-                <div className="col-3 text-center"> <div className="tn_rs_chs_txt">133.222</div></div>
-                <div className="col-3 text-center"> <div className="tn_rs_chs_txt">20</div></div>
-                <div className="col-3 text-end"> <div className="tn_rs_chs_txt srk_fw_800">- 30%</div></div>
-              </div>
-            </div>
-            <div className="tn_rs_chs_list">
-              <div className="row g-2">
-                <div className="col-3"> <img src={bitcoinLogo} className="tn_hh_chs_list_ico" /></div>
-                <div className="col-3 text-center"> <div className="tn_rs_chs_txt">133.222</div></div>
-                <div className="col-3 text-center"> <div className="tn_rs_chs_txt">20</div></div>
-                <div className="col-3 text-end"> <div className="tn_rs_chs_txt srk_fw_800">- 30%</div></div>
-              </div>
-            </div>
-            <div className="tn_rs_chs_list">
-              <div className="row g-2">
-                <div className="col-3"> <img src={bitcoinLogo} className="tn_hh_chs_list_ico" /></div>
-                <div className="col-3 text-center"> <div className="tn_rs_chs_txt">133.222</div></div>
-                <div className="col-3 text-center"> <div className="tn_rs_chs_txt">20</div></div>
-                <div className="col-3 text-end"> <div className="tn_rs_chs_txt srk_fw_800">- 30%</div></div>
-              </div>
-            </div>
-            <div className="tn_rs_chs_list">
-              <div className="row g-2">
-                <div className="col-3"> <img src={bitcoinLogo} className="tn_hh_chs_list_ico" /></div>
-                <div className="col-3 text-center"> <div className="tn_rs_chs_txt">133.222</div></div>
-                <div className="col-3 text-center"> <div className="tn_rs_chs_txt">20</div></div>
-                <div className="col-3 text-end"> <div className="tn_rs_chs_txt srk_fw_800">- 30%</div></div>
-              </div>
-            </div>
-            <div className="tn_rs_chs_list">
-              <div className="row g-2">
-                <div className="col-3"> <img src={bitcoinLogo} className="tn_hh_chs_list_ico" /></div>
-                <div className="col-3 text-center"> <div className="tn_rs_chs_txt">133.222</div></div>
-                <div className="col-3 text-center"> <div className="tn_rs_chs_txt">20</div></div>
-                <div className="col-3 text-end"> <div className="tn_rs_chs_txt srk_fw_800">- 30%</div></div>
-              </div>
-            </div>
-            <div className="tn_rs_chs_list">
-              <div className="row g-2">
-                <div className="col-3"> <img src={bitcoinLogo} className="tn_hh_chs_list_ico" /></div>
-                <div className="col-3 text-center"> <div className="tn_rs_chs_txt">133.222</div></div>
-                <div className="col-3 text-center"> <div className="tn_rs_chs_txt">20</div></div>
-                <div className="col-3 text-end"> <div className="tn_rs_chs_txt srk_fw_800">- 30%</div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="tn_right_sid_bar_tab " data-navn="t5">
-          <div className="tn_rs_ld_set_scrl tn_right_sid_bar_tab_t5 mCustomScrollbar" data-mcs-theme="minimal">
-            <div className="tn_rs_ld_set">
-              <div className="srk srk_fs_1dot4 srk_fw_600 srk_clr_white_1 srk_mb_0dot6"> A Simple & secure way to buy Bitcon</div>
-              <div className="srk srk_fs_1 srk_fw_400 srk_clr_bright_green "> A Simple & secure way to buy Bitcon</div>
-            </div>
-            <div className="tn_rs_ld_set">
-              <div className="srk srk_fs_1dot4 srk_fw_600 srk_clr_white_1 srk_mb_0dot6"> A Simple & secure way to buy Bitcon</div>
-              <div className="srk srk_fs_1 srk_fw_400 srk_clr_bright_green "> A Simple & secure way to buy Bitcon</div>
-            </div>
-            <div className="tn_rs_ld_set">
-              <div className="srk srk_fs_1dot4 srk_fw_600 srk_clr_white_1 srk_mb_0dot6"> A Simple & secure way to buy Bitcon</div>
-              <div className="srk srk_fs_1 srk_fw_400 srk_clr_bright_green "> A Simple & secure way to buy Bitcon</div>
-            </div>
-          </div>
-        </div>
-        <div className="tn_right_sid_bar_tab" data-navn="t6">
-          <div className="tn_right_sid_bar_tab_hd">Top Gainers
-            <i className="tn_right_sid_bar_tab_cls_ico fas fa-times"></i>
-          </div>
-          <div className="tn_rs_ld_set srk_mb_1">
-            <div className="row srk_mb_1">
-              <div className="col-2">
-                <img src={bitcoinLogo} className="tn_hh_chs_list_ico" />
-              </div>
-              <div className="col-5 text-center"> <div className="tn_rs_chs_txt">20</div></div>
-              <div className="col-5 text-end"> <div className="tn_rs_chs_txt srk_fw_800">- 30%</div></div>
-            </div>
-            <div className="row srk_mb_1">
-              <div className="col-2">
-                <img src={bitcoinLogo} className="tn_hh_chs_list_ico" />
-              </div>
-              <div className="col-5 text-center"> <div className="tn_rs_chs_txt">20</div></div>
-              <div className="col-5 text-end"> <div className="tn_rs_chs_txt srk_fw_800">- 30%</div></div>
-            </div>
-            <div className="row srk_mb_1">
-              <div className="col-2">
-                <img src={bitcoinLogo} className="tn_hh_chs_list_ico" />
-              </div>
-              <div className="col-5 text-center"> <div className="tn_rs_chs_txt">20</div></div>
-              <div className="col-5 text-end"> <div className="tn_rs_chs_txt srk_fw_800">- 30%</div></div>
-            </div>
-            <div className="row ">
-              <div className="col-2">
-                <img src={bitcoinLogo} className="tn_hh_chs_list_ico" />
-              </div>
-              <div className="col-5 text-center"> <div className="tn_rs_chs_txt">20</div></div>
-              <div className="col-5 text-end"> <div className="tn_rs_chs_txt srk_fw_800">- 30%</div></div>
-            </div>
-          </div>
-          <div className="tn_right_sid_bar_tab_hd srk_mt_2">Top losers</div>
-          <div className="tn_rs_ld_set mb-0">
-            <div className="row srk_mb_1">
-              <div className="col-2">
-                <img src={bitcoinLogo} className="tn_hh_chs_list_ico" />
-              </div>
-              <div className="col-5 text-center"> <div className="tn_rs_chs_txt">20</div></div>
-              <div className="col-5 text-end"> <div className="tn_rs_chs_txt srk_fw_800">- 30%</div></div>
-            </div>
-            <div className="row srk_mb_1">
-              <div className="col-2">
-                <img src={bitcoinLogo} className="tn_hh_chs_list_ico" />
-              </div>
-              <div className="col-5 text-center"> <div className="tn_rs_chs_txt">20</div></div>
-              <div className="col-5 text-end"> <div className="tn_rs_chs_txt srk_fw_800">- 30%</div></div>
-            </div>
-            <div className="row srk_mb_1">
-              <div className="col-2">
-                <img src={bitcoinLogo} className="tn_hh_chs_list_ico" />
-              </div>
-              <div className="col-5 text-center"> <div className="tn_rs_chs_txt">20</div></div>
-              <div className="col-5 text-end"> <div className="tn_rs_chs_txt srk_fw_800">- 30%</div></div>
-            </div>
-            <div className="row ">
-              <div className="col-2">
-                <img src={bitcoinLogo} className="tn_hh_chs_list_ico" />
-              </div>
-              <div className="col-5 text-center"> <div className="tn_rs_chs_txt">20</div></div>
-              <div className="col-5 text-end"> <div className="tn_rs_chs_txt srk_fw_800">- 30%</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <SideFloatingBar />
       <div className="s_web_wrapper">
         <div className="s_hm_bg_line"></div>
         <div className="s_web_wrapper_in">
@@ -469,9 +37,9 @@ export default function Home() {
                   <p className="srk srk_fs_1 srk_clr_white_1 srk_fw_300 srk_ln_1dot9 srk_mb_1dot9 ts_hm1_sec_hdng_p">Maximize Your Trading Potential with TechNa's AI-Driven Financial Devices Hybrid Blockchain, and Social Network for Traders.</p>
                   <div className="row srk_mb_1dot9">
                     <div className="col-6"><a href="#" className="ts_btn_comn w-100 ts_normal_font">
-                      <img src={homeico1} className="ts_btn_comn_ico" /> Demo</a></div>
+                      <img src={homeico1} className="ts_btn_comn_ico" alt="" /> Demo</a></div>
                     <div className="col-6"><a href="#" className="ts_btn_comn w-100 ts_normal_font">
-                      <img src={homeico2} className="ts_btn_comn_ico" /> Buy TCN</a></div>
+                      <img src={homeico2} className="ts_btn_comn_ico" alt="" /> Buy TCN</a></div>
                   </div>
                   <div className="ts_hm1_shap1">
                     <div className="row w-100 g-5">
@@ -484,7 +52,7 @@ export default function Home() {
                         </div>
                       </div>
                       <div className="col-auto">
-                        <img src={homeico3} className="img-fluid ts_hm1_shap1_ico" />
+                        <img src={homeico3} className="img-fluid ts_hm1_shap1_ico" alt="" />
                       </div>
                     </div>
                   </div>
@@ -512,7 +80,7 @@ export default function Home() {
                     <div className="ts_hm2_dv_2">
                       <div className="ts_hm2_dv_2_in">
                         <div className="ts_hm2_dv_2_vid_out">
-                          <img src={tmico6} className="ts_hm2_dv_2_vid_in" />
+                          <img src={tmico6} className="ts_hm2_dv_2_vid_in" alt="" />
                         </div>
                         <div className="srk srk_fs_1dot5 srk_clr_white_1 srk_fw_800 srk_mb_0dot5">Hedging</div>
                         <div className="srk srk_fs_0dot9 srk_clr_white_1 srk_fw_300 srk_ln_1dot6">The AI-driven financial platform trader, Trade smarter with our hedging tools and user-firendly devices.</div>
@@ -523,7 +91,7 @@ export default function Home() {
                 <div className="col-md-4">
                   <div className="ts_hm2_dv_2">
                     <div className="ts_hm2_dv_2_vid_out">
-                      <img src={tmico6} className="ts_hm2_dv_2_vid_in" />
+                      <img src={tmico6} className="ts_hm2_dv_2_vid_in" alt="" />
                     </div>
                     <div className="srk srk_fs_1dot5 srk_clr_white_1 srk_fw_800 srk_mb_0dot5">Hedging</div>
                     <div className="srk srk_fs_0dot9 srk_clr_white_1 srk_fw_300 srk_ln_1dot6">The AI-driven financial platform trader, Trade smarter with our hedging tools and user-firendly devices.</div>
@@ -532,7 +100,7 @@ export default function Home() {
                 <div className="col-md-4">
                   <div className="ts_hm2_dv_2">
                     <div className="ts_hm2_dv_2_vid_out">
-                      <img src={tmico6} className="ts_hm2_dv_2_vid_in" />
+                      <img src={tmico6} className="ts_hm2_dv_2_vid_in" alt="" />
                     </div>
                     <div className="srk srk_fs_1dot5 srk_clr_white_1 srk_fw_800 srk_mb_0dot5">Hedging</div>
                     <div className="srk srk_fs_0dot9 srk_clr_white_1 srk_fw_300 srk_ln_1dot6">The AI-driven financial platform trader, Trade smarter with our hedging tools and user-firendly devices.</div>
@@ -614,7 +182,7 @@ export default function Home() {
                     <div className="ts_pg_sec_hdng">Frequently Asked Questions</div>
                     <div className="ts_pg_sec_hdng_p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod odio non dui blanditLorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
                   </div>
-                  <img src={homefaqsidimg} className="img-fluid" />
+                  <img src={homefaqsidimg} className="img-fluid" alt="" />
                 </div>
                 <div className="col-md-7">
                   <div className="ts_hm_faq_dv ts_hm_faq_dv_act">
@@ -900,28 +468,28 @@ export default function Home() {
                 <div className="row justify-content-center text-center srk_mt_1dot5">
                   <div className="col-md col-6">
                     <a href="#">
-                      <img src={com1} className="ts_hm_com_ico" />
+                      <img src={com1} className="ts_hm_com_ico" alt="" />
                       <div className="srk srk_fs_1 srk_fw_400 srk_clr_white_1 srk_mb_1">Discord</div>
                     </a>
                   </div>
                   <div className="col-md col-6">
                     <a href="#">
-                      <img src={com2} className="ts_hm_com_ico" />
+                      <img src={com2} className="ts_hm_com_ico" alt="" />
                       <div className="srk srk_fs_1 srk_fw_400 srk_clr_white_1 srk_mb_1">Reddit</div>
                     </a></div>
                   <div className="col-md col-6">
                     <a href="#">
-                      <img src={com3} className="ts_hm_com_ico" />
+                      <img src={com3} className="ts_hm_com_ico" alt="" />
                       <div className="srk srk_fs_1 srk_fw_400 srk_clr_white_1 srk_mb_1">Telegram</div>
                     </a></div>
                   <div className="col-md col-6">
                     <a href="#">
-                      <img src={com4} className="ts_hm_com_ico" />
+                      <img src={com4} className="ts_hm_com_ico" alt="" />
                       <div className="srk srk_fs_1 srk_fw_400 srk_clr_white_1 srk_mb_1">Twitter</div>
                     </a></div>
                   <div className="col-md col-6">
                     <a href="#">
-                      <img src={com5} className="ts_hm_com_ico" />
+                      <img src={com5} className="ts_hm_com_ico" alt="" />
                       <div className="srk srk_fs_1 srk_fw_400 srk_clr_white_1 srk_mb_1">Tiktok</div>
                     </a></div>
                 </div>
