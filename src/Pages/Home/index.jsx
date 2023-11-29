@@ -3,11 +3,11 @@ import "./style.css"
 
 
 //components
-
+import NavBar from "../../Components/NavBar"
+import Footer from "../../Components/Footer"
 
 //images
 import bitcoinLogo from "../../Assets/img/bitcoin logo.png"
-import Logo from "../../Assets/img/logo.png"
 import homeico1 from "../../Assets/img/home-ico-1.png"
 import homeico2 from "../../Assets/img/home-ico-2.png"
 import homeico3 from "../../Assets/img/home-ico-3.png"
@@ -18,9 +18,6 @@ import com2 from "../../Assets/img/com-2.png"
 import com3 from "../../Assets/img/com-3.png"
 import com4 from "../../Assets/img/com-4.png"
 import com5 from "../../Assets/img/com-5.png"
-import ftr1 from "../../Assets/img/ftr-1.png"
-import ftr2 from "../../Assets/img/ftr-2.png"
-import ftr3 from "../../Assets/img/ftr-3.png"
 
 
 export default function Home() {
@@ -463,31 +460,7 @@ export default function Home() {
       <div className="s_web_wrapper">
         <div className="s_hm_bg_line"></div>
         <div className="s_web_wrapper_in">
-          <div className="s_nav_set">
-            <div className="container-fluid s_container_hdr_ftr">
-              <div className="d-flex justify-content-between">
-                <a href="#" className="s_nav_logo">
-                  <img src={Logo} className="s_nav_logo_img" alt="" />
-                </a>
-                <i className="far fa-bars s_nav_ul_cls"></i>
-                <div className="s_nav_ul">
-                  <a href="#" className="s_nav_logo_mbl">
-                    <img src={Logo} className="s_nav_logo_img" alt="" />
-                  </a>
-                  <div className="s_nav_ul_in">
-                    <a className="s_nav_li ">Products </a>
-                    <a className="s_nav_li ">FAQ's </a>
-                    <a className="s_nav_li ">Roadmap </a>
-                    <a className="s_nav_li ">Tokenomics </a>
-                    <a className="s_nav_li ">Community </a>
-                  </div>
-                </div>
-                <div className="s_nav_right">
-                  <a href="#" className="s_btn_outline s_ftr_contact_btn">Whitepaper</a>
-                </div>
-              </div>
-            </div>
-          </div>
+          <NavBar />
           <section className=" ts_hm1_sec">
             <div className="container">
               <div className="row g-5">
@@ -955,61 +928,7 @@ export default function Home() {
               </div>
             </div>
           </section>
-          <footer className="ts_ftr_sec">
-            <div className="container">
-              <div className="row g-5">
-                <div className="col-md-5">
-                  <a href="#" className="">
-                    <img src={Logo} className="ts_ftr_sec_logo" />
-                  </a>
-                  <p className="srk srk_fs_1 srk_fw_400 ts_ftr_sec_logo_p srk_ln_1dot6 srk_clr_white_1 srk_mb_1dot5">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed purus accumsan, dapibus diam eget, congue nibh. Fusce eu pulvinar est. Pellentesque eleifend vel ex eu iaculis.
-                  </p>
-                  <div className="ts_ftr_scico">
-                    <a href="#" className="ts_ftr_sico_a">
-                      <img src={ftr1} className="ts_ftr_sico" />
-                    </a>
-                    <a href="#" className="ts_ftr_sico_a">
-                      <img src={ftr2} className="ts_ftr_sico" />
-                    </a>
-                    <a href="#" className="ts_ftr_sico_a">
-                      <img src={ftr3} className="ts_ftr_sico" />
-                    </a></div>
-                </div>
-                <div className="col-md-7">
-                  <div className="row g-5">
-                    <div className="col-md-4">
-                      <div className="ts_ftr_sec_hd">Site Map</div>
-                      <a href="#" className="ts_ftr_sec_li">Product Videos</a>
-                      <a href="#" className="ts_ftr_sec_li">Product Videos</a>
-                      <a href="#" className="ts_ftr_sec_li">Product Videos</a>
-                      <a href="#" className="ts_ftr_sec_li">Product Videos</a>
-                      <a href="#" className="ts_ftr_sec_li">Product Videos</a>
-                    </div>
-                    <div className="col-md-4">
-                      <div className="ts_ftr_sec_hd">Site Map</div>
-                      <a href="#" className="ts_ftr_sec_li">Product Videos</a>
-                      <a href="#" className="ts_ftr_sec_li">Product Videos</a>
-                      <a href="#" className="ts_ftr_sec_li">Product Videos</a>
-                      <a href="#" className="ts_ftr_sec_li">Product Videos</a>
-                      <a href="#" className="ts_ftr_sec_li">Product Videos</a>
-                    </div>
-                    <div className="col-md-4">
-                      <div className="ts_ftr_sec_hd">Site Map</div>
-                      <a href="#" className="ts_ftr_sec_li">Product Videos</a>
-                      <a href="#" className="ts_ftr_sec_li">Product Videos</a>
-                      <a href="#" className="ts_ftr_sec_li">Product Videos</a>
-                      <a href="#" className="ts_ftr_sec_li">Product Videos</a>
-                      <a href="#" className="ts_ftr_sec_li">Product Videos</a>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-7">
-                  <div className="ts_ftr_sec_cpy">Copyright <span className="srk_clr_brightgrn">Tokenomics</span> core 2022 All right reserved</div>
-                </div>
-              </div>
-            </div>
-          </footer>
+          <Footer />
         </div>
       </div>    
     </>
