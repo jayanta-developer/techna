@@ -1,8 +1,5 @@
 import React from 'react';
-import "./bootstrap.min.css"
-import "./mCustomScrollbar.css"
 import "./style.css"
-import "./custom.css"
 
 
 //components
