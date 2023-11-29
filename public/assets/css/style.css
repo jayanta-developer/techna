@@ -1,16 +1,12 @@
-.homeContainer {
-  width: 100%;
-}
-
 :root {
   --fontnormal: "Mulish", sans-serif;
 }
 
 @font-face {
   font-family: "ClashDisplay-Variable";
-  src: url("../../Assets/fonts/ClashDisplay-Variable.woff2") format("woff2"),
-    url("../../Assets/fonts/ClashDisplay-Variable.woff") format("woff"),
-    url("../../Assets/fonts/ClashDisplay-Variable.ttf") format("truetype");
+  src: url("../../assets/fonts/ClashDisplay-Variable.woff2") format("woff2"),
+    url("../../assets/fonts/ClashDisplay-Variable.woff") format("woff"),
+    url("../../assets/fonts/ClashDisplay-Variable.ttf") format("truetype");
   font-weight: 200 700;
   font-display: swap;
   font-style: normal;
@@ -18,9 +14,9 @@
 
 @font-face {
   font-family: "ClashDisplay-Extralight";
-  src: url("../../Assets/fonts/ClashDisplay-Extralight.woff2") format("woff2"),
-    url("../../Assets/fonts/ClashDisplay-Extralight.woff") format("woff"),
-    url("../../Assets/fonts/ClashDisplay-Extralight.ttf") format("truetype");
+  src: url("../../assets/fonts/ClashDisplay-Extralight.woff2") format("woff2"),
+    url("../../assets/fonts/ClashDisplay-Extralight.woff") format("woff"),
+    url("../../assets/fonts/ClashDisplay-Extralight.ttf") format("truetype");
   font-weight: 200;
   font-display: swap;
   font-style: normal;
@@ -28,9 +24,9 @@
 
 @font-face {
   font-family: "ClashDisplay-Light";
-  src: url("../../Assets/fonts/ClashDisplay-Light.woff2") format("woff2"),
-    url("../../Assets/fonts/ClashDisplay-Light.woff") format("woff"),
-    url("../../Assets/fonts/ClashDisplay-Light.ttf") format("truetype");
+  src: url("../../assets/fonts/ClashDisplay-Light.woff2") format("woff2"),
+    url("../../assets/fonts/ClashDisplay-Light.woff") format("woff"),
+    url("../../assets/fonts/ClashDisplay-Light.ttf") format("truetype");
   font-weight: 300;
   font-display: swap;
   font-style: normal;
@@ -38,9 +34,9 @@
 
 @font-face {
   font-family: "ClashDisplay-Regular";
-  src: url("../../Assets/fonts/ClashDisplay-Regular.woff2") format("woff2"),
-    url("../../Assets/fonts/ClashDisplay-Regular.woff") format("woff"),
-    url("../../Assets/fonts/ClashDisplay-Regular.ttf") format("truetype");
+  src: url("../../assets/fonts/ClashDisplay-Regular.woff2") format("woff2"),
+    url("../../assets/fonts/ClashDisplay-Regular.woff") format("woff"),
+    url("../../assets/fonts/ClashDisplay-Regular.ttf") format("truetype");
   font-weight: 400;
   font-display: swap;
   font-style: normal;
@@ -48,9 +44,9 @@
 
 @font-face {
   font-family: "ClashDisplay-Medium";
-  src: url("../../Assets/fonts/ClashDisplay-Medium.woff2") format("woff2"),
-    url("../../Assets/fonts/ClashDisplay-Medium.woff") format("woff"),
-    url("../../Assets/fonts/ClashDisplay-Medium.ttf") format("truetype");
+  src: url("../../assets/fonts/ClashDisplay-Medium.woff2") format("woff2"),
+    url("../../assets/fonts/ClashDisplay-Medium.woff") format("woff"),
+    url("../../assets/fonts/ClashDisplay-Medium.ttf") format("truetype");
   font-weight: 500;
   font-display: swap;
   font-style: normal;
@@ -58,9 +54,9 @@
 
 @font-face {
   font-family: "ClashDisplay-Semibold";
-  src: url("../../Assets/fonts/ClashDisplay-Semibold.woff2") format("woff2"),
-    url("../../Assets/fonts/ClashDisplay-Semibold.woff") format("woff"),
-    url("../../Assets/fonts/ClashDisplay-Semibold.ttf") format("truetype");
+  src: url("../../assets/fonts/ClashDisplay-Semibold.woff2") format("woff2"),
+    url("../../assets/fonts/ClashDisplay-Semibold.woff") format("woff"),
+    url("../../assets/fonts/ClashDisplay-Semibold.ttf") format("truetype");
   font-weight: 600;
   font-display: swap;
   font-style: normal;
@@ -68,9 +64,9 @@
 
 @font-face {
   font-family: "ClashDisplay-Bold";
-  src: url("../../Assets/fonts/ClashDisplay-Bold.woff2") format("woff2"),
-    url("../../Assets/fonts/ClashDisplay-Bold.woff") format("woff"),
-    url("../../Assets/fonts/ClashDisplay-Bold.ttf") format("truetype");
+  src: url("../../assets/fonts/ClashDisplay-Bold.woff2") format("woff2"),
+    url("../../assets/fonts/ClashDisplay-Bold.woff") format("woff"),
+    url("../../assets/fonts/ClashDisplay-Bold.ttf") format("truetype");
   font-weight: 700;
   font-display: swap;
   font-style: normal;
@@ -78,7 +74,7 @@
 @font-face {
   font-family: "QuarcaNormBold";
   font-weight: bold;
-  src: url("../../Assets/fonts/QuarcaNormBold.otf") format("opentype");
+  src: url("../../assets/fonts/QuarcaNormBold.otf") format("opentype");
 }
 body {
   letter-spacing: 1.5px;
@@ -141,7 +137,7 @@ body {
   display: block;
   width: 100%;
   height: 100%;
-  background-image: url("../../Assets/img/bgline.png");
+  background-image: url(../img/bgline.png);
   background-size: cover;
   position: absolute;
   left: 0px;
@@ -152,7 +148,7 @@ body {
   display: block;
   width: 46%;
   height: 170vh;
-  background-image: url("../../Assets/img/home-girl.png");
+  background-image: url(../../assets/img/home-girl.png);
   background-size: contain;
   position: absolute;
   right: 0px;
@@ -194,7 +190,7 @@ body {
 .ts_hm1_shap1 {
   display: flex;
   width: 100%;
-  background-image: url("../../Assets/img/home-ban-shape.png");
+  background-image: url(../../assets/img/home-ban-shape.png);
   background-size: 100% 100%;
   padding: 4rem;
   height: 238px;
@@ -281,7 +277,7 @@ body {
 }
 .ts_hm2_dv_2_vid_out:before {
   content: "";
-  background-image: url("../../Assets/img/home-pay-ico.png");
+  background-image: url(../../assets/img/home-pay-ico.png);
   background-size: 50px;
   background-position: center;
   height: 100%;
@@ -313,14 +309,14 @@ body {
 }
 
 .ts_pg_road_dv_bg_1 {
-  background-image: url("../../Assets/img/home-line-road.png");
+  background-image: url(../../assets/img/home-line-road.png);
   background-size: 210px 100%;
   background-repeat: no-repeat;
   background-position: top right;
   padding-right: 77px;
 }
 .ts_pg_road_dv_bg_2 {
-  background-image: url("../../Assets/img/home-line-road2.png");
+  background-image: url(../../assets/img/home-line-road2.png);
   background-size: 210px 100%;
   background-repeat: no-repeat;
   background-position: top left;
@@ -400,7 +396,7 @@ body {
   display: block;
   width: 16px;
   height: 9px;
-  background-image: url("../../Assets/img/arw.png");
+  background-image: url(../../assets/img/arw.png);
   position: absolute;
   top: calc(50% - 4.5px);
   right: 20px;
@@ -732,7 +728,7 @@ body {
     left: auto;
   }
   .ts_pg_road_dv_bg_2 {
-    background-image: url("../../Assets/img/home-line-road.png");
+    background-image: url(../../assets/img/home-line-road.png);
 
     background-position: top right;
 
@@ -746,7 +742,7 @@ body {
   .ts_pg_road_dv_bg_1,
   .ts_pg_road_dv_bg_2 {
     margin-top: 30px;
-    background-image: url("../../Assets/img/home-line-road2.png");
+    background-image: url(../../assets/img/home-line-road2.png);
     background-position: top left;
     padding-right: 0px;
     padding-left: 77px;
@@ -1237,19 +1233,4 @@ body {
 }
 .srk_clr_bright_green {
   color: #4dbcc5;
-}
-
-.tag-wrap {
-  filter: drop-shadow(7px 7px 6px rgba(59, 245, 255, 0.33));
-  /* filter: drop-shadow(-1px 6px 3px #f00); */
-}
-
-.tag {
-  background: #fb8c00;
-  color: #222;
-  padding: 2rem 3rem 2rem 4rem;
-  font: bold 32px system-ui;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 82%, 71% 100%, 0% 100%);
-
-  /* clip-path: polygon(30px 0%, 100% 0%, 100% 100%, 30px 100%, 0 50%); */
 }
