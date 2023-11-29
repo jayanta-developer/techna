@@ -13,7 +13,43 @@ import NavBar from '../../Components/NavBar'
 
 export default function Spot() {
   const [sideTab, setSideTab] = useState(1)
-  console.log(sideTab);
+
+
+  const tableRow = ({ Time, Pay, Receive, Amount, Type, TriggerPrice, Price, Expiry, Status }) => {
+    return (
+      <Box className="tableRow">
+        <Box className="tableRowItem">
+          <Typography>{Time}</Typography>
+        </Box>
+        <Box className="tableRowItem">
+          <Typography>{Pay}</Typography>
+        </Box>
+        <Box className="tableRowItem">
+          <Typography>{Receive}</Typography>
+        </Box>
+        <Box className="tableRowItem">
+          <Typography>{Amount}</Typography>
+        </Box>
+        <Box className="tableRowItem">
+          <Typography>{Type}</Typography>
+        </Box>
+        <Box className="tableRowItem">
+          <Typography>{TriggerPrice}</Typography>
+        </Box>
+        <Box className="tableRowItem">
+          <Typography>{Price}</Typography>
+        </Box>
+        <Box className="tableRowItem">
+          <Typography>{Expiry}</Typography>
+        </Box>
+        <Box className="tableRowItem">
+          <Typography>{Status}</Typography>
+        </Box>
+      </Box>
+    )
+  }
+
+
 
   return (
     <>
@@ -43,7 +79,7 @@ export default function Spot() {
                 <Box className="usdSelectorBox">
                   {sBitIcon}
                   <Typography>USDT</Typography>
-                  <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+                  <KeyboardArrowDownIcon className='dwonArrow' sx={{ color: "#fff" }} />
                 </Box>
                 <Box className="usdTBox">
                   <Box><Typography>25</Typography></Box>
@@ -78,7 +114,7 @@ export default function Spot() {
                 <Box className="usdSelectorBox">
                   {sBitIcon}
                   <Typography>USDT</Typography>
-                  <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+                  <KeyboardArrowDownIcon className='dwonArrow' sx={{ color: "#fff" }} />
                 </Box>
                 <Box className="usdTBox RusdTBox">
                   <Typography>27.8377</Typography>
@@ -112,13 +148,16 @@ export default function Spot() {
 
             {/*Table  LimitSection */}
             <Box sx={{ display: sideTab === 2 ? "flex" : "none" }} className="tabeinnerSection">
-              <Typography className='sideMenuGText'>Paid token</Typography>
+              <Box className="tabsectionLabel">
+                <Typography className='sideMenuGText'>Paid token</Typography>
+                <Typography className='sideMenuGText sideMenuGTextL'>Paid token</Typography>
+              </Box>
 
               <Box className="usdTHeader">
                 <Box className="usdSelectorBox">
                   {sBitIcon}
                   <Typography>MATIC</Typography>
-                  <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+                  <KeyboardArrowDownIcon className='dwonArrow' sx={{ color: "#fff" }} />
                 </Box>
                 <Box className="usdTBox">
                   <Box><Typography>1.45</Typography></Box>
@@ -144,11 +183,14 @@ export default function Spot() {
                 </Box>
               </Box>
 
-              <Typography className='sideMenuGText'>Expiry</Typography>
+              <Box className="tabsectionLabel">
+                <Typography className='sideMenuGText'>Expiry</Typography>
+                <Typography className='sideMenuGText sideMenuGTextL'>Price limit</Typography>
+              </Box>
               <Box className="usdTHeader">
                 <Box className="usdSelectorBox">
                   <Typography>1 hour</Typography>
-                  <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+                  <KeyboardArrowDownIcon className='dwonArrow' sx={{ color: "#fff" }} />
                 </Box>
                 <Box className="usdTBox">
                   <Box><Typography>1.45</Typography></Box>
@@ -165,7 +207,7 @@ export default function Spot() {
                 <Box className="usdSelectorBox">
                   {sBitIcon}
                   <Typography>BTC</Typography>
-                  <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+                  <KeyboardArrowDownIcon className='dwonArrow' sx={{ color: "#fff" }} />
                 </Box>
                 <Box className="usdTBox RusdTBox">
                   <Typography>27.8377</Typography>
@@ -194,17 +236,20 @@ export default function Spot() {
 
             {/*Table  StopMarketSection */}
             <Box sx={{ display: sideTab === 3 ? "flex" : "none" }} className="tabeinnerSection">
-              <Typography className='sideMenuGText'>Pay</Typography>
+              <Box className="tabsectionLabel">
+                <Typography className='sideMenuGText'>Paid token</Typography>
+                <Typography className='sideMenuGText sideMenuGTextL SMsideMenuGTextL'>Amount</Typography>
+              </Box>
 
               <Box className="usdTHeader">
                 <Box className="usdSelectorBox">
                   {sBitIcon}
-                  <Typography>USDT</Typography>
-                  <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+                  <Typography>MATIC</Typography>
+                  <KeyboardArrowDownIcon className='dwonArrow' sx={{ color: "#fff" }} />
                 </Box>
                 <Box className="usdTBox">
-                  <Box><Typography>25</Typography></Box>
-                  <Box><Typography>155</Typography></Box>
+                  <Box><Typography>145</Typography></Box>
+                  <Box><Typography>25$</Typography></Box>
                 </Box>
               </Box>
 
@@ -226,23 +271,39 @@ export default function Spot() {
                 </Box>
               </Box>
 
+
+              <Box className="tabsectionLabel">
+                <Typography className='sideMenuGText'>Trigger price</Typography>
+                <Typography className='sideMenuGText sideMenuGTextL SMsideMenuGTextL'>Expiry</Typography>
+              </Box>
+              <Box className="usdTHeader">
+                <Box className="usdSelectorBox">
+                  <Typography>35,000</Typography>
+                  <KeyboardArrowDownIcon className='dwonArrow' sx={{ color: "#fff" }} />
+                </Box>
+                <Box className="usdTBox RusdTBox">
+                  <Typography>1 hour</Typography>
+                  <KeyboardArrowDownIcon className='dwonArrow' sx={{ color: "#fff" }} />
+                </Box>
+              </Box>
+
               <Box className="placeholderRefres_box">
                 <img src={refreshLogo} />
               </Box>
-              <Typography className='sideMenuGText'>Receive</Typography>
+              <Typography className='sideMenuGText'>You Get</Typography>
 
               <Box className="usdTHeader">
                 <Box className="usdSelectorBox">
                   {sBitIcon}
-                  <Typography>USDT</Typography>
-                  <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+                  <Typography>BTC</Typography>
+                  <KeyboardArrowDownIcon className='dwonArrow' sx={{ color: "#fff" }} />
                 </Box>
                 <Box className="usdTBox RusdTBox">
                   <Typography>27.8377</Typography>
                 </Box>
               </Box>
               <Box className="buyBtn">
-                <Typography>Buy</Typography>
+                <Typography>Create Order</Typography>
               </Box>
             </Box>
           </Box>
@@ -259,10 +320,65 @@ export default function Spot() {
             <Typography className='spotTabelHeaderText'>Open Orders</Typography>
             <Box className="oderDropBox">
               <Typography>Open Orders</Typography>
-              <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+              <KeyboardArrowDownIcon className='dwonArrow' sx={{ color: "#fff" }} />
             </Box>
           </Box>
           <Box className="spotLBoxTable">
+            {tableRow(
+              {
+                Time: "Time",
+                Pay: "Pay",
+                Receive: "Receive",
+                Amount: "Amount",
+                Type: "Type",
+                TriggerPrice: "Trigger Price",
+                Price: "Price",
+                Expiry: "Expiry",
+                Status: "Status"
+              }
+            )}
+            {tableRow(
+              {
+                Time: "4.7.23.18.58",
+                Pay: "USDT",
+                Receive: "BTC",
+                Amount: "2",
+                Type: "Limit",
+                TriggerPrice: "--",
+                Price: "54",
+                Expiry: "1 Day",
+                Status: "2/0"
+              }
+            )}
+            {tableRow(
+              {
+                Time: "4.7.23.18.58",
+                Pay: "USDT",
+                Receive: "BTC",
+                Amount: "2",
+                Type: "Limit",
+                TriggerPrice: "--",
+                Price: "54",
+                Expiry: "1 Day",
+                Status: "2/0"
+              }
+            )}
+            {tableRow(
+              {
+                Time: "4.7.23.18.58",
+                Pay: "USDT",
+                Receive: "BTC",
+                Amount: "2",
+                Type: "Limit",
+                TriggerPrice: "--",
+                Price: "54",
+                Expiry: "1 Day",
+                Status: "2/0"
+              }
+            )}
+
+
+
 
           </Box>
 
