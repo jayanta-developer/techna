@@ -22479,7 +22479,6 @@
   font-weight: 100;
   font-display: block;
   src: url(../../Assets/fonts/fa-thin-100.woff2) format("woff2"),
-    url(../../Assets/fonts/fa-thin-100.woff) format("woff"),
     url(../../Assets/fonts/fa-thin-100.ttf) format("truetype");
 }
 .fa-solid,

@@ -1,12 +1,11 @@
 import React from 'react';
-import { Box } from '@mui/material';
-// import "./style.css"
-// import "./mCustomScrollbar.css"
-// import "./custom.css"
-// import "./bootstrap.min.css"
+import "./style.css"
+import "./mCustomScrollbar.css"
+import "./custom.css"
+import "./bootstrap.min.css"
 
 //components
-import NavBar from '../../Components/NavBar';
+
 
 //images
 import bitcoinLogo from "../../Assets/img/bitcoin logo.png"
@@ -15,8 +14,6 @@ import bitcoinLogo from "../../Assets/img/bitcoin logo.png"
 export default function Home() {
   return (
     <>
-      {/* <NavBar /> */}
-      <Box className="homeContainer">
         <div class="tn_sid_bar_totset">
           <div class="tn_right_sid_bar">
             <i class="fab fa-bitcoin tn_right_sid_bar_i" data-navn="t1"></i>
@@ -480,7 +477,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </Box>
     </>
   )
 }
