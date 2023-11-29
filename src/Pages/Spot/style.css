@@ -149,8 +149,6 @@
 .tabeinnerSection {
   width: 100%;
   height: 100%;
-  border: 1px solid;
-  display: flex;
   flex-direction: column;
 }
 .usdTHeader {
@@ -159,6 +157,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 16px;
 }
 .usdSelectorBox {
   width: 145px;
@@ -167,6 +166,18 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding-left: 15px;
+  cursor: pointer;
+}
+.usdSelectorBox p {
+  color: #fff;
+  font-family: Inter;
+  font-size: 14px !important;
+  font-style: normal;
+  font-weight: 400 !important;
+  line-height: normal;
+  margin-left: 4px !important;
+  margin-right: 29px !important;
 }
 .usdTBox {
   width: 242px;
@@ -190,5 +201,74 @@
   font-size: 14px !important;
   font-style: normal;
   font-weight: 400 !important;
+  line-height: normal;
+}
+.usdTHeaderValue {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.usdTHeaderValueItem {
+  width: 20%;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+}
+.usdTHeaderValueItem p {
+  color: #fff;
+  font-size: 14px !important;
+  font-style: normal;
+  font-weight: 400 !important;
+  line-height: normal;
+}
+.customBtn p {
+  color: #fff;
+  font-size: 12px !important;
+  font-style: normal;
+  font-weight: 400 !important;
+  line-height: normal;
+}
+.customBtn {
+  border-radius: 4px;
+  opacity: 0.5;
+  background: #18141c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.placeholderRefres_box {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0;
+}
+.RusdTBox > :last-child {
+  border: 0px;
+}
+.RusdTBox {
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+}
+.buyBtn {
+  width: 100%;
+  height: 49px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #41f8f8;
+  margin-top: 24px;
+}
+.buyBtn p {
+  color: #18141c;
+  font-family: "inter" !important;
+  font-size: 16px !important;
+  font-style: normal;
+  font-weight: 600 !important;
   line-height: normal;
 }
