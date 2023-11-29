@@ -142,7 +142,7 @@ export default function AdminPanel() {
                   <div className="col-md-6">
                     <div className="row align-items-center">
                       <div className="col-md-5">
-                        <div className="ts_lll_admin_lbl">St Referral Status</div>
+                        <div className="ts_lll_admin_lbl">Referral Length</div>
                       </div>
                       <div className="col-md-7">
                         <div className="row g-3">
@@ -159,7 +159,7 @@ export default function AdminPanel() {
                   <div className="col-md-6">
                     <div className="row align-items-center">
                       <div className="col-md-5">
-                        <div className="ts_lll_admin_lbl">St Referral Status</div>
+                        <div className="ts_lll_admin_lbl">Referral Percentage</div>
                       </div>
                       <div className="col-md-7">
                         <div className="row g-3">
@@ -176,7 +176,7 @@ export default function AdminPanel() {
                   <div className="col-md-6">
                     <div className="row align-items-center">
                       <div className="col-md-5">
-                        <div className="ts_lll_admin_lbl">St Referral Status</div>
+                        <div className="ts_lll_admin_lbl">Transfer Ownership</div>
                       </div>
                       <div className="col-md-7">
                         <div className="row g-3">
@@ -194,6 +194,7 @@ export default function AdminPanel() {
               </div>
             </div>
           </section>
+          <section className="ts_bot_sec">Need Help ? Join Us At our <a href="#">Discord</a> Community</section>
           <Footer />
         </div>
       </div>
