@@ -1414,3 +1414,7 @@ body {
 
   /* clip-path: polygon(30px 0%, 100% 0%, 100% 100%, 30px 100%, 0 50%); */
 }
+
+.br30 {
+  border-radius: 30px !important;
+}

@@ -134,10 +134,8 @@ export default function AdminPanel() {
                         <div className="ts_lll_admin_lbl">St Referral Status</div>
                       </div>
                       <div className="col-md-7">
-                        <a href="#" className="ts_btn_outline ts_btn_outline_n  "
-                          style="border-radius: 30px;">Yes</a>
-                        <a href="#" className="ts_btn_outline ts_btn_outline_n  "
-                          style="border-radius: 30px;">No</a>
+                        <a href="#" className="ts_btn_outline ts_btn_outline_n br30">Yes</a>
+                        <a href="#" className="ts_btn_outline ts_btn_outline_n br30">No</a>
                       </div>
                     </div>
                   </div>
