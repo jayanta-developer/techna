@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import { Box, Typography } from '@mui/material'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import "./style.css"
@@ -7,11 +8,11 @@ import { NavIcon, BitIcon } from "../../Assets/Data"
 
 
 export default function NavBar() {
-
+  const navigate = useNavigate();
   return (
     <>
       <Box className="navBar">
-        <Box className="logoBox">
+        <Box onClick={() => navigate("/")} className="logoBox">
           {NavIcon}
           <Typography>TechNa</Typography>
         </Box>

@@ -103,10 +103,10 @@
 }
 .spotOderBox {
   width: 100%;
-  height: 250px;
   /* background: #383838; */
   display: flex;
   flex-direction: column;
+  margin-bottom: 50px;
 }
 .spotLBoxHeader {
   width: 100%;
