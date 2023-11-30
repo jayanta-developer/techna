@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 /* font-family: 'Inter', sans-serif; */
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap");
 /* font-family: 'Kanit', sans-serif; */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 /* font-family: 'Montserrat', sans-serif; */
-@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Aldrich&display=swap");
 /* font-family: 'Aldrich', sans-serif; */
 
 .homeContainer {
@@ -130,7 +130,8 @@ body {
   display: block;
   position: fixed;
   width: 400px;
-  right: 0px;
+  top: 233px;
+  right: 60px;
   transition: 0.3s all ease;
   padding: 1.5rem;
   background-color: rgba(255, 255, 255, 0.1);
@@ -138,6 +139,21 @@ body {
   backdrop-filter: blur(10px);
   z-index: 99;
 }
+.slideOff {
+  right: -2000px;
+}
+/* .token {
+  right: -2000px;
+} */
+/* .trad {
+  right: -2000px;
+}
+.drop {
+  right: -2000px;
+}
+.topGL {
+  right: -2000px;
+} */
 
 .tn_right_sid_bar_tab_act {
   right: 60px;
@@ -705,7 +721,8 @@ body {
     width: calc(100% - 150px);
   }
 
-  .ts_hm1_sec_hdng_p {}
+  .ts_hm1_sec_hdng_p {
+  }
 
   .ts_hm1_sec {
     min-height: 600px;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./style.css"
 
 //images
@@ -6,18 +6,78 @@ import bitcoinLogo from "../../Assets/img/bitcoin logo.png"
 
 
 export default function SideFloatingBar() {
+  const [chatSlide, setChatSlide] = useState(false)
+  const [liqutation, setLiqutation] = useState(false)
+  const [token, setToken] = useState(false)
+  const [trad, setTrad] = useState(false)
+  const [drop, setDrop] = useState(false)
+  const [topGL, setTopGL] = useState(false)
+
+  const handleSlide = (e) => {
+    if (e?.target?.id === "chatSlide") {
+      setChatSlide(!chatSlide)
+      setLiqutation(false)
+      setToken(false)
+      setTrad(false)
+      setDrop(false)
+      setTopGL(false)
+    }
+    if (e?.target?.id === "liqutation") {
+      setLiqutation(!liqutation)
+      setChatSlide(false)
+      setToken(false)
+      setTrad(false)
+      setDrop(false)
+      setTopGL(false)
+    }
+    if (e?.target?.id === "token") {
+      setToken(!token)
+      setLiqutation(false)
+      setChatSlide(false)
+      setTrad(false)
+      setDrop(false)
+      setTopGL(false)
+    }
+    if (e?.target?.id === "trad") {
+      setTrad(!trad)
+      setToken(false)
+      setLiqutation(false)
+      setChatSlide(false)
+      setDrop(false)
+      setTopGL(false)
+    }
+    if (e?.target?.id === "drop") {
+      setDrop(!drop)
+      setTrad(false)
+      setToken(false)
+      setLiqutation(false)
+      setChatSlide(false)
+      setTopGL(false)
+    }
+    if (e?.target?.id === "topGL") {
+      setTopGL(!topGL)
+      setDrop(false)
+      setTrad(false)
+      setToken(false)
+      setLiqutation(false)
+      setChatSlide(false)
+    }
+  }
+
+
+
   return (
     <>
       <div className="tn_sid_bar_totset">
         <div className="tn_right_sid_bar">
-          <i className="fab fa-bitcoin tn_right_sid_bar_i" data-navn="t1"></i>
-          <i className="fas fa-volume tn_right_sid_bar_i" data-navn="t2"></i>
-          <i className="fas fa-presentation-screen tn_right_sid_bar_i" data-navn="t3"></i>
-          <i className="fas fa-chart-line-up tn_right_sid_bar_i" data-navn="t4"></i>
-          <i className="fas fa-droplet tn_right_sid_bar_i" data-navn="t5"></i>
-          <i className="fas fa-messages-question tn_right_sid_bar_i" data-navn="t6"></i>
+          <i onClick={handleSlide} className="fab fa-bitcoin tn_right_sid_bar_i" id='chatSlide' data-navn="t1"></i>
+          <i onClick={handleSlide} className="fas fa-volume tn_right_sid_bar_i" id="liqutation" data-navn="t2"></i>
+          <i onClick={handleSlide} className="fas fa-presentation-screen tn_right_sid_bar_i" id='token' data-navn="t3"></i>
+          <i onClick={handleSlide} className="fas fa-chart-line-up tn_right_sid_bar_i" id='trad' data-navn="t4"></i>
+          <i onClick={handleSlide} className="fas fa-droplet tn_right_sid_bar_i" id='drop' data-navn="t5"></i>
+          <i onClick={handleSlide} className="fas fa-messages-question tn_right_sid_bar_i" id='topGL' data-navn="t6"></i>
         </div>
-        <div className="tn_right_sid_bar_tab " data-navn="t1">
+        <div className={chatSlide ? "tn_right_sid_bar_tab" : "tn_right_sid_bar_tab slideOff "} data-navn="t1">
           <div className="tn_right_sid_bar_tab_innn">
             <div className="tn_right_sid_bar_tab_hd">Chat
               <i className="tn_right_sid_bar_tab_cls_ico fas fa-times"></i>
@@ -79,7 +139,7 @@ export default function SideFloatingBar() {
             </div>
           </div>
         </div>
-        <div className="tn_right_sid_bar_tab" data-navn="t2">
+        <div className={liqutation ? "tn_right_sid_bar_tab" : "tn_right_sid_bar_tab slideOff"} data-navn="t2">
           <div className="tn_right_sid_bar_tab_hd">Liqutation
             <i className="tn_right_sid_bar_tab_cls_ico fas fa-times"></i>
           </div>
@@ -163,7 +223,7 @@ export default function SideFloatingBar() {
             </div>
           </div>
         </div>
-        <div className="tn_right_sid_bar_tab " data-navn="t3">
+        <div className={token ? "tn_right_sid_bar_tab" : "tn_right_sid_bar_tab slideOff"} data-navn="t3">
           <div className="tn_right_sid_bar_tab_hd mb-0">
             <i className="tn_right_sid_bar_tab_cls_ico fas fa-times"></i>
           </div>
@@ -250,7 +310,7 @@ export default function SideFloatingBar() {
             </div>
           </div>
         </div>
-        <div className="tn_right_sid_bar_tab" data-navn="t4">
+        <div className={trad ? "tn_right_sid_bar_tab" : "tn_right_sid_bar_tab slideOff"} data-navn="t4">
           <div className="tn_right_sid_bar_tab_hd mb-0">
             <i className="tn_right_sid_bar_tab_cls_ico fas fa-times"></i>
           </div>
@@ -359,7 +419,7 @@ export default function SideFloatingBar() {
             </div>
           </div>
         </div>
-        <div className="tn_right_sid_bar_tab " data-navn="t5">
+        <div className={drop ? "tn_right_sid_bar_tab" : "tn_right_sid_bar_tab slideOff"} data-navn="t5">
           <div className="tn_rs_ld_set_scrl tn_right_sid_bar_tab_t5 mCustomScrollbar" data-mcs-theme="minimal">
             <div className="tn_rs_ld_set">
               <div className="srk srk_fs_1dot4 srk_fw_600 srk_clr_white_1 srk_mb_0dot6"> A Simple & secure way to buy Bitcon</div>
@@ -375,7 +435,7 @@ export default function SideFloatingBar() {
             </div>
           </div>
         </div>
-        <div className="tn_right_sid_bar_tab" data-navn="t6">
+        <div className={topGL ? "tn_right_sid_bar_tab" : "tn_right_sid_bar_tab slideOff"} data-navn="t6">
           <div className="tn_right_sid_bar_tab_hd">Top Gainers
             <i className="tn_right_sid_bar_tab_cls_ico fas fa-times"></i>
           </div>
