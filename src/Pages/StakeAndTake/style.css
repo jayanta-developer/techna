@@ -99,6 +99,7 @@
   display: flex;
   flex-direction: row;
 }
+
 .gradient-border {
   border-width: 1px;
   border-style: solid;
@@ -159,6 +160,17 @@
     height: 77%;
     margin-bottom: 20px;
   }
+
+  .SATLBoxTable {
+    flex-wrap: wrap;
+  }
+
+  .infoBox {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
 }
 
 @media only screen and (min-width: 1000px) {
@@ -180,5 +192,16 @@
   .lineGraphBoxSAT {
     height: 58%;
     margin-bottom: 129px;
+  }
+
+  .SATLBoxTable {
+    flex-wrap: wrap;
+  }
+
+  .infoBox {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin: 0;
   }
 }
