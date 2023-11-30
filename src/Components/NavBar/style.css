@@ -88,3 +88,132 @@
   line-height: normal;
   opacity: 0.4;
 }
+
+@media only screen and (max-width:760px) {
+  .navBar {
+    padding: 0 15px;
+  }
+
+  .spotContainer {
+    padding: 15px;
+  }
+
+  .spotFBox {
+    flex-wrap: wrap;
+  }
+
+  .spotSideMenu {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 15px;
+    margin: 0 0 8px 0;
+  }
+
+  .spotGraphBox {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 15px;
+    margin: 8px 0 0 0;
+  }
+
+  .spotLBoxTable {
+    overflow: auto;
+  }
+
+  .tableRowItem {
+    white-space: nowrap;
+  }
+
+  .tableRow {
+    gap: 15px;
+  }
+
+  .tableRowItem p {
+    font-size: 14px !important;
+  }
+
+  .sideBoxMenu p, .sideMenuGText {
+    font-size: 14px !important;
+  }
+
+  .spotTabelHeaderText {
+    font-size: 18px !important;
+  }
+
+  .currencyBox {
+    display: none;
+  }
+
+  .tableRow {
+    min-width: 1080px;
+  }
+
+  .placeholderRefres_box {
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width:761px) and (max-width:1023px) {
+  .navBar {
+    padding: 0 15px;
+  }
+
+  .spotContainer {
+    padding: 15px;
+  }
+
+  .spotFBox {
+    flex-wrap: wrap;
+  }
+
+  .spotSideMenu {
+    width: 300px;
+    height: auto;
+    padding: 15px;
+    margin: 0 0 8px 0;
+  }
+
+  .spotGraphBox {
+    width: calc(100% - 320px);
+    height: auto;
+    padding: 15px;
+    margin: 8px 0 0 0;
+  }
+
+  
+
+  .spotLBoxTable {
+    overflow: auto;
+  }
+
+  .tableRowItem {
+    white-space: nowrap;
+  }
+
+  .tableRow {
+    gap: 15px;
+  }
+
+  .tableRowItem p {
+    font-size: 14px !important;
+  }
+
+  .sideBoxMenu p, .sideMenuGText {
+    font-size: 14px !important;
+  }
+
+  .spotTabelHeaderText {
+    font-size: 18px !important;
+  }
+
+
+  .tableRow {
+    min-width: 1080px;
+  }
+
+  .placeholderRefres_box {
+    margin: 0;
+  }
+}
