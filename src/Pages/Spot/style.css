@@ -157,7 +157,7 @@
 
 .oderDropBox p {
   color: var(--Primary-white, #fff);
-  font-family: "Montserrat" !important;
+  font-family: 'Montserrat', sans-serif !important;
   font-size: 16p !important;
   font-style: normal;
   font-weight: 500 !important;
@@ -316,7 +316,7 @@
 
 .buyBtn p {
   color: #18141c;
-  font-family: "inter" !important;
+  font-family: 'Aldrich', sans-serif !important;
   font-size: 16px !important;
   font-style: normal;
   font-weight: 600 !important;
