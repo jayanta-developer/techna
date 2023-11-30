@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Typography, Slider, Checkbox, FormControlLabel, FormGroup } from '@mui/material'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import CloseIcon from '@mui/icons-material/Close';
 
 import "./style.css"
 
@@ -17,6 +18,9 @@ export default function Futures() {
   const [sideTab, setSideTab] = useState(1)
   const [longChecked, setLongChecked] = useState(true);
   const [shortChecked, setShortChecked] = useState(false);
+  const [gptTabe, setGptTabe] = useState(0)
+  const [graphBtn, setGraphBtn] = useState(true)
+
 
   const handleLongChange = (event) => {
     setLongChecked(event.target.checked);
@@ -67,75 +71,248 @@ export default function Futures() {
               <Typography>Stop Market</Typography>
             </Box>
           </Box>
-          <Typography className='sideMenuGText'>Amount</Typography>
+          {/* Amoutn */}
+          {sideTab === 1 ? (
+            <>
+              <Typography className='sideMenuGText'>Amount</Typography>
 
-          <Box className="usdTHeader">
-            <Box className="usdTBox">
-              <Box><Typography>300 USDT </Typography></Box>
-              <Box><Typography>0.03 BTC </Typography></Box>
-            </Box>
-          </Box>
-          <Box className="usdTHeaderValue">
-            <Box className="usdTHeaderValueItem">
-              <Typography>25</Typography>
-            </Box>
-            <Box className="usdTHeaderValueItem">
-              <Typography>50</Typography>
-            </Box>
-            <Box className="usdTHeaderValueItem">
-              <Typography>75</Typography>
-            </Box>
-            <Box className="usdTHeaderValueItem">
-              <Typography>MAX</Typography>
-            </Box>
-            <Box className="usdTHeaderValueItem customBtn">
-              <Typography>Custom</Typography>
-            </Box>
-          </Box>
-          <Typography className='sideMenuGText'>Leverage: X10</Typography>
-
-          <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" />
-
-          <Box className="CheckBoxContainer">
-            <FormGroup>
-              <Box>
-                <FormControlLabel
-                  control={<Checkbox sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }} checked={longChecked} onChange={handleLongChange} color="default" />}
-                  label="TP/SL of Long"
-                />
+              <Box className="usdTHeader">
+                <Box className="usdTBox">
+                  <Box><Typography>300 USDT </Typography></Box>
+                  <Box><Typography>0.03 BTC </Typography></Box>
+                </Box>
               </Box>
-              <Box>
-                <FormControlLabel
-                  control={<Checkbox sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }} checked={shortChecked} onChange={handleShortChange} color="default" />}
-                  label="TP/SL of Short"
-                />
+              <Box className="usdTHeaderValue">
+                <Box className="usdTHeaderValueItem">
+                  <Typography>25</Typography>
+                </Box>
+                <Box className="usdTHeaderValueItem">
+                  <Typography>50</Typography>
+                </Box>
+                <Box className="usdTHeaderValueItem">
+                  <Typography>75</Typography>
+                </Box>
+                <Box className="usdTHeaderValueItem">
+                  <Typography>MAX</Typography>
+                </Box>
+                <Box className="usdTHeaderValueItem customBtn">
+                  <Typography>Custom</Typography>
+                </Box>
               </Box>
-            </FormGroup>
-          </Box>
+              <Typography className='sideMenuGText'>Leverage: X10</Typography>
 
-          <Box className="sellAbuyBtnBox">
-            <Box sx={{ background: "#61FF71" }} className="SABbtn">
-              <Typography>Buy/Long</Typography>
-            </Box>
-            <Box sx={{ background: "#F44336" }} className="SABbtn">
-              <Typography>Sell/Short</Typography>
-            </Box>
-          </Box>
-          <Box className="FutuUSDTextBox">
-            <Typography>Position Base: </Typography>
-            <Typography>300 USDT</Typography>
-          </Box>
-          <Box className="FutuUSDTextBox">
-            <Typography>Fees: </Typography>
-            <Typography>0.2 USDT</Typography>
-          </Box>
-          <Box className="FutuUSDTextBox">
-            <Typography>Remaining Balance: </Typography>
-            <Typography>25 USDT</Typography>
-          </Box>
+              <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" />
+
+              <Box className="CheckBoxContainer">
+                <FormGroup>
+                  <Box>
+                    <FormControlLabel
+                      control={<Checkbox sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }} checked={longChecked} onChange={handleLongChange} color="default" />}
+                      label="TP/SL of Long"
+                    />
+                  </Box>
+                  <Box>
+                    <FormControlLabel
+                      control={<Checkbox sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }} checked={shortChecked} onChange={handleShortChange} color="default" />}
+                      label="TP/SL of Short"
+                    />
+                  </Box>
+                </FormGroup>
+              </Box>
+
+              <Box className="sellAbuyBtnBox">
+                <Box sx={{ background: "#61FF71" }} className="SABbtn">
+                  <Typography>Buy/Long</Typography>
+                </Box>
+                <Box sx={{ background: "#F44336" }} className="SABbtn">
+                  <Typography>Sell/Short</Typography>
+                </Box>
+              </Box>
+              <Box className="FutuUSDTextBox">
+                <Typography>Position Base: </Typography>
+                <Typography>300 USDT</Typography>
+              </Box>
+              <Box className="FutuUSDTextBox">
+                <Typography>Fees: </Typography>
+                <Typography>0.2 USDT</Typography>
+              </Box>
+              <Box className="FutuUSDTextBox">
+                <Typography>Remaining Balance: </Typography>
+                <Typography>25 USDT</Typography>
+              </Box>
+            </>
+          ) : sideTab === 2 ? (
+            <>
+              <Typography className='sideMenuGText'>Price</Typography>
+
+              <Box className="usdTHeader">
+                <Box className="usdTBox LPDrop">
+                  <Box>
+                    <Typography>Last</Typography>
+                    <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+                  </Box>
+                  <Typography>USDT</Typography>
+                </Box>
+              </Box>
+              <Typography className='sideMenuGText'>Amount</Typography>
+
+              <Box className="usdTHeader">
+                <Box className="usdTBox">
+                  <Box><Typography>300 USDT </Typography></Box>
+                  <Box><Typography>0.03 BTC </Typography></Box>
+                </Box>
+              </Box>
+              <Box className="usdTHeaderValue">
+                <Box className="usdTHeaderValueItem">
+                  <Typography>25</Typography>
+                </Box>
+                <Box className="usdTHeaderValueItem">
+                  <Typography>50</Typography>
+                </Box>
+                <Box className="usdTHeaderValueItem">
+                  <Typography>75</Typography>
+                </Box>
+                <Box className="usdTHeaderValueItem">
+                  <Typography>MAX</Typography>
+                </Box>
+                <Box className="usdTHeaderValueItem customBtn">
+                  <Typography>Custom</Typography>
+                </Box>
+              </Box>
+              <Typography className='sideMenuGText'>Leverage: X10</Typography>
+
+              <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" />
+
+              <Box className="CheckBoxContainer">
+                <FormGroup>
+                  <Box>
+                    <FormControlLabel
+                      control={<Checkbox sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }} checked={longChecked} onChange={handleLongChange} color="default" />}
+                      label="TP/SL of Long"
+                    />
+                  </Box>
+                  <Box>
+                    <FormControlLabel
+                      control={<Checkbox sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }} checked={shortChecked} onChange={handleShortChange} color="default" />}
+                      label="TP/SL of Short"
+                    />
+                  </Box>
+                </FormGroup>
+              </Box>
+
+              <Box className="sellAbuyBtnBox">
+                <Box sx={{ background: "#61FF71" }} className="SABbtn">
+                  <Typography>Buy/Long</Typography>
+                </Box>
+                <Box sx={{ background: "#F44336" }} className="SABbtn">
+                  <Typography>Sell/Short</Typography>
+                </Box>
+              </Box>
+              <Box className="FutuUSDTextBox">
+                <Typography>Position Base: </Typography>
+                <Typography>300 USDT</Typography>
+              </Box>
+              <Box className="FutuUSDTextBox">
+                <Typography>Fees: </Typography>
+                <Typography>0.2 USDT</Typography>
+              </Box>
+              <Box className="FutuUSDTextBox">
+                <Typography>Remaining Balance: </Typography>
+                <Typography>25 USDT</Typography>
+              </Box>
+            </>
+          ) : sideTab === 3 ? (
+            <>
+              <Typography className='sideMenuGText'>Trigger Price</Typography>
+
+              <Box className="usdTHeader">
+                <Box className="usdTBox LPDrop">
+                  <Box>
+                    <Typography>Last</Typography>
+                    <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+                  </Box>
+                  <Typography>USDT</Typography>
+                </Box>
+              </Box>
+              <Typography className='sideMenuGText'>Price</Typography>
+
+              <Box className="usdTHeader">
+                <Box className="usdTBox LPDrop smField">
+                  <Typography></Typography>
+                  <Typography>USDT</Typography>
+                </Box>
+              </Box>
+              <Typography className='sideMenuGText'>Amount</Typography>
+
+              <Box className="usdTHeader">
+                <Box className="usdTBox LPDrop smField">
+                  <Typography>0.03</Typography>
+                  <Typography>= 300 USDT</Typography>
+
+                </Box>
+              </Box>
+
+              <Box className="usdTHeaderValue">
+                <Box className="usdTHeaderValueItem">
+                  <Typography>25</Typography>
+                </Box>
+                <Box className="usdTHeaderValueItem">
+                  <Typography>50</Typography>
+                </Box>
+                <Box className="usdTHeaderValueItem">
+                  <Typography>75</Typography>
+                </Box>
+                <Box className="usdTHeaderValueItem">
+                  <Typography>MAX</Typography>
+                </Box>
+                <Box className="usdTHeaderValueItem customBtn">
+                  <Typography>Custom</Typography>
+                </Box>
+              </Box>
+              <Typography className='sideMenuGText'>Leverage: X10</Typography>
+
+              <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" />
+
+              <Box className="CheckBoxContainer">
+                <FormGroup>
+                  <Box>
+                    <FormControlLabel
+                      control={<Checkbox sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }} checked={longChecked} onChange={handleLongChange} color="default" />}
+                      label="TP/SL of Long"
+                    />
+                  </Box>
+                  <Box>
+                    <FormControlLabel
+                      control={<Checkbox sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }} checked={shortChecked} onChange={handleShortChange} color="default" />}
+                      label="TP/SL of Short"
+                    />
+                  </Box>
+                </FormGroup>
+              </Box>
+
+              <Box className="sellAbuyBtnBox">
+                <Box sx={{ background: "#61FF71" }} className="SABbtn">
+                  <Typography>Buy/Long</Typography>
+                </Box>
+                <Box sx={{ background: "#F44336" }} className="SABbtn">
+                  <Typography>Sell/Short</Typography>
+                </Box>
+              </Box>
+              <Box className="FutuUSDTextBox">
+                <Typography>Position Base: </Typography>
+                <Typography>300 USDT</Typography>
+              </Box>
+              <Box className="FutuUSDTextBox">
+                <Typography>Fees: </Typography>
+                <Typography>0.2 USDT</Typography>
+              </Box>
+              <Box className="FutuUSDTextBox">
+                <Typography>Remaining Balance: </Typography>
+                <Typography>25 USDT</Typography>
+              </Box>
+            </>
+          ) : null}
         </Box>
-
-
         <Box className="orderBookBox">
           <Typography className='oderBookHeader'>Order Book</Typography>
 
@@ -172,16 +349,79 @@ export default function Futures() {
           {tableRow({ textColor: "#61FF71" })}
           {tableRow({ textColor: "#61FF71" })}
           {tableRow({ textColor: "#61FF71" })}
-
-
-
-
-
         </Box>
 
+        <Box className="graphBox">
+          <Box className="graphTopPriceBox">
+            <Box className="GTPTopBox">
+              <Typography className='GTPTopHeader'>BTC/USDT</Typography>
+              <Box className="GTPDropBox">
+                <Typography className='GTPTopBtnText'>BTC/USDT</Typography>
+                <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+              </Box>
+            </Box>
+            <Box className="GTPTabeBox">
+              <Box className="GTPTabeItem">
+                <Typography>Price</Typography>
+                <Typography>$70,000</Typography>
+              </Box>
+              <Box className="GTPTabeItem">
+                <Typography>24 Change</Typography>
+                <Typography>+578%</Typography>
+              </Box>
+              <Box className="GTPTabeItem">
+                <Typography>Volume</Typography>
+                <Typography>44k  BTC</Typography>
+              </Box>
+              <Box className="GTPTabeItem">
+                <Typography>24 High</Typography>
+                <Typography>$71, 775</Typography>
+              </Box>
+              <Box className="GTPTabeItem">
+                <Typography>24 Low</Typography>
+                <Typography>$69, 755</Typography>
+              </Box>
+            </Box>
+          </Box>
+          <Box className="gtpTabBox ">
 
+            <Box onClick={() => setGptTabe(0)} sx={{ background: gptTabe === 0 ? "#18141c" : "#FFFFFF0D" }} className="gtpTabItem">
+              <Typography>BTC/USDT</Typography>
+              <CloseIcon className='gptTabCorsIcon' />
+            </Box>
+            <Box onClick={() => setGptTabe(1)} sx={{ background: gptTabe === 1 ? "#18141c" : "#FFFFFF0D" }} className="gtpTabItem">
+              <Typography>ETH/USDT</Typography>
+              <CloseIcon className='gptTabCorsIcon' />
+            </Box>
+            <Box onClick={() => setGptTabe(2)} sx={{ background: gptTabe === 2 ? "#18141c" : "#FFFFFF0D" }} className="gtpTabItem">
+              <Typography>SOL/USDT</Typography>
+              <CloseIcon className='gptTabCorsIcon' />
+            </Box>
+          </Box>
 
-        <Box className="graphBox"></Box>
+          <Box className="spotGraphBox innerGraphBox">
+            <Box className="graphBtnBox">
+
+              <Box onClick={() => setGraphBtn(true)} sx={{ background: graphBtn ? "#41f8f8" : "#18141c" }} className="graphBtn lineBtn">
+                <Typography sx={{ color: !graphBtn ? "#fff" : "#000" }}>Line</Typography>
+              </Box>
+              <Box onClick={() => setGraphBtn(false)} sx={{ background: !graphBtn ? "#41f8f8" : "#18141c" }} className="graphBtn jpnsBtn">
+                <Typography sx={{ color: graphBtn ? "#fff" : "#000" }}>Japanese</Typography>
+              </Box>
+
+            </Box>
+
+            <Box className="lineGraphBox">
+              {
+                graphBtn ?
+                  <LineChart /> :
+                  <Typography variant='h3' sx={{ color: "#fff" }}>On progress</Typography>
+                // <CandlestickChart />
+              }
+            </Box>
+          </Box>
+
+        </Box>
 
       </Box >
 

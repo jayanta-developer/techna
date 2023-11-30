@@ -78,7 +78,7 @@ export default function StakeAndTake() {
       <NavBar />
       <Box className="spotContainer">
 
-        <Box className="spotFBox">
+        <Box className="spotFBox SAT_Box">
           <Box className="spotSideMenu">
             {/* side menu */}
             <Box className="spotNavMenu">
@@ -323,6 +323,8 @@ export default function StakeAndTake() {
               <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
             </Box>
             <Box className="CategoriesItemBox">
+              {CategoriCard()}
+              {CategoriCard()}
               {CategoriCard()}
               {CategoriCard()}
               {CategoriCard()}
