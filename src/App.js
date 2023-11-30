@@ -7,6 +7,7 @@ import TokemSale from "./Pages/TokemSale";
 import AdminPanel from "./Pages/AdminPanel";
 import Spot from "./Pages/Spot";
 import StakeAndTake from "./Pages/StakeAndTake";
+import Futures from "./Pages/Futures";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
       <Route path="/admin-panel" element={<AdminPanel />} />
       <Route path="/spot" element={<Spot />} />
       <Route path="/stakeandtake" element={<StakeAndTake />} />
+      <Route path="/futures" element={<Futures />} />
     </Routes>
   );
 }

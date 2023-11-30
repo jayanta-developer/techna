@@ -147,27 +147,6 @@ export default function StakeAndTake() {
               </Box>
             </Box>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             {/*Table  LimitSection */}
             <Box sx={{ display: sideTab === 2 ? "flex" : "none" }} className="tabeinnerSection">
               <Box className="tabsectionLabel">
@@ -239,22 +218,6 @@ export default function StakeAndTake() {
                 <Typography>Buy</Typography>
               </Box>
             </Box>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             {/*Table  StopMarketSection */}
             <Box sx={{ display: sideTab === 3 ? "flex" : "none" }} className="tabeinnerSection">
@@ -439,7 +402,7 @@ export default function StakeAndTake() {
 
 
           </Box>
-          <Box className="infoBox">
+          <Box className="infoBox gradient-border">
             <Typography className='infoBoxHeader'>information</Typography>
             <Typography className='infoBoxSubText'>Cards with choosable tokens. Please also show what happens when we click on the card. The card includes a symbol, name, price, percentage of up/down, and category.</Typography>
 
