@@ -130,7 +130,7 @@ body {
   display: block;
   position: fixed;
   width: 400px;
-  top: 233px;
+  top: calc(50vh - 125px);
   right: 60px;
   transition: 0.3s all ease;
   padding: 1.5rem;
@@ -907,7 +907,7 @@ body {
 .tn_rs_chatbox {
   display: flex;
   width: 100%;
-  max-height: 400px;
+  max-height: 350px;
   overflow-y: auto;
   background-image: var(--pnlmodgrad);
   border-radius: 10px;
@@ -1075,10 +1075,9 @@ body {
 
 @media (min-width: 901px) {
   .tn_right_sid_bar_tab_cls_ico {
-    display: none;
     position: absolute;
-    top: 25px;
-    right: 20px;
+    top: 0;
+    right: 0;
     font-size: 16px;
   }
 }
@@ -1124,25 +1123,9 @@ body {
     max-width: calc(100% - 30px);
   }
 
-  .tn_right_sid_bar_tab {
-    position: fixed;
-    bottom: 0px !important;
-    top: auto !important;
-    max-height: 100vh !important;
-  }
-
   .tn_right_sid_bar_tab_act {
     right: 0px !important;
     width: 100%;
-  }
-
-  .tn_right_sid_bar_tab_cls_ico {
-    margin-left: auto;
-    position: absolute;
-    right: 0;
-    font-size: 14px;
-    top: 4px;
-    z-index: 9999;
   }
 
   .sk_pie_chart_in_h1 {
@@ -1443,4 +1426,18 @@ body {
 
 .br30 {
   border-radius: 30px !important;
+}
+
+
+@media only screen and (max-width:760px) { 
+  .tn_right_sid_bar_tab {
+    width: 300px;
+  }
+
+  .tn_right_sid_bar_tab_cls_ico {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 16px;
+  }
 }
