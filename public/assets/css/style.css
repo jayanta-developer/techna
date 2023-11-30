@@ -130,7 +130,7 @@ body {
   display: block;
   position: fixed;
   width: 400px;
-  right: -2000px;
+  right: 0px;
   transition: 0.3s all ease;
   padding: 1.5rem;
   background-color: rgba(255, 255, 255, 0.1);
