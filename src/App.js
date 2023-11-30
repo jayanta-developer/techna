@@ -8,6 +8,8 @@ import AdminPanel from "./Pages/AdminPanel";
 import Spot from "./Pages/Spot";
 import StakeAndTake from "./Pages/StakeAndTake";
 import Futures from "./Pages/Futures";
+import Feed from "./Pages/Feed";
+import Profile from "./Pages/Profile";
 
 export default function App() {
   return (
@@ -18,6 +20,8 @@ export default function App() {
       <Route path="/spot" element={<Spot />} />
       <Route path="/stakeandtake" element={<StakeAndTake />} />
       <Route path="/futures" element={<Futures />} />
+      <Route path="/feed" element={<Feed />} />
+      <Route path="/profile" element={<Profile />} />
     </Routes>
   );
 }
