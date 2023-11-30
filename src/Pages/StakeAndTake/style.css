@@ -99,15 +99,20 @@
   display: flex;
   flex-direction: row;
 }
+.gradient-border {
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(to right, #15bffd8e, #a015fd93);
+  border-image-slice: 1;
+  border-radius: 8px;
+}
 
 .infoBox {
   max-width: 341px;
   width: 33%;
   height: 316px;
   /* height: 100% ; */
-  border-radius: 8px;
-  border: 1px solid var(--Gredient, #15bffd);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.021);
   backdrop-filter: blur(18px);
   display: flex;
   flex-direction: column;
