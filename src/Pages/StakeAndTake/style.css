@@ -97,7 +97,7 @@
 .SATLBoxTable {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .gradient-border {
@@ -109,17 +109,13 @@
 }
 
 .infoBox {
-  max-width: 341px;
-  width: 33%;
-  height: 316px;
-  /* height: 100% ; */
+  width: 100%;
   background: rgba(255, 255, 255, 0.021);
   backdrop-filter: blur(18px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-left: 24px;
   padding: 20px;
 }
 
@@ -195,13 +191,15 @@
   }
 
   .SATLBoxTable {
-    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: inherit;
   }
 
   .infoBox {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
+    max-width: 341px;
+    width: 33%;
+    height: 316px;
     margin: 0;
+    margin-left: 24px;
   }
 }

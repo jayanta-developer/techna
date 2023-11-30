@@ -258,8 +258,8 @@
 }
 .gtpTabItem {
   border-radius: 16px 16px 0px 0px;
-  width: 201px;
-  height: 57px;
+  width: 105px;
+  height: 53px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -277,7 +277,7 @@
 .gptTabCorsIcon {
   position: absolute;
   top: 5px;
-  right: 8px;
+  right: 4px;
   color: #fff;
 }
 .innerGraphBox {
@@ -315,6 +315,13 @@
   .futuresContainer {
     flex-direction: row;
     align-items: inherit;
+  }
+  .gtpTabItem {
+    width: 201px;
+    height: 57px;
+  }
+  .gptTabCorsIcon {
+    right: 8px;
   }
 }
 
