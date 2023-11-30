@@ -13,7 +13,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/tokem-sale" element={<TokemSale />} />
-      {/* <Route path="/admin-panel" element={<AdminPanel />} /> */}
+      <Route path="/admin-panel" element={<AdminPanel />} />
       <Route path="/spot" element={<Spot />} />
       <Route path="/stakeandtake" element={<StakeAndTake />} />
     </Routes>
