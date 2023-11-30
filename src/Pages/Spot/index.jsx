@@ -11,7 +11,6 @@ import refreshLogo from "../../Assets/Images/image 124.png.svg"
 //component
 import NavBar from '../../Components/NavBar'
 import { LineChart } from "../../Components/LineChart"
-import CandlestickChart from "../../Components/TradingChart"
 
 export default function Spot() {
   const [sideTab, setSideTab] = useState(1)
