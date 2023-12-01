@@ -10,6 +10,8 @@ import StakeAndTake from "./Pages/StakeAndTake";
 import Futures from "./Pages/Futures";
 import Feed from "./Pages/Feed";
 import Profile from "./Pages/Profile";
+import OptionsBeginners from "./Pages/OptionsBeginners";
+import Optiospro from "./Pages/Optionspro";
 
 export default function App() {
   return (
@@ -22,6 +24,8 @@ export default function App() {
       <Route path="/futures" element={<Futures />} />
       <Route path="/feed" element={<Feed />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/optionsbeginners" element={<OptionsBeginners />} />
+      <Route path="/optionspro" element={<Optiospro />} />
     </Routes>
   );
 }
