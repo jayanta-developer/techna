@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+
 import "./style.css";
 
 import List from "@mui/material/List";
@@ -29,11 +30,13 @@ import iconconnect from "../../Assets/img/icon-connect.svg";
 import SideFloatingBar from "../../Components/SideFloatingBar";
 
 export default function Profile() {
+  const [sideBar, setSeideBar] = useState(true)
+  console.log(sideBar);
   return (
     <section className="profile-section">
       <SideFloatingBar />
       <div className="profile-sidebar">
-        <div className="avatar">
+        <div onClick={() => setSeideBar(!sideBar)} className="avatar">
           <a href="#">
             <img src={avatar} alt="" />
           </a>
@@ -60,7 +63,7 @@ export default function Profile() {
           </a>
         </div>
       </div>
-      <div className="profile-menu">
+      <div style={{ width: sideBar ? "265px" : "0px" }} className="profile-menu">
         <div className="logo">
           <a href="#">
             <img src={Logo} alt="" />

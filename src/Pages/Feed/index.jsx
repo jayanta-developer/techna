@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 
 import List from "@mui/material/List";
@@ -33,14 +33,18 @@ import share from "../../Assets/img/share.svg";
 
 //components
 import SideFloatingBar from "../../Components/SideFloatingBar";
+import { Box } from "@mui/material";
 
 export default function Feed() {
+  const [sideBar, setSeideBar] = useState(false)
+
+
   return (
     <>
       <section className="profile-section">
         <SideFloatingBar />
         <div className="profile-sidebar">
-          <div className="avatar">
+          <div onClick={() => setSeideBar(!sideBar)} className="avatar">
             <a href="#">
               <img src={avatar} alt="" />
             </a>
@@ -67,7 +71,7 @@ export default function Feed() {
             </a>
           </div>
         </div>
-        <div className="profile-menu">
+        <Box sx={{ width: sideBar ? "265px" : "0px" }} className="profile-menu">
           <div className="logo">
             <a href="#">
               <img src={Logo} alt="" />
@@ -141,7 +145,7 @@ export default function Feed() {
               </ListItem>
             </List>
           </nav>
-        </div>
+        </Box>
         <div className="profile-content">
           <div className="heading">
             <div className="left">
