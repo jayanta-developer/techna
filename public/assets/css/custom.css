@@ -822,7 +822,7 @@ body {
   }
 
   .s_nav_ul {
-    display: none;
+    display: block;
     width: 100%;
     position: fixed;
     z-index: 99;
@@ -863,5 +863,13 @@ body {
 @media (max-width: 700px) {
   html {
     font-size: 10px;
+  }
+}
+
+@media only screen and (max-width:760px) {
+  .s_nav_ul_in {
+    display: block;
+    width: 100%;
+    margin-top: 80px;
   }
 }
