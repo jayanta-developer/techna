@@ -12,7 +12,9 @@ import AddIcon from "@mui/icons-material/Add";
 
 //images
 import Logo from "../../Assets/img/logo.png";
-import avatar from "../../Assets/img/avatar.png";
+import avatar from "../../Assets/img/avatar.jpg";
+import avatar2 from "../../Assets/img/avatar2.png";
+import avatar3 from "../../Assets/img/avatar3.png";
 import avatargroup from "../../Assets/img/avatar-group.png";
 import iconhome from "../../Assets/img/icon-home.svg";
 import iconrules from "../../Assets/img/icon-rules.svg";
@@ -23,6 +25,11 @@ import iconfaq from "../../Assets/img/icon-faq.svg";
 import iconlinks from "../../Assets/img/icon-links.svg";
 import iconsettings from "../../Assets/img/icon-settings.svg";
 import iconcheckbox from "../../Assets/img/checkbox.png";
+import iconconnect from "../../Assets/img/icon-connect.svg";
+import ChatCircle from "../../Assets/img/ChatCircle.svg";
+import heart from "../../Assets/img/heart.svg";
+import repost from "../../Assets/img/repost.svg";
+import share from "../../Assets/img/share.svg";
 
 //components
 import SideFloatingBar from "../../Components/SideFloatingBar";
@@ -143,14 +150,147 @@ export default function Feed() {
                 <img src={iconcheckbox} alt="" /> 365k Follower
               </h6>
             </div>
-            <img src={avatargroup} alt="" />
+            <div className="group"><img src={avatargroup} alt="" /></div>
           </div>
           <div className="post-box">
-            <div className="avatar"><img src={avatar} alt="" /></div>
-            <div className="form"><textarea name="" id="" cols="30" rows="10" placeholder="What’s on your mind?"></textarea><input type="submit" value="POST" /></div>
+            <div className="avatar">
+              <img src={avatar} alt="" />
+            </div>
+            <div className="form">
+              <textarea
+                name=""
+                id=""
+                cols="30"
+                rows="10"
+                placeholder="What’s on your mind?"
+              ></textarea>
+              <input type="submit" value="POST" />
+            </div>
           </div>
-          <div className="comment-box"></div>
-          <div className="comment-box"></div>
+          <div className="comment-box">
+            <div className="comment">
+              <div className="avatar">
+                <figure>
+                  <img src={avatar3} alt="" />
+                </figure>
+                <div className="conntent">
+                  <img src={iconconnect} alt="" /> <span>Connect</span>
+                </div>
+              </div>
+              <div className="content">
+                <div className="top-comment-content">
+                  <h3>
+                    Kelly Wearstler <span>about 1 hour ago</span>
+                  </h3>
+                  <h4>
+                    <span>567 Connections</span> Level 2
+                  </h4>
+                </div>
+                <div className="mid-comment-content">
+                  <p>
+                    I was able to keep it from getting personal, and the
+                    coworker in the discussion began to make my argument for me.
+                  </p>
+                </div>
+                <div className="bot-comment-content">
+                  <div className="left">
+                    <div className="badge">
+                      <a href="#">
+                        <img src={heart} alt="" /> 1
+                      </a>
+                    </div>
+                    <a href="#">
+                      <img src={repost} alt="" />
+                    </a>
+                    <a href="#">
+                      <img src={share} alt="" />
+                    </a>
+                  </div>
+                  <div className="right">
+                    <img src={ChatCircle} alt="" />
+                    COMMENT <span className="badge">46</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="comment-post">
+              <div className="avatar">
+                <img src={avatar2} alt="" />
+              </div>
+              <div className="form">
+                <textarea
+                  name=""
+                  id=""
+                  cols="30"
+                  rows="3"
+                  placeholder="What’s on your mind?"
+                ></textarea>
+                <input type="submit" value="POST" />
+              </div>
+            </div>
+          </div>
+          <div className="comment-box">
+            <div className="comment">
+              <div className="avatar">
+                <figure>
+                  <img src={avatar3} alt="" />
+                </figure>
+                <div className="conntent">
+                  <img src={iconconnect} alt="" /> <span>Connect</span>
+                </div>
+              </div>
+              <div className="content">
+                <div className="top-comment-content">
+                  <h3>
+                    Kelly Wearstler <span>about 1 hour ago</span>
+                  </h3>
+                  <h4>
+                    <span>567 Connections</span> Level 2
+                  </h4>
+                </div>
+                <div className="mid-comment-content">
+                  <p>
+                    I was able to keep it from getting personal, and the
+                    coworker in the discussion began to make my argument for me.
+                  </p>
+                </div>
+                <div className="bot-comment-content">
+                  <div className="left">
+                    <div className="badge">
+                      <a href="#">
+                        <img src={heart} alt="" /> 1
+                      </a>
+                    </div>
+                    <a href="#">
+                      <img src={repost} alt="" />
+                    </a>
+                    <a href="#">
+                      <img src={share} alt="" />
+                    </a>
+                  </div>
+                  <div className="right">
+                    <img src={ChatCircle} alt="" />
+                    COMMENT <span className="badge">46</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="comment-post">
+              <div className="avatar">
+                <img src={avatar2} alt="" />
+              </div>
+              <div className="form">
+                <textarea
+                  name=""
+                  id=""
+                  cols="30"
+                  rows="3"
+                  placeholder="What’s on your mind?"
+                ></textarea>
+                <input type="submit" value="POST" />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </>
