@@ -2,7 +2,7 @@ import React from 'react'
 
 import Logo from "../../Assets/img/logo.png"
 
-export default function HomeNav() {
+export default function HomeNav({ setSideNav, sideNav }) {
   return (
     <>
       <div className="s_nav_set">
@@ -11,8 +11,8 @@ export default function HomeNav() {
             <a href="#" className="s_nav_logo">
               <img src={Logo} className="s_nav_logo_img" alt="" />
             </a>
-            <i className="far fa-bars s_nav_ul_cls"></i>
-            <div className="s_nav_ul">
+            <i onClick={() => setSideNav(!sideNav)} className="far fa-bars s_nav_ul_cls"></i>
+            <div style={{ width: sideNav ? "100%" : "0px" }} className="s_nav_ul">
               <a href="#" className="s_nav_logo_mbl">
                 <img src={Logo} className="s_nav_logo_img" alt="" />
               </a>

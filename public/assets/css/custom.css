@@ -822,7 +822,7 @@ body {
   }
 
   .s_nav_ul {
-    display: block;
+    display: flex;
     width: 100%;
     position: fixed;
     z-index: 99;
@@ -866,7 +866,7 @@ body {
   }
 }
 
-@media only screen and (max-width:760px) {
+@media only screen and (max-width: 760px) {
   .s_nav_ul_in {
     display: block;
     width: 100%;

@@ -1,3 +1,10 @@
 .s_nav_ul {
-  display: none !important;
+  overflow: hidden;
+  padding: 0px !important;
+}
+/* Desktop view */
+@media only screen and (min-width: 1000px) {
+  .s_nav_ul {
+    width: auto !important;
+  }
 }

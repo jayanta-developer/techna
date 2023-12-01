@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./style.css"
 
 
@@ -22,13 +22,15 @@ import com5 from "../../Assets/img/com-5.png"
 
 
 export default function Home() {
+  const [sideNav, setSideNav] = useState(false)
+
   return (
     <>
       <SideFloatingBar />
       <div className="s_web_wrapper">
         <div className="s_hm_bg_line"></div>
         <div className="s_web_wrapper_in">
-          <HomeNav />
+          <HomeNav setSideNav={setSideNav} sideNav={sideNav} />
           <section className=" ts_hm1_sec">
             <div className="container">
               <div className="row g-5">
