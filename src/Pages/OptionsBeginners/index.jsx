@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./style.css"
 import { Box, Typography } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import DateRangeIcon from '@mui/icons-material/DateRange';
+
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 
 //components
@@ -39,8 +44,48 @@ const callCard = () => {
 }
 
 
+
+
+
 export default function OptionsBeginners() {
   const [graphBtn, setGraphBtn] = useState(true)
+  const [obfDrop, setObfdrop] = useState(false)
+  const [obsDrop, setObsdrop] = useState(false)
+
+
+
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+
+      if (e?.target?.id !== "obfDrop") {
+        setObfdrop(false);
+      } else {
+        if (obfDrop) {
+          setObfdrop(false);
+          return;
+        } else {
+          return;
+        }
+      }
+      if (e?.target?.id !== "obsDrop") {
+        setObsdrop(false);
+      } else {
+        if (obsDrop) {
+          setObsdrop(false);
+          return;
+        } else {
+          return;
+        }
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [])
 
   return (
     <>
@@ -48,9 +93,26 @@ export default function OptionsBeginners() {
       <Box className="OptionsBeginners">
         <Box className="OBUsdBox">
 
-          <Box className="dropTab">
-            <Typography>BTC/USDT</Typography>
-            <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+          <Box px={1} onClick={() => setObfdrop(!obfDrop)} id="obfDrop" className="dropTab">
+            <Typography id="obfDrop">BTC/USDT</Typography>
+            {obfDrop ?
+              <KeyboardArrowUpIcon id="obfDrop" className='dwonArrow' sx={{ color: "#fff" }} /> :
+              <KeyboardArrowDownIcon id="obfDrop" className='dwonArrow' sx={{ color: "#fff" }} />
+            }
+            <Box id="obfDrop" sx={{ height: obfDrop ? "auto" : "0px" }} className="dropMenu mpusd">
+              <Box id="obfDrop" className="dropMenuItem usdItem">
+                <Typography id="obfDrop">Item 1</Typography>
+              </Box>
+              <Box id="obfDrop" className="dropMenuItem usdItem">
+                <Typography id="obfDrop">Item 2</Typography>
+              </Box>
+              <Box id="obfDrop" className="dropMenuItem usdItem">
+                <Typography id="obfDrop">Item 3</Typography>
+              </Box>
+              <Box id="obfDrop" className="dropMenuItem usdItem">
+                <Typography id="obfDrop">Item 4</Typography>
+              </Box>
+            </Box>
           </Box>
           <Box className="GTPTabeItem">
             <Typography>Price</Typography>
@@ -79,9 +141,26 @@ export default function OptionsBeginners() {
 
         <Box className="BTCGraphBox">
           <Box className="btcGHeader">
-            <Box className="dropTab">
-              <Typography>BTC/USDT</Typography>
-              <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+            <Box px={1} id="obsDrop" className="dropTab" onClick={() => setObsdrop(!obsDrop)}>
+              <Typography id="obsDrop">BTC/USDT</Typography>
+              {obsDrop ?
+                <KeyboardArrowUpIcon id="obsDrop" className='dwonArrow' sx={{ color: "#fff" }} /> :
+                <KeyboardArrowDownIcon id="obsDrop" className='dwonArrow' sx={{ color: "#fff" }} />
+              }
+              <Box id="obsDrop" sx={{ height: obsDrop ? "auto" : "0px" }} className="dropMenu mpusd">
+                <Box id="obsDrop" className="dropMenuItem usdItem">
+                  <Typography id="obsDrop">Item 1</Typography>
+                </Box>
+                <Box id="obsDrop" className="dropMenuItem usdItem">
+                  <Typography id="obsDrop">Item 2</Typography>
+                </Box>
+                <Box id="obsDrop" className="dropMenuItem usdItem">
+                  <Typography id="obsDrop">Item 3</Typography>
+                </Box>
+                <Box id="obsDrop" className="dropMenuItem usdItem">
+                  <Typography id="obsDrop">Item 4</Typography>
+                </Box>
+              </Box>
             </Box>
             <Box className="btcGCenterHeader">
               <Box>
@@ -118,10 +197,10 @@ export default function OptionsBeginners() {
               </Box>
               <Box>
                 <Box className="dropTab">
-                  <Typography>BTC/USDT</Typography>
-                  <DateRangeIcon sx={{ color: "#fff" }} />
+                  <LocalizationProvider sx={{ color: "#fff" }} dateAdapter={AdapterDayjs}>
+                    <DatePicker className='datePicker' />
+                  </LocalizationProvider>
                 </Box>
-                {/* <DatePicker defaultValue={dayjs('2022-04-17')} /> */}
               </Box>
             </Box>
             <Box className="callCardBox">
@@ -129,7 +208,8 @@ export default function OptionsBeginners() {
               {callCard()}
               {callCard()}
               {callCard()}
-
+              {callCard()}
+              {callCard()}
             </Box>
           </Box>
           <Box className="braph_Box">
@@ -147,8 +227,7 @@ export default function OptionsBeginners() {
                 {
                   graphBtn ?
                     <LineChart /> :
-                    <Typography variant='h3' sx={{ color: "#fff" }}>On progress</Typography>
-                  // <CandlestickChart />
+                    <CandlestickChart />
                 }
               </Box>
             </Box>

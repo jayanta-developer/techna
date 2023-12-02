@@ -221,6 +221,17 @@
   border-radius: 8px;
   opacity: 0.8;
   background: #18141c;
+  position: relative;
+  cursor: pointer;
+}
+.dropMenuItem p {
+  color: #fff;
+  font-family: "ClashDisplay-Regular" !important;
+  font-size: 14px !important;
+  font-style: normal;
+  font-weight: 400 !important;
+  line-height: normal;
+  margin-left: 4px !important;
 }
 .GTPTopBtnText {
   color: var(--Primary-white, #fff);
@@ -294,6 +305,10 @@
   align-items: center;
   justify-content: space-between;
   padding-right: 15px;
+}
+.LPDrop :first-child {
+  position: relative;
+  cursor: pointer;
 }
 .LPDrop :last-child {
   border: 0;

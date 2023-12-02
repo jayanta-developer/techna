@@ -44,6 +44,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  position: relative;
 }
 
 .sideMenuGText {
@@ -149,6 +150,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  position: relative;
+  cursor: pointer;
 }
 
 .oderDropBox p {
@@ -191,11 +194,12 @@
   padding-left: 15px;
   cursor: pointer;
   margin-right: 8px;
+  position: relative;
 }
 
 .usdSelectorBox p {
   color: #fff;
-  font-family: "ClashDisplay-Regular";
+  font-family: "ClashDisplay-Regular" !important;
   font-size: 14px !important;
   font-style: normal;
   font-weight: 400 !important;
@@ -204,7 +208,7 @@
 }
 
 .dwonArrow {
-  margin-left: 29px !important;
+  margin-left: 8px !important;
   cursor: pointer;
 }
 
@@ -218,7 +222,7 @@
 
 .usdTBox > div {
   width: 50%;
-  padding-left: 15px;
+  /* padding-left: 15px; */
   display: flex;
   align-items: center;
 }
@@ -290,13 +294,16 @@
 .RusdTBox > :last-child {
   border: 0px;
 }
-
+.RusdHourTBox {
+  cursor: pointer;
+}
 .RusdTBox {
   display: flex;
   align-items: center;
-  padding: 0 15px;
+  /* padding: 0 15px; */
   flex-direction: row;
   justify-content: space-between;
+  position: relative;
 }
 
 .buyBtn {
@@ -403,7 +410,64 @@
 .jpnsBtn {
   width: 118px;
 }
+.dropMenu {
+  width: 100% !important;
+  position: absolute;
+  top: 35px;
+  display: flex;
+  flex-direction: column;
+  z-index: 9;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+.dropMenuItem {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #ffffff1f;
+  background: #18141c;
+  transition: all 0.5s;
+  padding-left: 5px;
+  cursor: pointer;
+}
+.dropMenuItem:hover {
+  background: rgb(42 35 49);
+}
+.dropMenuItem p {
+  font-family: "ClashDisplay-Regular" !important;
+}
 
+.mpusd {
+  top: 48px;
+  left: 0;
+}
+.usdItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+}
+.usdItem img {
+  width: 24px;
+}
+.inputFiled {
+  width: 100%;
+  height: 100%;
+  background: #18141c00;
+  color: #fff;
+  font-family: Inter;
+  font-size: 14px !important;
+  font-style: normal;
+  font-weight: 400 !important;
+  line-height: normal;
+  padding-left: 5px;
+}
+.inputFiled :focus {
+  outline: none;
+}
 /* Tab view*/
 @media only screen and (min-width: 768px) {
   .spotSideMenu {

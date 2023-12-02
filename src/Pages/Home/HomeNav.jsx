@@ -19,7 +19,7 @@ export default function HomeNav({ setSideNav, sideNav }) {
               <div className="s_nav_ul_in">
                 <a className="s_nav_li ">Products </a>
                 <a className="s_nav_li ">FAQ's </a>
-                <a className="s_nav_li ">Roadmap </a>
+                <a href='#roadmap' className="s_nav_li ">Roadmap </a>
                 <a className="s_nav_li ">Tokenomics </a>
                 <a className="s_nav_li ">Community </a>
               </div>

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Box, Typography, Slider, Checkbox, FormControlLabel, FormGroup } from '@mui/material'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import CloseIcon from '@mui/icons-material/Close';
 
 import "./style.css"
@@ -16,12 +17,20 @@ import CandlestickChart from "../../Components/TradingChart"
 
 
 export default function Futures() {
+  const ref = useRef();
   const [sideTab, setSideTab] = useState(1)
   const [longChecked, setLongChecked] = useState(true);
   const [shortChecked, setShortChecked] = useState(false);
   const [gptTabe, setGptTabe] = useState(0)
   const [graphBtn, setGraphBtn] = useState(true)
+  const [flpDrop, setFlpDrop] = useState(false)
+  const [flpDropVal, setFlpDropVal] = useState(false)
+  const [fbtcDrop, setFbtcDrop] = useState(false)
 
+
+  const [stopMDrop, setStopMDrop] = useState(false)
+  const [stopMDropVal, setStopMDropVal] = useState("Stop Market")
+  console.log(flpDrop);
 
   const handleLongChange = (event) => {
     setLongChecked(event.target.checked);
@@ -34,11 +43,18 @@ export default function Futures() {
   };
 
 
-  const tableRow = ({ textColor }) => {
+  const tableRow = (val) => {
+    let HColor;
+    if (val?.heighLightRed) {
+      HColor = "#ff000017"
+    } else if (val?.heighLightGray) {
+      HColor = "#5757574b"
+    }
+
     return (
-      <Box className="orderTableRow">
+      <Box sx={{ background: HColor }} className="orderTableRow">
         <Box className="orderTableRow_item">
-          <Typography sx={{ color: textColor ? textColor : "#fff" }} className='tableRedText'>30.922.9</Typography>
+          <Typography sx={{ color: val?.textColor ? val?.textColor : "#fff" }} className='tableRedText'>30.922.9</Typography>
         </Box>
         <Box className="orderTableRow_item">
           <Typography className='tableWhiteText'>0.01648529</Typography>
@@ -49,6 +65,42 @@ export default function Futures() {
       </Box>
     )
   }
+
+
+
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+
+      if (e?.target?.id !== "flpDrop") {
+        setFlpDrop(false);
+      } else {
+        if (flpDrop) {
+          setFlpDrop(false);
+          return;
+        } else {
+          return;
+        }
+      }
+      if (e?.target?.id !== "fbtcDrop") {
+        setFbtcDrop(false);
+      } else {
+        if (fbtcDrop) {
+          setFbtcDrop(false);
+          return;
+        } else {
+          return;
+        }
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [])
+
 
   return (
     <>
@@ -68,8 +120,23 @@ export default function Futures() {
             <Box onClick={() => setSideTab(2)} sx={{ background: sideTab === 2 ? "#41f8f8" : "#18141c" }} className="sideBoxMenu limit">
               <Typography>Limit</Typography>
             </Box>
-            <Box onClick={() => setSideTab(3)} sx={{ background: sideTab === 3 ? "#41f8f8" : "#18141c" }} className="sideBoxMenu SMarket">
-              <Typography>Stop Market</Typography>
+            <Box onClick={() => {
+              setSideTab(3)
+              setStopMDrop(!stopMDrop)
+            }}
+              id="spotSM"
+              ref={ref}
+              sx={{ background: sideTab === 3 ? "#41f8f8" : "#18141c" }} className="sideBoxMenu SMarket">
+              <Typography id="spotSM" mr={1}>{stopMDropVal}</Typography>
+              <KeyboardArrowDownIcon id="spotSM" sx={{ color: "#fff" }} />
+              <Box sx={{ height: stopMDrop ? "auto" : "0px" }} id="spotSM" className="dropMenu">
+                <Box onClick={(e) => setStopMDropVal(e.target.innerText)} id="spotSM" className="dropMenuItem">
+                  <Typography id="spotSM">Stop Market</Typography>
+                </Box>
+                <Box onClick={(e) => setStopMDropVal(e.target.innerText)} id="spotSM" className="dropMenuItem">
+                  <Typography id="spotSM">Stop limit</Typography>
+                </Box>
+              </Box>
             </Box>
           </Box>
           {/* Amoutn */}
@@ -79,8 +146,8 @@ export default function Futures() {
 
               <Box className="usdTHeader">
                 <Box className="usdTBox">
-                  <Box><Typography>300 USDT </Typography></Box>
-                  <Box><Typography>0.03 BTC </Typography></Box>
+                  <Box px={1}><Typography>300 USDT </Typography></Box>
+                  <Box px={1}><Typography>0.03 BTC </Typography></Box>
                 </Box>
               </Box>
               <Box className="usdTHeaderValue">
@@ -147,10 +214,30 @@ export default function Futures() {
               <Typography className='sideMenuGText'>Price</Typography>
 
               <Box className="usdTHeader">
-                <Box className="usdTBox LPDrop">
-                  <Box>
-                    <Typography>Last</Typography>
-                    <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+                <Box px={1} className="usdTBox LPDrop">
+                  <Box id="flpDrop" onClick={() => setFlpDrop(!flpDrop)}>
+                    <Typography id="flpDrop" >{flpDropVal || "Last"}</Typography>
+                    {flpDrop ?
+                      <KeyboardArrowUpIcon id="flpDrop" className='dwonArrow' sx={{ color: "#fff" }} /> :
+                      <KeyboardArrowDownIcon id="flpDrop" className='dwonArrow' sx={{ color: "#fff" }} />
+                    }
+                    <Box id="flpDrop" sx={{ height: flpDrop ? "auto" : "0px" }} className="dropMenu mpusd">
+                      <Box onClick={(e) => setFlpDropVal(e.target.innerText)} id="flpDrop" className="dropMenuItem usdItem">
+                        <Typography id="flpDrop">1 hour</Typography>
+                      </Box>
+                      <Box onClick={(e) => setFlpDropVal(e.target.innerText)} id="flpDrop" className="dropMenuItem usdItem">
+                        <Typography id="flpDrop">2 hour</Typography>
+                      </Box>
+                      <Box onClick={(e) => setFlpDropVal(e.target.innerText)} id="flpDrop" className="dropMenuItem usdItem">
+                        <Typography id="flpDrop">3 hour</Typography>
+                      </Box>
+                      <Box onClick={(e) => setFlpDropVal(e.target.innerText)} id="flpDrop" className="dropMenuItem usdItem">
+                        <Typography id="flpDrop">4 hour</Typography>
+                      </Box>
+                      <Box onClick={(e) => setFlpDropVal(e.target.innerText)} id="flpDrop" className="dropMenuItem usdItem">
+                        <Typography id="flpDrop">5 hour</Typography>
+                      </Box>
+                    </Box>
                   </Box>
                   <Typography>USDT</Typography>
                 </Box>
@@ -159,8 +246,8 @@ export default function Futures() {
 
               <Box className="usdTHeader">
                 <Box className="usdTBox">
-                  <Box><Typography>300 USDT </Typography></Box>
-                  <Box><Typography>0.03 BTC </Typography></Box>
+                  <Box px={1}><Typography>300 USDT </Typography></Box>
+                  <Box px={1}><Typography>0.03 BTC </Typography></Box>
                 </Box>
               </Box>
               <Box className="usdTHeaderValue">
@@ -227,10 +314,30 @@ export default function Futures() {
               <Typography className='sideMenuGText'>Trigger Price</Typography>
 
               <Box className="usdTHeader">
-                <Box className="usdTBox LPDrop">
-                  <Box>
-                    <Typography>Last</Typography>
-                    <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+                <Box px={1} className="usdTBox LPDrop">
+                  <Box id="flpDrop" onClick={() => setFlpDrop(!flpDrop)}>
+                    <Typography id="flpDrop" >{flpDropVal || "Last"}</Typography>
+                    {flpDrop ?
+                      <KeyboardArrowUpIcon id="flpDrop" className='dwonArrow' sx={{ color: "#fff" }} /> :
+                      <KeyboardArrowDownIcon id="flpDrop" className='dwonArrow' sx={{ color: "#fff" }} />
+                    }
+                    <Box id="flpDrop" sx={{ height: flpDrop ? "auto" : "0px" }} className="dropMenu mpusd">
+                      <Box onClick={(e) => setFlpDropVal(e.target.innerText)} id="flpDrop" className="dropMenuItem usdItem">
+                        <Typography id="flpDrop">1 hour</Typography>
+                      </Box>
+                      <Box onClick={(e) => setFlpDropVal(e.target.innerText)} id="flpDrop" className="dropMenuItem usdItem">
+                        <Typography id="flpDrop">2 hour</Typography>
+                      </Box>
+                      <Box onClick={(e) => setFlpDropVal(e.target.innerText)} id="flpDrop" className="dropMenuItem usdItem">
+                        <Typography id="flpDrop">3 hour</Typography>
+                      </Box>
+                      <Box onClick={(e) => setFlpDropVal(e.target.innerText)} id="flpDrop" className="dropMenuItem usdItem">
+                        <Typography id="flpDrop">4 hour</Typography>
+                      </Box>
+                      <Box onClick={(e) => setFlpDropVal(e.target.innerText)} id="flpDrop" className="dropMenuItem usdItem">
+                        <Typography id="flpDrop">5 hour</Typography>
+                      </Box>
+                    </Box>
                   </Box>
                   <Typography>USDT</Typography>
                 </Box>
@@ -238,7 +345,7 @@ export default function Futures() {
               <Typography className='sideMenuGText'>Price</Typography>
 
               <Box className="usdTHeader">
-                <Box className="usdTBox LPDrop smField">
+                <Box px={1} className="usdTBox LPDrop smField">
                   <Typography></Typography>
                   <Typography>USDT</Typography>
                 </Box>
@@ -328,7 +435,7 @@ export default function Futures() {
               <Typography className='tableHeaderText'>Total (BTC)</Typography>
             </Box>
           </Box>
-          {tableRow({ textColor: "#ff7d61" })}
+          {tableRow({ textColor: "#ff7d61", heighLightRed: true })}
           {tableRow({ textColor: "#ff7d61" })}
           {tableRow({ textColor: "#ff7d61" })}
           {tableRow({ textColor: "#ff7d61" })}
@@ -344,7 +451,7 @@ export default function Futures() {
               <Typography className='totalUSDText'>Mark Price</Typography>
             </Box>
           </Box>
-          {tableRow({ textColor: "#61FF71" })}
+          {tableRow({ textColor: "#61FF71", heighLightGray: true, })}
           {tableRow({ textColor: "#61FF71" })}
           {tableRow({ textColor: "#61FF71" })}
           {tableRow({ textColor: "#61FF71" })}
@@ -356,9 +463,26 @@ export default function Futures() {
           <Box className="graphTopPriceBox">
             <Box className="GTPTopBox">
               <Typography className='GTPTopHeader'>BTC/USDT</Typography>
-              <Box className="GTPDropBox">
-                <Typography className='GTPTopBtnText'>BTC/USDT</Typography>
-                <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+              <Box id="fbtcDrop" onClick={() => setFbtcDrop(!fbtcDrop)} className="GTPDropBox">
+                <Typography id="fbtcDrop" className='GTPTopBtnText'>BTC/USDT</Typography>
+                {fbtcDrop ?
+                  <KeyboardArrowUpIcon id="fbtcDrop" className='dwonArrow' sx={{ color: "#fff" }} /> :
+                  <KeyboardArrowDownIcon id="fbtcDrop" className='dwonArrow' sx={{ color: "#fff" }} />
+                }
+                <Box id="fbtcDrop" sx={{ height: fbtcDrop ? "auto" : "0px" }} className="dropMenu mpusd">
+                  <Box id="fbtcDrop" className="dropMenuItem usdItem">
+                    <Typography id="fbtcDrop">Item 1</Typography>
+                  </Box>
+                  <Box id="fbtcDrop" className="dropMenuItem usdItem">
+                    <Typography id="fbtcDrop">Item 2</Typography>
+                  </Box>
+                  <Box id="fbtcDrop" className="dropMenuItem usdItem">
+                    <Typography id="fbtcDrop">Item 3</Typography>
+                  </Box>
+                  <Box id="fbtcDrop" className="dropMenuItem usdItem">
+                    <Typography id="fbtcDrop">Item 4</Typography>
+                  </Box>
+                </Box>
               </Box>
             </Box>
             <Box className="GTPTabeBox">

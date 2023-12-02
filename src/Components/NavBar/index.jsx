@@ -27,25 +27,29 @@ export default function NavBar() {
           <Typography>TechNa</Typography>
         </Box>
         <Box className="MenuBox">
-          <Box className="navMenuItem">
+          <Box onClick={() => navigate("/spot")} className="navMenuItem">
             <Typography>Spot</Typography>
-            <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+            {/* <KeyboardArrowDownIcon sx={{ color: "#fff" }} /> */}
           </Box>
-          <Box className="navMenuItem">
+          <Box onClick={() => navigate("/stakeandtake")} className="navMenuItem">
             <Typography>S&T</Typography>
-            <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+            {/* <KeyboardArrowDownIcon sx={{ color: "#fff" }} /> */}
           </Box>
-          <Box className="navMenuItem">
+          <Box onClick={() => navigate("/futures")} className="navMenuItem">
             <Typography>Futures</Typography>
-            <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+            {/* <KeyboardArrowDownIcon sx={{ color: "#fff" }} /> */}
           </Box>
-          <Box className="navMenuItem">
+          <Box onClick={() => navigate("/optionsbeginners")} className="navMenuItem">
             <Typography>Options Beginners</Typography>
-            <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+            {/* <KeyboardArrowDownIcon sx={{ color: "#fff" }} /> */}
           </Box>
-          <Box className="navMenuItem">
+          <Box onClick={() => navigate("/optionspro")} className="navMenuItem">
             <Typography>Options Pro</Typography>
-            <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+            {/* <KeyboardArrowDownIcon sx={{ color: "#fff" }} /> */}
+          </Box>
+          <Box onClick={() => navigate("/feed")} className="navMenuItem">
+            <Typography>Feed</Typography>
+            {/* <KeyboardArrowDownIcon sx={{ color: "#fff" }} /> */}
           </Box>
         </Box>
         <Box className="currencyBox">

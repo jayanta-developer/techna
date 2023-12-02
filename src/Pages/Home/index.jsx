@@ -111,7 +111,7 @@ export default function Home() {
               </div>
             </div>
           </section>
-          <section className=" ts_hm3_sec">
+          <section id='roadmap' className=" ts_hm3_sec">
             <div className="container">
               <div className="ts_pg_sec_hdng_set text-center">
                 <div className="ts_pg_sec_hdng">Roadmap</div>

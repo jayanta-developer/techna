@@ -52,10 +52,18 @@ export default function Optiospro() {
 
 
   const optRow = (val) => {
+    let HColor;
+    if (val?.heighLightRed) {
+      HColor = "#ff000017"
+    } else if (val?.heighLightGray) {
+      HColor = "#5757574b"
+    }
+
+
     return (
-      <Box className="optRow">
+      <Box sx={{ background: HColor }} className="optRow">
         <Box className="optrowItem">
-          <Typography sx={{ color: val ? "#61FF71" : "#FF7D61" }} className='potT_RedText'>3.9</Typography>
+          <Typography sx={{ color: val?.green ? "#61FF71" : "#FF7D61" }} className='potT_RedText'>3.9</Typography>
         </Box>
         <Box className="optrowItem">
           <Typography className='potT_whiteText'>--</Typography>
@@ -119,9 +127,9 @@ export default function Optiospro() {
     )
   }
 
-  const optLastTabRow = () => {
+  const optLastTabRow = (val) => {
     return (
-      <Box className="optRow">
+      <Box sx={{ background: val?.heighLight ? "#1a1a1a6b" : null }} className="optRow">
         <Box sx={{ flexDirection: "row", justifyContent: "center" }} className="optrowItem optrowLOPtItem">
           {sWhiteBitIcon}
           <Typography ml={1} className='potT_LheaderText'>BTC</Typography>
@@ -178,7 +186,7 @@ export default function Optiospro() {
         <Box className="optTableBox">
           <Box className="optFTb">
             {optHeaderRow()}
-            {optRow()}
+            {optRow({ heighLightRed: true })}
             {optRow()}
             {optRow()}
             {optRow()}
@@ -207,11 +215,11 @@ export default function Optiospro() {
           </Box>
           <Box className="optLTb">
             {optHeaderRow()}
-            {optRow(true)}
-            {optRow(true)}
-            {optRow(true)}
-            {optRow(true)}
-            {optRow(true)}
+            {optRow({ heighLightGray: true, green: true })}
+            {optRow({ green: true })}
+            {optRow({ green: true })}
+            {optRow({ green: true })}
+
           </Box>
         </Box>
 
@@ -276,7 +284,7 @@ export default function Optiospro() {
 
           <Box className="optBotLBox">
             {optLastTabHeaderRow()}
-            {optLastTabRow()}
+            {optLastTabRow({ heighLight: true })}
             {optLastTabRow()}
             {optLastTabRow()}
             {optLastTabRow()}

@@ -125,13 +125,18 @@ body {
   color: #4cbbca;
   cursor: pointer;
 }
+.tn_right_sid_bar_iActive {
+  color: #4cbbca;
+  cursor: pointer;
+}
 
 .tn_right_sid_bar_tab {
   display: block;
   position: fixed;
   width: 400px;
-  top: calc(50vh - 125px);
-  right: 60px;
+  height: 600px;
+  top: calc(50vh - 250px);
+  right: 95px;
   transition: 0.3s all ease;
   padding: 1.5rem;
   background-color: rgba(255, 255, 255, 0.1);
@@ -142,19 +147,6 @@ body {
 .slideOff {
   right: -2000px;
 }
-/* .token {
-  right: -2000px;
-} */
-/* .trad {
-  right: -2000px;
-}
-.drop {
-  right: -2000px;
-}
-.topGL {
-  right: -2000px;
-} */
-
 .tn_right_sid_bar_tab_act {
   right: 60px;
 }
@@ -890,6 +882,7 @@ body {
 }
 
 .tn_right_sid_bar_tab_innn {
+  height: 100%;
   position: relative;
   display: block;
 }
@@ -907,7 +900,8 @@ body {
 .tn_rs_chatbox {
   display: flex;
   width: 100%;
-  max-height: 350px;
+  /* max-height: 350px; */
+  height: 84%;
   overflow-y: auto;
   background-image: var(--pnlmodgrad);
   border-radius: 10px;
@@ -1007,7 +1001,7 @@ body {
 }
 
 .tn_rs_ld_set_scrl {
-  max-height: 400px;
+  height: 93%;
   overflow: auto;
 }
 
@@ -1053,12 +1047,12 @@ body {
 }
 
 .tn_rs_chs_list_scrl {
-  max-height: 450px;
+  height: 95%;
   overflow: auto;
 }
 
 .tn_rs_chs_list_scrl2 {
-  max-height: 390px;
+  height: 81%;
   overflow: auto;
 }
 
@@ -1415,8 +1409,7 @@ body {
   border-radius: 30px !important;
 }
 
-
-@media only screen and (max-width:760px) { 
+@media only screen and (max-width: 760px) {
   .tn_right_sid_bar_tab {
     width: 300px;
   }
