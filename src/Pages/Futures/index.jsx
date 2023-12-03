@@ -13,34 +13,23 @@ import refreshLogo from "../../Assets/Images/image 124.png.svg"
 import NavBar from '../../Components/NavBar'
 import { LineChart } from "../../Components/LineChart"
 import CandlestickChart from "../../Components/TradingChart"
+import { CheckboxTik } from "../../Assets/Data"
 
 
 
 export default function Futures() {
   const ref = useRef();
   const [sideTab, setSideTab] = useState(1)
-  const [longChecked, setLongChecked] = useState(true);
-  const [shortChecked, setShortChecked] = useState(false);
   const [gptTabe, setGptTabe] = useState(0)
   const [graphBtn, setGraphBtn] = useState(true)
   const [flpDrop, setFlpDrop] = useState(false)
   const [flpDropVal, setFlpDropVal] = useState(false)
   const [fbtcDrop, setFbtcDrop] = useState(false)
-
-
+  const [ofLong, setOfLong] = useState(false)
+  const [ofShort, setOfShort] = useState(true)
   const [stopMDrop, setStopMDrop] = useState(false)
   const [stopMDropVal, setStopMDropVal] = useState("Stop Market")
-  console.log(flpDrop);
 
-  const handleLongChange = (event) => {
-    setLongChecked(event.target.checked);
-    setShortChecked(!event.target.checked);
-  };
-
-  const handleShortChange = (event) => {
-    setShortChecked(event.target.checked);
-    setLongChecked(!event.target.checked);
-  };
 
 
   const tableRow = (val) => {
@@ -63,6 +52,27 @@ export default function Futures() {
           <Typography className='tableWhiteText'>5.27456208</Typography>
         </Box>
       </Box>
+    )
+  }
+
+  const checkBoxComp = () => {
+    return (
+      <>
+        <Box className="checkBoxInnerBox">
+          <Box onClick={() => setOfLong(!ofLong)}>
+            {ofLong ? CheckboxTik : null}
+          </Box>
+          <Typography>TP/SL of Long</Typography>
+        </Box>
+
+
+        <Box className="checkBoxInnerBox">
+          <Box onClick={() => setOfShort(!ofShort)}>
+            {ofShort ? CheckboxTik : null}
+          </Box>
+          <Typography>TP/SL of Short</Typography>
+        </Box>
+      </>
     )
   }
 
@@ -171,22 +181,7 @@ export default function Futures() {
 
               <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" />
 
-              <Box className="CheckBoxContainer">
-                <FormGroup>
-                  <Box>
-                    <FormControlLabel
-                      control={<Checkbox sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }} checked={longChecked} onChange={handleLongChange} color="default" />}
-                      label="TP/SL of Long"
-                    />
-                  </Box>
-                  <Box>
-                    <FormControlLabel
-                      control={<Checkbox sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }} checked={shortChecked} onChange={handleShortChange} color="default" />}
-                      label="TP/SL of Short"
-                    />
-                  </Box>
-                </FormGroup>
-              </Box>
+              <Box className="CheckBoxContainer">{checkBoxComp()}</Box>
 
               <Box className="sellAbuyBtnBox">
                 <Box sx={{ background: "#61FF71" }} className="SABbtn">
@@ -271,22 +266,7 @@ export default function Futures() {
 
               <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" />
 
-              <Box className="CheckBoxContainer">
-                <FormGroup>
-                  <Box>
-                    <FormControlLabel
-                      control={<Checkbox sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }} checked={longChecked} onChange={handleLongChange} color="default" />}
-                      label="TP/SL of Long"
-                    />
-                  </Box>
-                  <Box>
-                    <FormControlLabel
-                      control={<Checkbox sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }} checked={shortChecked} onChange={handleShortChange} color="default" />}
-                      label="TP/SL of Short"
-                    />
-                  </Box>
-                </FormGroup>
-              </Box>
+              <Box className="CheckBoxContainer">{checkBoxComp()}</Box>
 
               <Box className="sellAbuyBtnBox">
                 <Box sx={{ background: "#61FF71" }} className="SABbtn">
@@ -381,22 +361,7 @@ export default function Futures() {
 
               <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" />
 
-              <Box className="CheckBoxContainer">
-                <FormGroup>
-                  <Box>
-                    <FormControlLabel
-                      control={<Checkbox sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }} checked={longChecked} onChange={handleLongChange} color="default" />}
-                      label="TP/SL of Long"
-                    />
-                  </Box>
-                  <Box>
-                    <FormControlLabel
-                      control={<Checkbox sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }} checked={shortChecked} onChange={handleShortChange} color="default" />}
-                      label="TP/SL of Short"
-                    />
-                  </Box>
-                </FormGroup>
-              </Box>
+              <Box className="CheckBoxContainer">{checkBoxComp()}</Box>
 
               <Box className="sellAbuyBtnBox">
                 <Box sx={{ background: "#61FF71" }} className="SABbtn">

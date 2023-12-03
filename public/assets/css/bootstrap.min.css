@@ -834,7 +834,7 @@ progress {
   .container-sm,
   .container-xl,
   .container-xxl {
-    max-width: 1055px;
+    max-width: 1320px;
   }
 }
 
@@ -942,7 +942,7 @@ progress {
 
 .col-7 {
   flex: 0 0 auto;
-  width: 72%;
+  width: 55%;
 }
 
 .col-8 {

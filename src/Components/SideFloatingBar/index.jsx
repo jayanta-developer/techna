@@ -146,7 +146,7 @@ export default function SideFloatingBar() {
               className="tn_rs_chatbox mCustomScrollbar"
               data-mcs-theme="minimal"
             >
-              <Scrollbars>
+              <Scrollbars className="sideBarScrollBox">
                 <div className="tn_rs_chatbox_in">
                   <div className="tn_rs_chatbox_chatting_out">
                     <div className="tn_rs_chatbox_chatting">
@@ -233,7 +233,7 @@ export default function SideFloatingBar() {
             className="tn_rs_ld_set_scrl mCustomScrollbar"
             data-mcs-theme="minimal"
           >
-            <Scrollbars>
+            <Scrollbars className="sideBarScrollBox">
               <div className="tn_rs_ld_set">
                 <div className="row">
                   <div className="col-auto">
@@ -375,7 +375,7 @@ export default function SideFloatingBar() {
             className="tn_rs_chs_list_scrl2 mCustomScrollbar"
             data-mcs-theme="minimal"
           >
-            <Scrollbars>
+            <Scrollbars className="sideBarScrollBox">
               <div className="tn_rs_chs_list">
                 <div className="row g-2">
                   <div className="col-4">
@@ -547,7 +547,7 @@ export default function SideFloatingBar() {
           data-navn="t4"
         >
           <div className="tn_right_sid_bar_tab_hd mb-0">
-            <i className="tn_right_sid_bar_tab_cls_ico fas fa-times"></i>
+            {/* <i className="tn_right_sid_bar_tab_cls_ico fas fa-times"></i> */}
           </div>
           <div className="row g-2 srk_mb_1 tn_right_sid_bar_tab_tbhd">
             <div className="col-3">
@@ -571,7 +571,7 @@ export default function SideFloatingBar() {
             className="tn_rs_chs_list_scrl mCustomScrollbar"
             data-mcs-theme="minimal"
           >
-            <Scrollbars >
+            <Scrollbars className="sideBarScrollBox">
               <div className="tn_rs_chs_list">
                 <div className="row g-2">
                   <div className="col-3">
@@ -873,7 +873,7 @@ export default function SideFloatingBar() {
             className="tn_rs_ld_set_scrl tn_right_sid_bar_tab_t5 mCustomScrollbar"
             data-mcs-theme="minimal"
           >
-            <Scrollbars>
+            <Scrollbars className="sideBarScrollBox">
               <div className="tn_rs_ld_set">
                 <div className="srk srk_fs_1dot4 srk_fw_600 srk_clr_white_1 srk_mb_0dot6">
                   {" "}
@@ -923,10 +923,10 @@ export default function SideFloatingBar() {
           }
           data-navn="t6"
         >
-          <Scrollbars >
+          <Scrollbars className="sideBarScrollBox">
             <div className="tn_right_sid_bar_tab_hd">
               Top Gainers
-              <i className="tn_right_sid_bar_tab_cls_ico fas fa-times"></i>
+              {/* <i className="tn_right_sid_bar_tab_cls_ico fas fa-times"></i> */}
             </div>
             <div className="tn_rs_ld_set srk_mb_1">
               <div className="row srk_mb_1">

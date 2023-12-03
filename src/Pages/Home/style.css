@@ -5,11 +5,21 @@
 .col-md-7 {
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
+  flex-direction: column;
 }
+
+@media only screen and (min-width: 768px) {
+  .landingTeamBox {
+    flex-direction: column;
+  }
+}
+
 /* Desktop view */
 @media only screen and (min-width: 1000px) {
   .s_nav_ul {
     width: auto !important;
+  }
+  .landingTeamBox {
+    flex-direction: row;
   }
 }

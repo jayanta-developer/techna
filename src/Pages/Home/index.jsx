@@ -71,11 +71,6 @@ export default function Home() {
                 <div className="ts_pg_sec_hdng">Products</div>
                 <div className="ts_pg_sec_hdng_p"></div>
               </div>
-              <span className="tag-wrap">
-                <span className="tag">
-                  Tag
-                </span>
-              </span>
               <div className="row g-5 mt-5">
                 <div className="col-md-4">
                   <div className="ts_hm2_dv_2_out">
@@ -312,7 +307,7 @@ export default function Home() {
                 <div className="col-md-5">
                   <div className="sk_chart_sid_dv_totout">
                     <div className="sk_chart_sid_dv mt-md-0">
-                      <div className="row">
+                      <div className="row landingTeamBox">
                         <div className="col-md-7 col-6">
                           <div className="srk srk_fs_1dot2 srk_fw_600 srk_clr_bright_green srk_mb_0dot5">
                             15%  <span className="srk_fs_1dot2 srk_ml_0dot6 sk_chart_sid_dv_1">Team</span>
@@ -332,7 +327,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="sk_chart_sid_dv">
-                      <div className="row">
+                      <div className="row landingTeamBox">
                         <div className="col-md-7 col-6">
                           <div className="srk srk_fs_1dot2 srk_fw_600 srk_clr_bright_green srk_mb_0dot5">
                             15%  <span className="srk_fs_1dot2 srk_ml_0dot6 sk_chart_sid_dv_1">Team</span>
@@ -352,7 +347,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="sk_chart_sid_dv">
-                      <div className="row">
+                      <div className="row landingTeamBox">
                         <div className="col-md-7 col-6">
                           <div className="srk srk_fs_1dot2 srk_fw_600 srk_clr_bright_green srk_mb_0dot5">
                             15%  <span className="srk_fs_1dot2 srk_ml_0dot6 sk_chart_sid_dv_1">Team</span>
@@ -372,7 +367,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="sk_chart_sid_dv">
-                      <div className="row">
+                      <div className="row landingTeamBox">
                         <div className="col-md-7 col-6">
                           <div className="srk srk_fs_1dot2 srk_fw_600 srk_clr_bright_green srk_mb_0dot5">
                             15%  <span className="srk_fs_1dot2 srk_ml_0dot6 sk_chart_sid_dv_1">Team</span>
@@ -392,7 +387,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="sk_chart_sid_dv">
-                      <div className="row">
+                      <div className="row landingTeamBox">
                         <div className="col-md-7 col-6">
                           <div className="srk srk_fs_1dot2 srk_fw_600 srk_clr_bright_green srk_mb_0dot5">
                             15%  <span className="srk_fs_1dot2 srk_ml_0dot6 sk_chart_sid_dv_1">Team</span>
@@ -412,7 +407,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="sk_chart_sid_dv">
-                      <div className="row">
+                      <div className="row landingTeamBox">
                         <div className="col-md-7 col-6">
                           <div className="srk srk_fs_1dot2 srk_fw_600 srk_clr_bright_green srk_mb_0dot5">
                             15%  <span className="srk_fs_1dot2 srk_ml_0dot6 sk_chart_sid_dv_1">Team</span>
@@ -432,7 +427,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="sk_chart_sid_dv">
-                      <div className="row">
+                      <div className="row landingTeamBox">
                         <div className="col-md-7 col-6">
                           <div className="srk srk_fs_1dot2 srk_fw_600 srk_clr_bright_green srk_mb_0dot5">
                             15%  <span className="srk_fs_1dot2 srk_ml_0dot6 sk_chart_sid_dv_1">Team</span>

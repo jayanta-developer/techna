@@ -193,7 +193,7 @@
   }
   .optFTb {
     width: 47%;
-    border-radius: 0 16px 16px 0;
+    border-radius: 16px 0px 0px 16px;
   }
   .optLTb {
     width: 47%;
@@ -210,6 +210,10 @@
   .optBotFBox {
     width: 48%;
     margin-bottom: 0;
+    margin-right: 10px;
+  }
+  .optBotLBox {
+    margin-left: 10px;
   }
 }
 

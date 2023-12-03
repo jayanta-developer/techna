@@ -133,10 +133,10 @@ body {
 .tn_right_sid_bar_tab {
   display: block;
   position: fixed;
-  width: 400px;
-  height: 600px;
-  top: calc(50vh - 250px);
-  right: 95px;
+  width: 312px;
+  height: 565px;
+  top: calc(50vh - 283px);
+  right: 54px;
   transition: 0.3s all ease;
   padding: 1.5rem;
   background-color: rgba(255, 255, 255, 0.1);
@@ -145,7 +145,7 @@ body {
   z-index: 99;
 }
 .slideOff {
-  right: -2000px;
+  right: -2000px !important;
 }
 .tn_right_sid_bar_tab_act {
   right: 60px;
@@ -570,7 +570,7 @@ body {
   font-size: 16px;
   font-weight: 300;
   line-height: 36px;
-  letter-spacing: 0em;
+  letter-spacing: 2px;
   text-align: center;
   color: #ffffff;
 }
@@ -581,11 +581,10 @@ body {
 }
 
 .ts_comn_pnl {
-  height: 626px;
+  height: auto;
   display: block;
   background-color: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
-  padding: 3rem;
   border-radius: 10px;
   margin-bottom: 30px;
 }
@@ -1006,10 +1005,6 @@ body {
   overflow: auto;
 }
 
-.tn_right_sid_bar_tab {
-  /* overflow: auto; */
-}
-
 .tn_right_sid_bar_tab_overflow {
   overflow: auto;
 }
@@ -1409,16 +1404,87 @@ body {
 .br30 {
   border-radius: 30px !important;
 }
+.adminSBox {
+  width: 100%;
+  height: 164px;
+}
+.adminBBox {
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.adminBBox > div {
+  width: 100%;
+  margin: 5px 0;
+}
+
+.adminBtn {
+  width: 115px !important;
+}
+.adminL4Box {
+  /* width: ; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.adminL4Box .srk_mb_1dot7 {
+  margin-bottom: 0;
+  text-align: center;
+}
 
 @media only screen and (max-width: 760px) {
-  .tn_right_sid_bar_tab {
-    width: 300px;
-  }
-
   .tn_right_sid_bar_tab_cls_ico {
     position: absolute;
     top: 0;
     right: 0;
     font-size: 16px;
+  }
+}
+
+/* Tab view*/
+@media only screen and (min-width: 768px) {
+  .ts_comn_pnl {
+    height: 626px;
+    padding: 20px;
+  }
+  .adminFistContainder {
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+  .adminSBox {
+    width: 160px;
+  }
+  .adminL4Box {
+    width: 140px;
+    height: 180px !important;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .tn_right_sid_bar_tab {
+    width: 400px;
+    height: 600px;
+    top: calc(50vh - 250px);
+    right: 95px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .ts_comn_pnl {
+    padding: 3rem;
+  }
+  .adminFistContainder {
+    justify-content: inherit;
+  }
+  .adminSBox {
+    width: 25%;
+  }
+  .adminBBox {
+    flex-direction: row;
+  }
+  .adminBBox > div {
+    width: 45%;
+  }
+  .adminL4Box {
+    width: 100%;
   }
 }

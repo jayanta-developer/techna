@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Box, Typography } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { sBitIcon, sWhiteBitIcon } from "../../Assets/Data"
@@ -9,10 +9,16 @@ import "./style.css"
 //components
 import NavBar from '../../Components/NavBar';
 import { LineChart } from "../../Components/LineChart"
+import CandlestickChart from "../../Components/TradingChart"
+
 
 export default function Optiospro() {
+  const ref = useRef();
   const [graphBtn, setGraphBtn] = useState(true)
   const [sideTab, setSideTab] = useState(1)
+  const [stopMDrop, setStopMDrop] = useState(false)
+  const [stopMDropVal, setStopMDropVal] = useState("Stop Market")
+
 
 
 
@@ -178,8 +184,7 @@ export default function Optiospro() {
             {
               graphBtn ?
                 <LineChart /> :
-                <Typography variant='h3' sx={{ color: "#fff" }}>On progress</Typography>
-              // <CandlestickChart />
+                <CandlestickChart />
             }
           </Box>
         </Box>
@@ -232,8 +237,23 @@ export default function Optiospro() {
               <Box onClick={() => setSideTab(2)} sx={{ background: sideTab === 2 ? "#41f8f8" : "#18141c" }} className="sideBoxMenu limit">
                 <Typography>Limit</Typography>
               </Box>
-              <Box onClick={() => setSideTab(3)} sx={{ background: sideTab === 3 ? "#41f8f8" : "#18141c" }} className="sideBoxMenu SMarket">
-                <Typography>Stop Market</Typography>
+              <Box onClick={() => {
+                setSideTab(3)
+                setStopMDrop(!stopMDrop)
+              }}
+                id="spotSM"
+                ref={ref}
+                sx={{ background: sideTab === 3 ? "#41f8f8" : "#18141c" }} className="sideBoxMenu SMarket">
+                <Typography id="spotSM" mr={1}>{stopMDropVal}</Typography>
+                <KeyboardArrowDownIcon id="spotSM" sx={{ color: "#fff" }} />
+                <Box sx={{ height: stopMDrop ? "auto" : "0px" }} id="spotSM" className="dropMenu">
+                  <Box onClick={(e) => setStopMDropVal(e.target.innerText)} id="spotSM" className="dropMenuItem">
+                    <Typography id="spotSM">Stop Market</Typography>
+                  </Box>
+                  <Box onClick={(e) => setStopMDropVal(e.target.innerText)} id="spotSM" className="dropMenuItem">
+                    <Typography id="spotSM">Stop limit</Typography>
+                  </Box>
+                </Box>
               </Box>
             </Box>
 

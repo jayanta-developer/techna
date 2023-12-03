@@ -8,7 +8,7 @@ export default function HomeNav({ setSideNav, sideNav }) {
       <div className="s_nav_set">
         <div className="container-fluid s_container_hdr_ftr">
           <div className="d-flex justify-content-between">
-            <a href="#" className="s_nav_logo">
+            <a href="./" className="s_nav_logo">
               <img src={Logo} className="s_nav_logo_img" alt="" />
             </a>
             <i onClick={() => setSideNav(!sideNav)} className="far fa-bars s_nav_ul_cls"></i>
