@@ -125,6 +125,7 @@ body {
   color: #4cbbca;
   cursor: pointer;
 }
+
 .tn_right_sid_bar_iActive {
   color: #4cbbca;
   cursor: pointer;
@@ -144,9 +145,11 @@ body {
   backdrop-filter: blur(10px);
   z-index: 99;
 }
+
 .slideOff {
   right: -2000px !important;
 }
+
 .tn_right_sid_bar_tab_act {
   right: 60px;
 }
@@ -256,36 +259,49 @@ body {
   padding-top: 3rem;
 }
 
-.ts_hm2_dv_2 {
+/* .ts_hm2_dv_2 {
   display: block;
   width: 100%;
-  height: 500px;
+  min-height: 500px;
   position: relative;
   padding: 1.5rem;
   background-color: rgb(255 255 255 / 5%);
   border-radius: 15px;
   backdrop-filter: blur(15px);
   border: 2px solid #3bf5ff;
-  background-size: 121% 109%;
-  background-position: 49% 75%;
-  background-repeat: no-repeat;
-  /* background-image: url(../img/tribg.png); */
   box-shadow: 0px 7px 22px 0px rgba(59, 245, 255, 0.33);
   -webkit-box-shadow: 0px 7px 22px 0px rgba(59, 245, 255, 0.33);
   -moz-box-shadow: 0px 7px 22px 0px rgba(59, 245, 255, 0.33);
   clip-path: polygon(0% 0%, 100% 0%, 100% 82%, 71% 100%, 0% 100%);
+  overflow: hidden;
 }
 
 .ts_hm2_dv_2:before {
   content: "";
   display: block;
-  width: 1.5px;
-  height: 200px;
-  background-color: #3bf5ff;
+  width: 145px;
+  height: 114px;
+  background: url(../img/angle-line.png) no-repeat center;
   position: absolute;
-  right: 75.2px;
-  bottom: -70px;
-  transform: rotate(52.9deg);
+  right: -26px;
+  bottom: -5px;
+} */
+
+.ts_hm2_dv_2 {
+  display: block;
+  width: 100%;
+  position: relative;
+  padding: 1.5rem;
+  background: url(../img/Subtract.png) no-repeat bottom right;
+  backdrop-filter: blur(15px);
+  border: 1px solid #1ac8fe;
+  border-width: 1px 0 0 1px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.pr65 {
+  padding-right: 65px;
 }
 
 .ts_hm2_dv_2_out {
@@ -713,8 +729,7 @@ body {
     width: calc(100% - 150px);
   }
 
-  .ts_hm1_sec_hdng_p {
-  }
+  .ts_hm1_sec_hdng_p {}
 
   .ts_hm1_sec {
     min-height: 600px;
@@ -1404,16 +1419,19 @@ body {
 .br30 {
   border-radius: 30px !important;
 }
+
 .adminSBox {
   width: 100%;
   height: 164px;
 }
+
 .adminBBox {
   width: 100%;
   flex-direction: column;
   justify-content: space-between;
 }
-.adminBBox > div {
+
+.adminBBox>div {
   width: 100%;
   margin: 5px 0;
 }
@@ -1421,12 +1439,14 @@ body {
 .adminBtn {
   width: 115px !important;
 }
+
 .adminL4Box {
   /* width: ; */
   display: flex;
   flex-direction: row;
   align-items: center;
 }
+
 .adminL4Box .srk_mb_1dot7 {
   margin-bottom: 0;
   text-align: center;
@@ -1447,19 +1467,23 @@ body {
     height: 626px;
     padding: 20px;
   }
+
   .adminFistContainder {
     justify-content: space-between;
     margin-bottom: 50px;
   }
+
   .adminSBox {
     width: 160px;
   }
+
   .adminL4Box {
     width: 140px;
     height: 180px !important;
     flex-direction: column;
     justify-content: space-between;
   }
+
   .tn_right_sid_bar_tab {
     width: 400px;
     height: 600px;
@@ -1472,18 +1496,23 @@ body {
   .ts_comn_pnl {
     padding: 3rem;
   }
+
   .adminFistContainder {
     justify-content: inherit;
   }
+
   .adminSBox {
     width: 25%;
   }
+
   .adminBBox {
     flex-direction: row;
   }
-  .adminBBox > div {
+
+  .adminBBox>div {
     width: 45%;
   }
+
   .adminL4Box {
     width: 100%;
   }
