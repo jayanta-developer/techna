@@ -17,11 +17,11 @@ export default function HomeNav({ setSideNav, sideNav }) {
                 <img src={Logo} className="s_nav_logo_img" alt="" />
               </a>
               <div className="s_nav_ul_in">
-                <a className="s_nav_li ">Products </a>
-                <a className="s_nav_li ">FAQ's </a>
+                <a href='#products' className="s_nav_li ">Products </a>
+                <a href='#FAQ' className="s_nav_li ">FAQ's </a>
                 <a href='#roadmap' className="s_nav_li ">Roadmap </a>
-                <a className="s_nav_li ">Tokenomics </a>
-                <a className="s_nav_li ">Community </a>
+                <a href='#tokenomics' className="s_nav_li ">Tokenomics </a>
+                <a href='#community' className="s_nav_li ">Community </a>
               </div>
             </div>
             <div className="s_nav_right">

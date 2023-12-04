@@ -38,9 +38,9 @@ export default function Home() {
                   <h1 className="srk_fw_700 ts_hm1_sec_hdng">TRADE SMARTER <br />WITH TECHNA</h1>
                   <p className="srk srk_fs_1 srk_clr_white_1 srk_fw_300 srk_ln_1dot9 srk_mb_1dot9 ts_hm1_sec_hdng_p">Maximize Your Trading Potential with TechNa's AI-Driven Financial Devices Hybrid Blockchain, and Social Network for Traders.</p>
                   <div className="row srk_mb_1dot9">
-                    <div className="col-6"><a href="#" className="ts_btn_comn w-100 ts_normal_font">
+                    <div className="col-6"><a href="/spot" className="ts_btn_comn w-100 ts_normal_font">
                       <img src={homeico1} className="ts_btn_comn_ico" alt="" /> Demo</a></div>
-                    <div className="col-6"><a href="#" className="ts_btn_comn w-100 ts_normal_font">
+                    <div className="col-6"><a href="/tokem-sale" className="ts_btn_comn w-100 ts_normal_font">
                       <img src={homeico2} className="ts_btn_comn_ico" alt="" /> Buy TCN</a></div>
                   </div>
                   <div className="ts_hm1_shap1">
@@ -65,7 +65,7 @@ export default function Home() {
             </div>
             <div className="s_hm_botgirl"></div>
           </section>
-          <section className=" ts_hm2_sec">
+          <section id='products' className=" ts_hm2_sec">
             <div className="container">
               <div className="ts_pg_sec_hdng_set text-center">
                 <div className="ts_pg_sec_hdng">Products</div>
@@ -171,7 +171,7 @@ export default function Home() {
               </div>
             </div>
           </section>
-          <section className=" ts_hm4_sec">
+          <section id='FAQ' className=" ts_hm4_sec">
             <div className="container">
               <div className="row g-5">
                 <div className="col-md-5">
@@ -231,7 +231,7 @@ export default function Home() {
               </div>
             </div>
           </section>
-          <section className=" ts_hm5_sec">
+          <section id='tokenomics' className=" ts_hm5_sec">
             <div className="container">
               <div className="row justify-content-center">
                 <div className="col-md-6">
@@ -451,7 +451,7 @@ export default function Home() {
               </div>
             </div>
           </section>
-          <section className=" ts_hm6_sec">
+          <section id='community' className=" ts_hm6_sec">
             <div className="container">
               <div className="row justify-content-center">
                 <div className="col-md-6">
