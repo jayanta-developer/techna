@@ -80,7 +80,7 @@ export default function Home() {
                           <img src={tmico6} className="ts_hm2_dv_2_vid_in" alt="" />
                         </div>
                         <div className="srk srk_fs_1dot5 srk_clr_white_1 srk_fw_800 srk_mb_0dot5">Hedging</div>
-                        <div className="srk srk_fs_0dot9 srk_clr_white_1 srk_fw_300 srk_ln_1dot6">The AI-driven financial platform trader, Trade smarter with our hedging tools and user-firendly devices.</div>
+                        <div className="srk srk_fs_0dot9 srk_clr_white_1 srk_fw_300 srk_ln_1dot6 pr65">The AI-driven financial platform trader, Trade smarter with our hedging tools and user-firendly devices.</div>
                       </div>
                     </div>
                   </div>
@@ -91,7 +91,7 @@ export default function Home() {
                       <img src={tmico6} className="ts_hm2_dv_2_vid_in" alt="" />
                     </div>
                     <div className="srk srk_fs_1dot5 srk_clr_white_1 srk_fw_800 srk_mb_0dot5">Hedging</div>
-                    <div className="srk srk_fs_0dot9 srk_clr_white_1 srk_fw_300 srk_ln_1dot6">The AI-driven financial platform trader, Trade smarter with our hedging tools and user-firendly devices.</div>
+                    <div className="srk srk_fs_0dot9 srk_clr_white_1 srk_fw_300 srk_ln_1dot6 pr65">The AI-driven financial platform trader, Trade smarter with our hedging tools and user-firendly devices.</div>
                   </div>
                 </div>
                 <div className="col-md-4">
@@ -100,7 +100,7 @@ export default function Home() {
                       <img src={tmico6} className="ts_hm2_dv_2_vid_in" alt="" />
                     </div>
                     <div className="srk srk_fs_1dot5 srk_clr_white_1 srk_fw_800 srk_mb_0dot5">Hedging</div>
-                    <div className="srk srk_fs_0dot9 srk_clr_white_1 srk_fw_300 srk_ln_1dot6">The AI-driven financial platform trader, Trade smarter with our hedging tools and user-firendly devices.</div>
+                    <div className="srk srk_fs_0dot9 srk_clr_white_1 srk_fw_300 srk_ln_1dot6 pr65">The AI-driven financial platform trader, Trade smarter with our hedging tools and user-firendly devices.</div>
                   </div>
                 </div>
               </div>
