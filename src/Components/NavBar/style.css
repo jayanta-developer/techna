@@ -48,6 +48,7 @@
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  position: relative;
 }
 
 .navMenuItem p {

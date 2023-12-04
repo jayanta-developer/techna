@@ -1,10 +1,19 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { sBitIcon, sWhiteBitIcon } from "../../Assets/Data"
 
 
 import "./style.css"
+
+//images
+import ETHI from "../../Assets/Images/E4bc3598cd3721b16fa31a60ab91c0b04.png";
+import USDT from "../../Assets/Images/USDT icon.png"
+import USDC from "../../Assets/Images/USDC.png"
+import BUSD from "../../Assets/Images/BUSD.png"
+import MATIC from "../../Assets/Images/MATIC.png"
+import BNB from "../../Assets/Images/BNB.png"
 
 //components
 import NavBar from '../../Components/NavBar';
@@ -18,6 +27,10 @@ export default function Optiospro() {
   const [sideTab, setSideTab] = useState(1)
   const [stopMDrop, setStopMDrop] = useState(false)
   const [stopMDropVal, setStopMDropVal] = useState("Stop Market")
+  const [mpusd, setMpusd] = useState(false)
+  const [leusd, setLeusd] = useState(false)
+  const [leusdVal, setLeusdVal] = useState("12")
+
 
 
 
@@ -166,6 +179,57 @@ export default function Optiospro() {
     )
   }
 
+
+
+
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (e?.target?.id !== "spotSM") {
+        setStopMDrop(false);
+      } else {
+        if (stopMDrop) {
+          setStopMDrop(false);
+          return;
+        } else {
+          return;
+        }
+      }
+
+
+      if (e?.target?.id !== "mpusd") {
+        setMpusd(false);
+      } else {
+        if (mpusd) {
+          setMpusd(false);
+          return;
+        } else {
+          return;
+        }
+      }
+
+      if (e?.target?.id !== "leusd") {
+        setLeusd(false);
+      } else {
+        if (leusd) {
+          setLeusd(false);
+          return;
+        } else {
+          return;
+        }
+      }
+
+
+    };
+
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [])
+
+
   return (
     <>
       <NavBar />
@@ -257,48 +321,296 @@ export default function Optiospro() {
               </Box>
             </Box>
 
-            <Box sx={{ justifyContent: 'space-between' }} className="tabsectionLabel">
-              <Typography className='sideMenuGText gptLCText'> Amount</Typography>
-              <Typography className='sideMenuGText gptLCText'>Trigger price</Typography>
-              <Typography className='sideMenuGText gptLCText'>Price</Typography>
+            <Box sx={{ display: sideTab === 1 ? "block" : "none" }}>
+              <Box sx={{ justifyContent: 'space-between' }} className="tabsectionLabel">
+                <Typography className='sideMenuGText gptLCText'> Amount</Typography>
+                <Typography className='sideMenuGText gptLCText'>Trigger price</Typography>
+                <Typography className='sideMenuGText gptLCText'>Price</Typography>
+              </Box>
+              <Box className="usdTHeader">
+                <Box sx={{ justifyContent: "space-between" }} className="usdSelectorBox" id="leusd" onClick={() => setLeusd(!leusd)}>
+                  <Typography id="leusd" sx={{ width: "100%" }}>{leusdVal || "1 hour"}</Typography>
+                  {leusd ?
+                    <KeyboardArrowUpIcon id="leusd" className='dwonArrow' sx={{ color: "#fff" }} /> :
+                    <KeyboardArrowDownIcon id="leusd" className='dwonArrow' sx={{ color: "#fff" }} />
+                  }
+                  <Box id="leusd" sx={{ height: leusd ? "auto" : "0px" }} className="dropMenu mpusd">
+                    <Box onClick={(e) => setLeusdVal(e.target.innerText)} id="leusd" className="dropMenuItem usdItem">
+                      <Typography id="leusd">10</Typography>
+                    </Box>
+                    <Box onClick={(e) => setLeusdVal(e.target.innerText)} id="leusd" className="dropMenuItem usdItem">
+                      <Typography id="leusd">11</Typography>
+                    </Box>
+                    <Box onClick={(e) => setLeusdVal(e.target.innerText)} id="leusd" className="dropMenuItem usdItem">
+                      <Typography id="leusd">12</Typography>
+                    </Box>
+                    <Box onClick={(e) => setLeusdVal(e.target.innerText)} id="leusd" className="dropMenuItem usdItem">
+                      <Typography id="leusd">13</Typography>
+                    </Box>
+                    <Box onClick={(e) => setLeusdVal(e.target.innerText)} id="leusd" className="dropMenuItem usdItem">
+                      <Typography id="leusd">14</Typography>
+                    </Box>
+                  </Box>
+                </Box>
+
+                <Box onClick={() => setMpusd(!mpusd)} id="mpusd" className="usdSelectorBox">
+                  {sBitIcon}
+                  <Typography id="mpusd">BTC</Typography>
+                  {mpusd ?
+                    <KeyboardArrowUpIcon id="mpusd" className='dwonArrow' sx={{ color: "#fff" }} /> :
+                    <KeyboardArrowDownIcon id="mpusd" className='dwonArrow' sx={{ color: "#fff" }} />
+                  }
+                  <Box id="mpusd" sx={{ height: mpusd ? "auto" : "0px" }} className="dropMenu mpusd">
+                    <Box id="mpusd" className="dropMenuItem usdItem">
+                      <img id="mpusd" src={ETHI} />
+                      <Typography id="mpusd">ETH</Typography>
+                    </Box>
+                    <Box id="mpusd" className="dropMenuItem usdItem">
+                      <img id="mpusd" src={USDT} />
+                      <Typography id="mpusd">USDT</Typography>
+                    </Box>
+                    <Box id="mpusd" className="dropMenuItem usdItem">
+                      <img id="mpusd" src={USDC} />
+                      <Typography id="mpusd">USDC</Typography>
+                    </Box>
+                    <Box id="mpusd" className="dropMenuItem usdItem">
+                      <img id="mpusd" src={BUSD} />
+                      <Typography id="mpusd">BUSD</Typography>
+                    </Box>
+                    <Box id="mpusd" className="dropMenuItem usdItem">
+                      <img id="mpusd" src={MATIC} />
+                      <Typography id="mpusd">MATIC</Typography>
+                    </Box>
+                    <Box id="mpusd" className="dropMenuItem usdItem">
+                      <img id="mpusd" src={BNB} />
+                      <Typography id="mpusd">BNB</Typography>
+                    </Box>
+                  </Box>
+                </Box>
+
+                <Box sx={{ justifyContent: "space-between" }} pr={2} className="usdSelectorBox">
+                  <Typography>25</Typography>
+                </Box>
+              </Box>
+              <Box className="sellAbuyBtnBox">
+                <Box sx={{ background: "#61FF71" }} className="SABbtn">
+                  <Typography>Buy/Long</Typography>
+                </Box>
+                <Box sx={{ background: "#F44336" }} className="SABbtn">
+                  <Typography>Sell/Short</Typography>
+                </Box>
+              </Box>
+              <Box className="optCUstTextBox">
+                <Box className="optCUstTextItemBox">
+                  <Typography>Position Base</Typography>
+                </Box>
+                <Box className="optCUstTextItemBox">
+                  <Typography>Remaining Balance</Typography>
+                </Box>
+                <Box className="optCUstTextItemBox">
+                  <Typography>Fee</Typography>
+                </Box>
+              </Box>
+              <Box className="optCUstText_Box">
+                <Box className="optCUstTextItemBox"> <Typography sx={{ color: "#50cd89" }}>300 USDT</Typography></Box>
+                <Box className="optCUstTextItemBox"><Typography sx={{ color: "#50cd89" }}>20 USDT</Typography></Box>
+                <Box className="optCUstTextItemBox"><Typography sx={{ color: "#FFFFFF" }}>0.2 USDT</Typography></Box>
+              </Box>
             </Box>
-            <Box className="usdTHeader">
-              <Box sx={{ justifyContent: "space-between" }} pr={2} className="usdSelectorBox">
-                <Typography>12</Typography>
-                <KeyboardArrowDownIcon className='dwonArrow' sx={{ color: "#fff" }} />
+
+
+
+
+            <Box sx={{ display: sideTab === 2 ? "block" : "none" }}>
+              <Box sx={{ justifyContent: 'space-between' }} className="tabsectionLabel">
+                <Typography className='sideMenuGText gptLCText'> Amount</Typography>
+                <Typography className='sideMenuGText gptLCText'>Trigger price</Typography>
+                <Typography className='sideMenuGText gptLCText'>Price</Typography>
               </Box>
-              <Box className="usdSelectorBox">
-                {sBitIcon}
-                <Typography>BTC</Typography>
-                <KeyboardArrowDownIcon className='dwonArrow' sx={{ color: "#fff" }} />
+              <Box className="usdTHeader">
+                <Box sx={{ justifyContent: "space-between" }} className="usdSelectorBox" id="leusd" onClick={() => setLeusd(!leusd)}>
+                  <Typography id="leusd" sx={{ width: "100%" }}>{leusdVal || "1 hour"}</Typography>
+                  {leusd ?
+                    <KeyboardArrowUpIcon id="leusd" className='dwonArrow' sx={{ color: "#fff" }} /> :
+                    <KeyboardArrowDownIcon id="leusd" className='dwonArrow' sx={{ color: "#fff" }} />
+                  }
+                  <Box id="leusd" sx={{ height: leusd ? "auto" : "0px" }} className="dropMenu mpusd">
+                    <Box onClick={(e) => setLeusdVal(e.target.innerText)} id="leusd" className="dropMenuItem usdItem">
+                      <Typography id="leusd">10</Typography>
+                    </Box>
+                    <Box onClick={(e) => setLeusdVal(e.target.innerText)} id="leusd" className="dropMenuItem usdItem">
+                      <Typography id="leusd">11</Typography>
+                    </Box>
+                    <Box onClick={(e) => setLeusdVal(e.target.innerText)} id="leusd" className="dropMenuItem usdItem">
+                      <Typography id="leusd">12</Typography>
+                    </Box>
+                    <Box onClick={(e) => setLeusdVal(e.target.innerText)} id="leusd" className="dropMenuItem usdItem">
+                      <Typography id="leusd">13</Typography>
+                    </Box>
+                    <Box onClick={(e) => setLeusdVal(e.target.innerText)} id="leusd" className="dropMenuItem usdItem">
+                      <Typography id="leusd">14</Typography>
+                    </Box>
+                  </Box>
+                </Box>
+                <Box onClick={() => setMpusd(!mpusd)} id="mpusd" className="usdSelectorBox">
+                  {sBitIcon}
+                  <Typography id="mpusd">BTC</Typography>
+                  {mpusd ?
+                    <KeyboardArrowUpIcon id="mpusd" className='dwonArrow' sx={{ color: "#fff" }} /> :
+                    <KeyboardArrowDownIcon id="mpusd" className='dwonArrow' sx={{ color: "#fff" }} />
+                  }
+                  <Box id="mpusd" sx={{ height: mpusd ? "auto" : "0px" }} className="dropMenu mpusd">
+                    <Box id="mpusd" className="dropMenuItem usdItem">
+                      <img id="mpusd" src={ETHI} />
+                      <Typography id="mpusd">ETH</Typography>
+                    </Box>
+                    <Box id="mpusd" className="dropMenuItem usdItem">
+                      <img id="mpusd" src={USDT} />
+                      <Typography id="mpusd">USDT</Typography>
+                    </Box>
+                    <Box id="mpusd" className="dropMenuItem usdItem">
+                      <img id="mpusd" src={USDC} />
+                      <Typography id="mpusd">USDC</Typography>
+                    </Box>
+                    <Box id="mpusd" className="dropMenuItem usdItem">
+                      <img id="mpusd" src={BUSD} />
+                      <Typography id="mpusd">BUSD</Typography>
+                    </Box>
+                    <Box id="mpusd" className="dropMenuItem usdItem">
+                      <img id="mpusd" src={MATIC} />
+                      <Typography id="mpusd">MATIC</Typography>
+                    </Box>
+                    <Box id="mpusd" className="dropMenuItem usdItem">
+                      <img id="mpusd" src={BNB} />
+                      <Typography id="mpusd">BNB</Typography>
+                    </Box>
+                  </Box>
+                </Box>
+                <Box sx={{ justifyContent: "space-between" }} pr={2} className="usdSelectorBox">
+                  <Typography>25</Typography>
+                </Box>
               </Box>
-              <Box sx={{ justifyContent: "space-between" }} pr={2} className="usdSelectorBox">
-                <Typography>25</Typography>
+              <Box className="sellAbuyBtnBox">
+                <Box sx={{ background: "#61FF71" }} className="SABbtn">
+                  <Typography>Buy/Long</Typography>
+                </Box>
+                <Box sx={{ background: "#F44336" }} className="SABbtn">
+                  <Typography>Sell/Short</Typography>
+                </Box>
+              </Box>
+              <Box className="optCUstTextBox">
+                <Box className="optCUstTextItemBox">
+                  <Typography>Position Base</Typography>
+                </Box>
+                <Box className="optCUstTextItemBox">
+                  <Typography>Remaining Balance</Typography>
+                </Box>
+                <Box className="optCUstTextItemBox">
+                  <Typography>Fee</Typography>
+                </Box>
+              </Box>
+              <Box className="optCUstText_Box">
+                <Box className="optCUstTextItemBox"> <Typography sx={{ color: "#50cd89" }}>300 USDT</Typography></Box>
+                <Box className="optCUstTextItemBox"><Typography sx={{ color: "#50cd89" }}>20 USDT</Typography></Box>
+                <Box className="optCUstTextItemBox"><Typography sx={{ color: "#FFFFFF" }}>0.2 USDT</Typography></Box>
               </Box>
             </Box>
-            <Box className="sellAbuyBtnBox">
-              <Box sx={{ background: "#61FF71" }} className="SABbtn">
-                <Typography>Buy/Long</Typography>
+
+
+
+            <Box sx={{ display: sideTab === 3 ? "block" : "none" }}>
+              <Box sx={{ justifyContent: 'space-between' }} className="tabsectionLabel">
+                <Typography className='sideMenuGText gptLCText'> Amount</Typography>
+                <Typography className='sideMenuGText gptLCText'>Trigger price</Typography>
+                <Typography className='sideMenuGText gptLCText'>Price</Typography>
               </Box>
-              <Box sx={{ background: "#F44336" }} className="SABbtn">
-                <Typography>Sell/Short</Typography>
+              <Box className="usdTHeader">
+                <Box sx={{ justifyContent: "space-between" }} className="usdSelectorBox" id="leusd" onClick={() => setLeusd(!leusd)}>
+                  <Typography id="leusd" sx={{ width: "100%" }}>{leusdVal || "1 hour"}</Typography>
+                  {leusd ?
+                    <KeyboardArrowUpIcon id="leusd" className='dwonArrow' sx={{ color: "#fff" }} /> :
+                    <KeyboardArrowDownIcon id="leusd" className='dwonArrow' sx={{ color: "#fff" }} />
+                  }
+                  <Box id="leusd" sx={{ height: leusd ? "auto" : "0px" }} className="dropMenu mpusd">
+                    <Box onClick={(e) => setLeusdVal(e.target.innerText)} id="leusd" className="dropMenuItem usdItem">
+                      <Typography id="leusd">10</Typography>
+                    </Box>
+                    <Box onClick={(e) => setLeusdVal(e.target.innerText)} id="leusd" className="dropMenuItem usdItem">
+                      <Typography id="leusd">11</Typography>
+                    </Box>
+                    <Box onClick={(e) => setLeusdVal(e.target.innerText)} id="leusd" className="dropMenuItem usdItem">
+                      <Typography id="leusd">12</Typography>
+                    </Box>
+                    <Box onClick={(e) => setLeusdVal(e.target.innerText)} id="leusd" className="dropMenuItem usdItem">
+                      <Typography id="leusd">13</Typography>
+                    </Box>
+                    <Box onClick={(e) => setLeusdVal(e.target.innerText)} id="leusd" className="dropMenuItem usdItem">
+                      <Typography id="leusd">14</Typography>
+                    </Box>
+                  </Box>
+                </Box>
+                <Box onClick={() => setMpusd(!mpusd)} id="mpusd" className="usdSelectorBox">
+                  {sBitIcon}
+                  <Typography id="mpusd">BTC</Typography>
+                  {mpusd ?
+                    <KeyboardArrowUpIcon id="mpusd" className='dwonArrow' sx={{ color: "#fff" }} /> :
+                    <KeyboardArrowDownIcon id="mpusd" className='dwonArrow' sx={{ color: "#fff" }} />
+                  }
+                  <Box id="mpusd" sx={{ height: mpusd ? "auto" : "0px" }} className="dropMenu mpusd">
+                    <Box id="mpusd" className="dropMenuItem usdItem">
+                      <img id="mpusd" src={ETHI} />
+                      <Typography id="mpusd">ETH</Typography>
+                    </Box>
+                    <Box id="mpusd" className="dropMenuItem usdItem">
+                      <img id="mpusd" src={USDT} />
+                      <Typography id="mpusd">USDT</Typography>
+                    </Box>
+                    <Box id="mpusd" className="dropMenuItem usdItem">
+                      <img id="mpusd" src={USDC} />
+                      <Typography id="mpusd">USDC</Typography>
+                    </Box>
+                    <Box id="mpusd" className="dropMenuItem usdItem">
+                      <img id="mpusd" src={BUSD} />
+                      <Typography id="mpusd">BUSD</Typography>
+                    </Box>
+                    <Box id="mpusd" className="dropMenuItem usdItem">
+                      <img id="mpusd" src={MATIC} />
+                      <Typography id="mpusd">MATIC</Typography>
+                    </Box>
+                    <Box id="mpusd" className="dropMenuItem usdItem">
+                      <img id="mpusd" src={BNB} />
+                      <Typography id="mpusd">BNB</Typography>
+                    </Box>
+                  </Box>
+                </Box>
+                <Box sx={{ justifyContent: "space-between" }} pr={2} className="usdSelectorBox">
+                  <Typography>25</Typography>
+                </Box>
               </Box>
-            </Box>
-            <Box className="optCUstTextBox">
-              <Box className="optCUstTextItemBox">
-                <Typography>Position Base</Typography>
+              <Box className="sellAbuyBtnBox">
+                <Box sx={{ background: "#61FF71" }} className="SABbtn">
+                  <Typography>Buy/Long</Typography>
+                </Box>
+                <Box sx={{ background: "#F44336" }} className="SABbtn">
+                  <Typography>Sell/Short</Typography>
+                </Box>
               </Box>
-              <Box className="optCUstTextItemBox">
-                <Typography>Remaining Balance</Typography>
+              <Box className="optCUstTextBox">
+                <Box className="optCUstTextItemBox">
+                  <Typography>Position Base</Typography>
+                </Box>
+                <Box className="optCUstTextItemBox">
+                  <Typography>Remaining Balance</Typography>
+                </Box>
+                <Box className="optCUstTextItemBox">
+                  <Typography>Fee</Typography>
+                </Box>
               </Box>
-              <Box className="optCUstTextItemBox">
-                <Typography>Fee</Typography>
+              <Box className="optCUstText_Box">
+                <Box className="optCUstTextItemBox"> <Typography sx={{ color: "#50cd89" }}>300 USDT</Typography></Box>
+                <Box className="optCUstTextItemBox"><Typography sx={{ color: "#50cd89" }}>20 USDT</Typography></Box>
+                <Box className="optCUstTextItemBox"><Typography sx={{ color: "#FFFFFF" }}>0.2 USDT</Typography></Box>
               </Box>
-            </Box>
-            <Box className="optCUstText_Box">
-              <Box className="optCUstTextItemBox"> <Typography sx={{ color: "#50cd89" }}>300 USDT</Typography></Box>
-              <Box className="optCUstTextItemBox"><Typography sx={{ color: "#50cd89" }}>20 USDT</Typography></Box>
-              <Box className="optCUstTextItemBox"><Typography sx={{ color: "#FFFFFF" }}>0.2 USDT</Typography></Box>
             </Box>
           </Box>
 

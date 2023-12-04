@@ -73,7 +73,7 @@ export default function Feed() {
         </div>
         <Box sx={{ width: sideBar ? "265px" : "0px" }} className="profile-menu">
           <div className="logo">
-            <a href="#">
+            <a href="/">
               <img src={Logo} alt="" />
             </a>
           </div>

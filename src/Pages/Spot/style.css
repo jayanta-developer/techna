@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px;
+  padding: 15px;
   background: linear-gradient(96deg, #2b1d37 16.42%, #1c152b 97.35%);
 }
 
@@ -78,7 +78,7 @@
 }
 
 .SMarket {
-  width: 154px;
+  width: 140px;
 }
 
 .spotGraphBox {
@@ -255,6 +255,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .usdTHeaderValueItem p {
@@ -265,7 +266,7 @@
   line-height: normal;
 }
 
-.customBtn p {
+.ActiveUsdBtn p {
   color: #fff;
   font-size: 12px !important;
   font-style: normal;
@@ -273,7 +274,7 @@
   line-height: normal;
 }
 
-.customBtn {
+.ActiveUsdBtn {
   border-radius: 4px;
   opacity: 0.5;
   background: #18141c;
@@ -483,15 +484,36 @@
     height: auto;
     margin-left: 12px;
   }
+  .SMarket {
+    width: 270px;
+  }
 }
 
 /* Desktop view */
 @media only screen and (min-width: 1000px) {
   .spotSideMenu {
     width: 30%;
-    height: 669px;
+    height: auto;
   }
   .spotGraphBox {
     padding: 24px;
+  }
+  .SMarket {
+    width: 170px;
+  }
+}
+
+@media screen and (min-width: 491px) and (max-width: 767px) {
+  .spotFBox {
+    align-items: center !important;
+  }
+  .spotSideMenu {
+    max-width: inherit !important;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .spotContainer {
+    padding: 50px;
   }
 }

@@ -729,7 +729,8 @@ body {
     width: calc(100% - 150px);
   }
 
-  .ts_hm1_sec_hdng_p {}
+  .ts_hm1_sec_hdng_p {
+  }
 
   .ts_hm1_sec {
     min-height: 600px;
@@ -1431,7 +1432,7 @@ body {
   justify-content: space-between;
 }
 
-.adminBBox>div {
+.adminBBox > div {
   width: 100%;
   margin: 5px 0;
 }
@@ -1490,6 +1491,9 @@ body {
     top: calc(50vh - 250px);
     right: 95px;
   }
+  .adminBBox {
+    width: 90%;
+  }
 }
 
 @media only screen and (min-width: 1000px) {
@@ -1509,7 +1513,7 @@ body {
     flex-direction: row;
   }
 
-  .adminBBox>div {
+  .adminBBox > div {
     width: 45%;
   }
 

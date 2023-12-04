@@ -25,11 +25,13 @@ export default function Futures() {
   const [flpDrop, setFlpDrop] = useState(false)
   const [flpDropVal, setFlpDropVal] = useState(false)
   const [fbtcDrop, setFbtcDrop] = useState(false)
+  const [fCrossDrop, setFCrossDrop] = useState(false)
   const [ofLong, setOfLong] = useState(false)
   const [ofShort, setOfShort] = useState(true)
   const [stopMDrop, setStopMDrop] = useState(false)
   const [stopMDropVal, setStopMDropVal] = useState("Stop Market")
-
+  const [usdRedio, setUsdRedio] = useState(1)
+  console.log(fCrossDrop);
 
 
   const tableRow = (val) => {
@@ -102,6 +104,16 @@ export default function Futures() {
           return;
         }
       }
+      if (e?.target?.id !== "fCrossDrop") {
+        setFCrossDrop(false);
+      } else {
+        if (fCrossDrop) {
+          setFCrossDrop(false);
+          return;
+        } else {
+          return;
+        }
+      }
     };
 
     document.addEventListener('click', handleClickOutside);
@@ -117,9 +129,26 @@ export default function Futures() {
       <NavBar />
       <Box className="futuresContainer">
         <Box className="crossBox">
-          <Box sx={{ width: "100px", marginBottom: "16px" }} className="navMenuItem">
-            <Typography>Cross</Typography>
-            <KeyboardArrowDownIcon sx={{ color: "#fff" }} />
+          <Box id="fCrossDrop" sx={{ width: "100px", marginBottom: "16px" }} className="navMenuItem" onClick={() => setFCrossDrop(!fCrossDrop)}>
+            <Typography id="fCrossDrop">Cross</Typography>
+            {fCrossDrop ?
+              <KeyboardArrowUpIcon id="fCrossDrop" className='dwonArrow' sx={{ color: "#fff" }} /> :
+              <KeyboardArrowDownIcon id="fCrossDrop" className='dwonArrow' sx={{ color: "#fff" }} />
+            }
+            <Box id="fCrossDrop" sx={{ height: fCrossDrop ? "auto" : "0px" }} className="dropMenu mpusd">
+              <Box id="fCrossDrop" className="dropMenuItem usdItem">
+                <Typography id="fCrossDrop">Item 1</Typography>
+              </Box>
+              <Box id="fCrossDrop" className="dropMenuItem usdItem">
+                <Typography id="fCrossDrop">Item 2</Typography>
+              </Box>
+              <Box id="fCrossDrop" className="dropMenuItem usdItem">
+                <Typography id="fCrossDrop">Item 3</Typography>
+              </Box>
+              <Box id="fCrossDrop" className="dropMenuItem usdItem">
+                <Typography id="fCrossDrop">Item 4</Typography>
+              </Box>
+            </Box>
           </Box>
 
           {/* side menu */}
@@ -161,19 +190,19 @@ export default function Futures() {
                 </Box>
               </Box>
               <Box className="usdTHeaderValue">
-                <Box className="usdTHeaderValueItem">
+                <Box onClick={() => setUsdRedio(1)} className={usdRedio === 1 ? "usdTHeaderValueItem ActiveUsdBtn" : "usdTHeaderValueItem"}>
                   <Typography>25</Typography>
                 </Box>
-                <Box className="usdTHeaderValueItem">
+                <Box onClick={() => setUsdRedio(2)} className={usdRedio === 2 ? "usdTHeaderValueItem ActiveUsdBtn" : "usdTHeaderValueItem"}>
                   <Typography>50</Typography>
                 </Box>
-                <Box className="usdTHeaderValueItem">
+                <Box onClick={() => setUsdRedio(3)} className={usdRedio === 3 ? "usdTHeaderValueItem ActiveUsdBtn" : "usdTHeaderValueItem"}>
                   <Typography>75</Typography>
                 </Box>
-                <Box className="usdTHeaderValueItem">
+                <Box onClick={() => setUsdRedio(4)} className={usdRedio === 4 ? "usdTHeaderValueItem ActiveUsdBtn" : "usdTHeaderValueItem"}>
                   <Typography>MAX</Typography>
                 </Box>
-                <Box className="usdTHeaderValueItem customBtn">
+                <Box onClick={() => setUsdRedio(5)} className={usdRedio === 5 ? "usdTHeaderValueItem ActiveUsdBtn" : "usdTHeaderValueItem"}>
                   <Typography>Custom</Typography>
                 </Box>
               </Box>
@@ -246,19 +275,19 @@ export default function Futures() {
                 </Box>
               </Box>
               <Box className="usdTHeaderValue">
-                <Box className="usdTHeaderValueItem">
+                <Box onClick={() => setUsdRedio(1)} className={usdRedio === 1 ? "usdTHeaderValueItem ActiveUsdBtn" : "usdTHeaderValueItem"}>
                   <Typography>25</Typography>
                 </Box>
-                <Box className="usdTHeaderValueItem">
+                <Box onClick={() => setUsdRedio(2)} className={usdRedio === 2 ? "usdTHeaderValueItem ActiveUsdBtn" : "usdTHeaderValueItem"}>
                   <Typography>50</Typography>
                 </Box>
-                <Box className="usdTHeaderValueItem">
+                <Box onClick={() => setUsdRedio(3)} className={usdRedio === 3 ? "usdTHeaderValueItem ActiveUsdBtn" : "usdTHeaderValueItem"}>
                   <Typography>75</Typography>
                 </Box>
-                <Box className="usdTHeaderValueItem">
+                <Box onClick={() => setUsdRedio(4)} className={usdRedio === 4 ? "usdTHeaderValueItem ActiveUsdBtn" : "usdTHeaderValueItem"}>
                   <Typography>MAX</Typography>
                 </Box>
-                <Box className="usdTHeaderValueItem customBtn">
+                <Box onClick={() => setUsdRedio(5)} className={usdRedio === 5 ? "usdTHeaderValueItem ActiveUsdBtn" : "usdTHeaderValueItem"}>
                   <Typography>Custom</Typography>
                 </Box>
               </Box>
@@ -291,98 +320,191 @@ export default function Futures() {
             </>
           ) : sideTab === 3 ? (
             <>
-              <Typography className='sideMenuGText'>Trigger Price</Typography>
+              {
+                stopMDropVal === "Stop Market" ?
+                  <>
+                    <Typography className='sideMenuGText'>Trigger Price</Typography>
 
-              <Box className="usdTHeader">
-                <Box px={1} className="usdTBox LPDrop">
-                  <Box id="flpDrop" onClick={() => setFlpDrop(!flpDrop)}>
-                    <Typography id="flpDrop" >{flpDropVal || "Last"}</Typography>
-                    {flpDrop ?
-                      <KeyboardArrowUpIcon id="flpDrop" className='dwonArrow' sx={{ color: "#fff" }} /> :
-                      <KeyboardArrowDownIcon id="flpDrop" className='dwonArrow' sx={{ color: "#fff" }} />
-                    }
-                    <Box id="flpDrop" sx={{ height: flpDrop ? "auto" : "0px" }} className="dropMenu mpusd">
-                      <Box onClick={(e) => setFlpDropVal(e.target.innerText)} id="flpDrop" className="dropMenuItem usdItem">
-                        <Typography id="flpDrop">1 hour</Typography>
-                      </Box>
-                      <Box onClick={(e) => setFlpDropVal(e.target.innerText)} id="flpDrop" className="dropMenuItem usdItem">
-                        <Typography id="flpDrop">2 hour</Typography>
-                      </Box>
-                      <Box onClick={(e) => setFlpDropVal(e.target.innerText)} id="flpDrop" className="dropMenuItem usdItem">
-                        <Typography id="flpDrop">3 hour</Typography>
-                      </Box>
-                      <Box onClick={(e) => setFlpDropVal(e.target.innerText)} id="flpDrop" className="dropMenuItem usdItem">
-                        <Typography id="flpDrop">4 hour</Typography>
-                      </Box>
-                      <Box onClick={(e) => setFlpDropVal(e.target.innerText)} id="flpDrop" className="dropMenuItem usdItem">
-                        <Typography id="flpDrop">5 hour</Typography>
+                    <Box className="usdTHeader">
+                      <Box px={1} className="usdTBox LPDrop">
+                        <Box id="flpDrop" onClick={() => setFlpDrop(!flpDrop)}>
+                          <Typography id="flpDrop" >{flpDropVal || "Last"}</Typography>
+                          {flpDrop ?
+                            <KeyboardArrowUpIcon id="flpDrop" className='dwonArrow' sx={{ color: "#fff" }} /> :
+                            <KeyboardArrowDownIcon id="flpDrop" className='dwonArrow' sx={{ color: "#fff" }} />
+                          }
+                          <Box id="flpDrop" sx={{ height: flpDrop ? "auto" : "0px" }} className="dropMenu mpusd">
+                            <Box onClick={(e) => setFlpDropVal(e.target.innerText)} id="flpDrop" className="dropMenuItem usdItem">
+                              <Typography id="flpDrop">1 hour</Typography>
+                            </Box>
+                            <Box onClick={(e) => setFlpDropVal(e.target.innerText)} id="flpDrop" className="dropMenuItem usdItem">
+                              <Typography id="flpDrop">2 hour</Typography>
+                            </Box>
+                            <Box onClick={(e) => setFlpDropVal(e.target.innerText)} id="flpDrop" className="dropMenuItem usdItem">
+                              <Typography id="flpDrop">3 hour</Typography>
+                            </Box>
+                            <Box onClick={(e) => setFlpDropVal(e.target.innerText)} id="flpDrop" className="dropMenuItem usdItem">
+                              <Typography id="flpDrop">4 hour</Typography>
+                            </Box>
+                            <Box onClick={(e) => setFlpDropVal(e.target.innerText)} id="flpDrop" className="dropMenuItem usdItem">
+                              <Typography id="flpDrop">5 hour</Typography>
+                            </Box>
+                          </Box>
+                        </Box>
+                        <Typography>USDT</Typography>
                       </Box>
                     </Box>
-                  </Box>
-                  <Typography>USDT</Typography>
-                </Box>
-              </Box>
-              <Typography className='sideMenuGText'>Price</Typography>
+                    <Typography className='sideMenuGText'>Amount</Typography>
 
-              <Box className="usdTHeader">
-                <Box px={1} className="usdTBox LPDrop smField">
-                  <Typography></Typography>
-                  <Typography>USDT</Typography>
-                </Box>
-              </Box>
-              <Typography className='sideMenuGText'>Amount</Typography>
+                    <Box className="usdTHeader">
+                      <Box className="usdTBox LPDrop smField">
+                        <Typography>0.03</Typography>
+                        <Typography>= 300 USDT</Typography>
 
-              <Box className="usdTHeader">
-                <Box className="usdTBox LPDrop smField">
-                  <Typography>0.03</Typography>
-                  <Typography>= 300 USDT</Typography>
+                      </Box>
+                    </Box>
 
-                </Box>
-              </Box>
+                    <Box className="usdTHeaderValue">
+                      <Box onClick={() => setUsdRedio(1)} className={usdRedio === 1 ? "usdTHeaderValueItem ActiveUsdBtn" : "usdTHeaderValueItem"}>
+                        <Typography>25</Typography>
+                      </Box>
+                      <Box onClick={() => setUsdRedio(2)} className={usdRedio === 2 ? "usdTHeaderValueItem ActiveUsdBtn" : "usdTHeaderValueItem"}>
+                        <Typography>50</Typography>
+                      </Box>
+                      <Box onClick={() => setUsdRedio(3)} className={usdRedio === 3 ? "usdTHeaderValueItem ActiveUsdBtn" : "usdTHeaderValueItem"}>
+                        <Typography>75</Typography>
+                      </Box>
+                      <Box onClick={() => setUsdRedio(4)} className={usdRedio === 4 ? "usdTHeaderValueItem ActiveUsdBtn" : "usdTHeaderValueItem"}>
+                        <Typography>MAX</Typography>
+                      </Box>
+                      <Box onClick={() => setUsdRedio(5)} className={usdRedio === 5 ? "usdTHeaderValueItem ActiveUsdBtn" : "usdTHeaderValueItem"}>
+                        <Typography>Custom</Typography>
+                      </Box>
+                    </Box>
+                    <Typography className='sideMenuGText'>Leverage: X10</Typography>
 
-              <Box className="usdTHeaderValue">
-                <Box className="usdTHeaderValueItem">
-                  <Typography>25</Typography>
-                </Box>
-                <Box className="usdTHeaderValueItem">
-                  <Typography>50</Typography>
-                </Box>
-                <Box className="usdTHeaderValueItem">
-                  <Typography>75</Typography>
-                </Box>
-                <Box className="usdTHeaderValueItem">
-                  <Typography>MAX</Typography>
-                </Box>
-                <Box className="usdTHeaderValueItem customBtn">
-                  <Typography>Custom</Typography>
-                </Box>
-              </Box>
-              <Typography className='sideMenuGText'>Leverage: X10</Typography>
+                    <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" />
 
-              <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" />
+                    <Box className="CheckBoxContainer">{checkBoxComp()}</Box>
 
-              <Box className="CheckBoxContainer">{checkBoxComp()}</Box>
+                    <Box className="sellAbuyBtnBox">
+                      <Box sx={{ background: "#61FF71" }} className="SABbtn">
+                        <Typography>Buy/Long</Typography>
+                      </Box>
+                      <Box sx={{ background: "#F44336" }} className="SABbtn">
+                        <Typography>Sell/Short</Typography>
+                      </Box>
+                    </Box>
+                    <Box className="FutuUSDTextBox">
+                      <Typography>Position Base: </Typography>
+                      <Typography>300 USDT</Typography>
+                    </Box>
+                    <Box className="FutuUSDTextBox">
+                      <Typography>Fees: </Typography>
+                      <Typography>0.2 USDT</Typography>
+                    </Box>
+                    <Box className="FutuUSDTextBox">
+                      <Typography>Remaining Balance: </Typography>
+                      <Typography>25 USDT</Typography>
+                    </Box>
+                  </>
+                  :
+                  <>
+                    <Typography className='sideMenuGText'>Trigger Price</Typography>
 
-              <Box className="sellAbuyBtnBox">
-                <Box sx={{ background: "#61FF71" }} className="SABbtn">
-                  <Typography>Buy/Long</Typography>
-                </Box>
-                <Box sx={{ background: "#F44336" }} className="SABbtn">
-                  <Typography>Sell/Short</Typography>
-                </Box>
-              </Box>
-              <Box className="FutuUSDTextBox">
-                <Typography>Position Base: </Typography>
-                <Typography>300 USDT</Typography>
-              </Box>
-              <Box className="FutuUSDTextBox">
-                <Typography>Fees: </Typography>
-                <Typography>0.2 USDT</Typography>
-              </Box>
-              <Box className="FutuUSDTextBox">
-                <Typography>Remaining Balance: </Typography>
-                <Typography>25 USDT</Typography>
-              </Box>
+                    <Box className="usdTHeader">
+                      <Box px={1} className="usdTBox LPDrop">
+                        <Box id="flpDrop" onClick={() => setFlpDrop(!flpDrop)}>
+                          <Typography id="flpDrop" >{flpDropVal || "Last"}</Typography>
+                          {flpDrop ?
+                            <KeyboardArrowUpIcon id="flpDrop" className='dwonArrow' sx={{ color: "#fff" }} /> :
+                            <KeyboardArrowDownIcon id="flpDrop" className='dwonArrow' sx={{ color: "#fff" }} />
+                          }
+                          <Box id="flpDrop" sx={{ height: flpDrop ? "auto" : "0px" }} className="dropMenu mpusd">
+                            <Box onClick={(e) => setFlpDropVal(e.target.innerText)} id="flpDrop" className="dropMenuItem usdItem">
+                              <Typography id="flpDrop">1 hour</Typography>
+                            </Box>
+                            <Box onClick={(e) => setFlpDropVal(e.target.innerText)} id="flpDrop" className="dropMenuItem usdItem">
+                              <Typography id="flpDrop">2 hour</Typography>
+                            </Box>
+                            <Box onClick={(e) => setFlpDropVal(e.target.innerText)} id="flpDrop" className="dropMenuItem usdItem">
+                              <Typography id="flpDrop">3 hour</Typography>
+                            </Box>
+                            <Box onClick={(e) => setFlpDropVal(e.target.innerText)} id="flpDrop" className="dropMenuItem usdItem">
+                              <Typography id="flpDrop">4 hour</Typography>
+                            </Box>
+                            <Box onClick={(e) => setFlpDropVal(e.target.innerText)} id="flpDrop" className="dropMenuItem usdItem">
+                              <Typography id="flpDrop">5 hour</Typography>
+                            </Box>
+                          </Box>
+                        </Box>
+                        <Typography>USDT</Typography>
+                      </Box>
+                    </Box>
+                    <Typography className='sideMenuGText'>Price</Typography>
+
+                    <Box className="usdTHeader">
+                      <Box px={1} className="usdTBox LPDrop smField">
+                        <Typography></Typography>
+                        <Typography>USDT</Typography>
+                      </Box>
+                    </Box>
+                    <Typography className='sideMenuGText'>Amount</Typography>
+
+                    <Box className="usdTHeader">
+                      <Box className="usdTBox LPDrop smField">
+                        <Typography>0.03</Typography>
+                        <Typography>= 300 USDT</Typography>
+
+                      </Box>
+                    </Box>
+
+                    <Box className="usdTHeaderValue">
+                      <Box onClick={() => setUsdRedio(1)} className={usdRedio === 1 ? "usdTHeaderValueItem ActiveUsdBtn" : "usdTHeaderValueItem"}>
+                        <Typography>25</Typography>
+                      </Box>
+                      <Box onClick={() => setUsdRedio(2)} className={usdRedio === 2 ? "usdTHeaderValueItem ActiveUsdBtn" : "usdTHeaderValueItem"}>
+                        <Typography>50</Typography>
+                      </Box>
+                      <Box onClick={() => setUsdRedio(3)} className={usdRedio === 3 ? "usdTHeaderValueItem ActiveUsdBtn" : "usdTHeaderValueItem"}>
+                        <Typography>75</Typography>
+                      </Box>
+                      <Box onClick={() => setUsdRedio(4)} className={usdRedio === 4 ? "usdTHeaderValueItem ActiveUsdBtn" : "usdTHeaderValueItem"}>
+                        <Typography>MAX</Typography>
+                      </Box>
+                      <Box onClick={() => setUsdRedio(5)} className={usdRedio === 5 ? "usdTHeaderValueItem ActiveUsdBtn" : "usdTHeaderValueItem"}>
+                        <Typography>Custom</Typography>
+                      </Box>
+                    </Box>
+                    <Typography className='sideMenuGText'>Leverage: X10</Typography>
+
+                    <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" />
+
+                    <Box className="CheckBoxContainer">{checkBoxComp()}</Box>
+
+                    <Box className="sellAbuyBtnBox">
+                      <Box sx={{ background: "#61FF71" }} className="SABbtn">
+                        <Typography>Buy/Long</Typography>
+                      </Box>
+                      <Box sx={{ background: "#F44336" }} className="SABbtn">
+                        <Typography>Sell/Short</Typography>
+                      </Box>
+                    </Box>
+                    <Box className="FutuUSDTextBox">
+                      <Typography>Position Base: </Typography>
+                      <Typography>300 USDT</Typography>
+                    </Box>
+                    <Box className="FutuUSDTextBox">
+                      <Typography>Fees: </Typography>
+                      <Typography>0.2 USDT</Typography>
+                    </Box>
+                    <Box className="FutuUSDTextBox">
+                      <Typography>Remaining Balance: </Typography>
+                      <Typography>25 USDT</Typography>
+                    </Box>
+                  </>
+              }
+
             </>
           ) : null}
         </Box>
@@ -424,7 +546,7 @@ export default function Futures() {
           {tableRow({ textColor: "#61FF71" })}
         </Box>
 
-        <Box className="graphBox">
+        <Box className="graphBox FGraphBox">
           <Box className="graphTopPriceBox">
             <Box className="GTPTopBox">
               <Typography className='GTPTopHeader'>BTC/USDT</Typography>
@@ -451,23 +573,23 @@ export default function Futures() {
               </Box>
             </Box>
             <Box className="GTPTabeBox">
-              <Box className="GTPTabeItem">
+              <Box className="GTPTabeItem FGTPTabeItem">
                 <Typography>Price</Typography>
                 <Typography>$70,000</Typography>
               </Box>
-              <Box className="GTPTabeItem">
+              <Box className="GTPTabeItem FGTPTabeItem">
                 <Typography>24 Change</Typography>
                 <Typography>+578%</Typography>
               </Box>
-              <Box className="GTPTabeItem">
+              <Box className="GTPTabeItem FGTPTabeItem">
                 <Typography>Volume</Typography>
                 <Typography>44k  BTC</Typography>
               </Box>
-              <Box className="GTPTabeItem">
+              <Box className="GTPTabeItem FGTPTabeItem">
                 <Typography>24 High</Typography>
                 <Typography>$71, 775</Typography>
               </Box>
-              <Box className="GTPTabeItem">
+              <Box className="GTPTabeItem FGTPTabeItem">
                 <Typography>24 Low</Typography>
                 <Typography>$69, 755</Typography>
               </Box>

@@ -213,7 +213,7 @@ export default function OptionsBeginners() {
             </Box>
           </Box>
           <Box className="braph_Box">
-            <Box className="spotGraphBox innerGraphBox">
+            <Box className="spotGraphBox innerGraphBox obGraphBox">
               <Box className="graphBtnBox">
 
                 <Box onClick={() => setGraphBtn(true)} sx={{ background: graphBtn ? "#41f8f8" : "#18141c" }} className="graphBtn lineBtn">

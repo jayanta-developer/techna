@@ -214,6 +214,7 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 12px 0;
+  flex-wrap: wrap;
 }
 .GTPTopHeader {
   color: #fff;
@@ -233,7 +234,7 @@
   flex-direction: row;
   padding: 7px 18px;
   border-radius: 8px;
-  opacity: 0.8;
+  /* opacity: 0.8; */
   background: #18141c;
   position: relative;
   cursor: pointer;
@@ -301,8 +302,8 @@
 }
 .gptTabCorsIcon {
   position: absolute;
-  top: 5px;
-  right: 4px;
+  top: 0px;
+  right: 0px;
   color: #fff;
 }
 .innerGraphBox {
@@ -330,6 +331,13 @@
 .smField {
   padding-left: 15px;
 }
+.FGTPTabeItem {
+  width: 111px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: inherit !important;
+  margin-top: 0px;
+}
 
 @media only screen and (min-width: 768px) {
   .orderBookBox {
@@ -350,7 +358,11 @@
     height: 57px;
   }
   .gptTabCorsIcon {
+    top: 5px;
     right: 8px;
+  }
+  .FGraphBox {
+    min-width: 616px;
   }
 }
 

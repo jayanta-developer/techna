@@ -13,15 +13,15 @@ export default function HomeNav({ setSideNav, sideNav }) {
             </a>
             <i onClick={() => setSideNav(!sideNav)} className="far fa-bars s_nav_ul_cls"></i>
             <div style={{ width: sideNav ? "100%" : "0px" }} className="s_nav_ul">
-              <a href="#" className="s_nav_logo_mbl">
+              <a onClick={() => setSideNav(false)} href="#" className="s_nav_logo_mbl">
                 <img src={Logo} className="s_nav_logo_img" alt="" />
               </a>
               <div className="s_nav_ul_in">
-                <a href='#products' className="s_nav_li ">Products </a>
-                <a href='#FAQ' className="s_nav_li ">FAQ's </a>
-                <a href='#roadmap' className="s_nav_li ">Roadmap </a>
-                <a href='#tokenomics' className="s_nav_li ">Tokenomics </a>
-                <a href='#community' className="s_nav_li ">Community </a>
+                <a onClick={() => setSideNav(false)} href='#products' className="s_nav_li ">Products </a>
+                <a onClick={() => setSideNav(false)} href='#FAQ' className="s_nav_li ">FAQ's </a>
+                <a onClick={() => setSideNav(false)} href='#roadmap' className="s_nav_li ">Roadmap </a>
+                <a onClick={() => setSideNav(false)} href='#tokenomics' className="s_nav_li ">Tokenomics </a>
+                <a onClick={() => setSideNav(false)} href='#community' className="s_nav_li ">Community </a>
               </div>
             </div>
             <div className="s_nav_right">

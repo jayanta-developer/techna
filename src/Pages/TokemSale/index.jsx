@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { sBitIcon } from "../../Assets/Data"
+
 import "./style.css"
 
 
@@ -14,12 +16,93 @@ import Footer from "../../Components/Footer"
 
 import icoeth from "../../Assets/img/ico-eth.png"
 import icotcn from "../../Assets/img/ico-tcn.png"
+import ETHI from "../../Assets/Images/E4bc3598cd3721b16fa31a60ab91c0b04.png";
+import USDT from "../../Assets/Images/USDT icon.png"
+import USDC from "../../Assets/Images/USDC.png"
+import BUSD from "../../Assets/Images/BUSD.png"
+import MATIC from "../../Assets/Images/MATIC.png"
+import BNB from "../../Assets/Images/BNB.png"
 
 
 export default function TokemSale() {
   const [sideNav, setSideNav] = useState(false)
-  const [tokenSelect, setTokenSelect] = useState(false)
-  const [tokenSelectVal, setTokenSelectVal] = useState("ETH")
+  const [mpusd, setMpusd] = useState(false)
+  const [mpusdVal, setMpusdVal] = useState("ETH")
+
+
+
+  const handelDropContaint = () => {
+    if (mpusdVal === "ETH") {
+      return (
+        <>
+          <img id="mpusd" src={ETHI} />
+        </>
+      )
+    }
+    if (mpusdVal === "USDT") {
+      return (
+        <>
+          <img id="mpusd" src={USDT} />
+        </>
+      )
+    }
+    if (mpusdVal === "USDC") {
+      return (
+        <>
+          <img id="mpusd" src={USDC} />
+        </>
+      )
+    }
+    if (mpusdVal === "BUSD") {
+      return (
+        <>
+          <img id="mpusd" src={BUSD} />
+        </>
+      )
+    }
+    if (mpusdVal === "MATIC") {
+      return (
+        <>
+          <img id="mpusd" src={MATIC} />
+        </>
+      )
+    }
+    if (mpusdVal === "BNB") {
+      return (
+        <>
+          <img id="mpusd" src={BNB} />
+        </>
+      )
+    }
+
+  }
+
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (e?.target?.id !== "spotSM") {
+
+        if (e?.target?.id !== "mpusd") {
+          setMpusd(false);
+        } else {
+          if (mpusd) {
+            setMpusd(false);
+            return;
+          } else {
+            return;
+          }
+        }
+
+      };
+    }
+
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+
+  }, [])
 
 
 
@@ -41,21 +124,40 @@ export default function TokemSale() {
                     <div className="srk srk_fs_1 srk_fw_300 srk_clr_white_1 srk_mb_2dot6 w-100 text-center">Buy
                       TCN on the polygon network</div>
                     <div className="ts_input_set">
-                      <div className="ts_input_lbl TokemScrollOuterBox"><img src={icoeth} alt="" />
-                        <Box px={1} id="tokenSelect" className="dropTab tokemDropBox" onClick={() => setTokenSelect(!tokenSelect)}>
-                          <Typography id="tokenSelect">{tokenSelectVal}:</Typography>
-                          {tokenSelect ?
-                            <KeyboardArrowUpIcon id="tokenSelect" className='dwonArrow' sx={{ color: "#fff" }} /> :
-                            <KeyboardArrowDownIcon id="tokenSelect" className='dwonArrow' sx={{ color: "#fff" }} />
-                          }
-                          <Box id="tokenSelect" sx={{ height: tokenSelect ? "auto" : "0px" }} className="dropMenu mpusd">
-                            <Box onClick={(e) => setTokenSelectVal(e.target.innerText)} id="tokenSelect" className="dropMenuItem usdItem tokemDropItem">
-                              <img src={icoeth} alt="" />
-                              <Typography id="tokenSelect">ETH</Typography>
-                            </Box>
-                            <Box onClick={(e) => setTokenSelectVal(e.target.innerText)} id="tokenSelect" className="dropMenuItem usdItem tokemDropItem">
-                              <img src={icoeth} alt="" />
-                              <Typography id="tokenSelect">BTC</Typography>
+                      <div className="ts_input_lbl TokemScrollOuterBox">
+                        <Box className="usdTHeader">
+                          <Box onClick={() => setMpusd(!mpusd)} id="mpusd" className="usdSelectorBox">
+                            {handelDropContaint()}
+                            <Typography id="mpusd">{mpusdVal}</Typography>
+                            {mpusd ?
+                              <KeyboardArrowUpIcon id="mpusd" className='dwonArrow' sx={{ color: "#fff" }} /> :
+                              <KeyboardArrowDownIcon id="mpusd" className='dwonArrow' sx={{ color: "#fff" }} />
+                            }
+                            <Box id="mpusd" sx={{ height: mpusd ? "auto" : "0px" }} className="dropMenu mpusd">
+                              <Box onClick={(e) => setMpusdVal(e.target.innerText)} id="mpusd" className="dropMenuItem usdItem">
+                                <img id="mpusd" src={ETHI} />
+                                <Typography id="mpusd">ETH</Typography>
+                              </Box>
+                              <Box onClick={(e) => setMpusdVal(e.target.innerText)} id="mpusd" className="dropMenuItem usdItem">
+                                <img id="mpusd" src={USDT} />
+                                <Typography id="mpusd">USDT</Typography>
+                              </Box>
+                              <Box onClick={(e) => setMpusdVal(e.target.innerText)} id="mpusd" className="dropMenuItem usdItem">
+                                <img id="mpusd" src={USDC} />
+                                <Typography id="mpusd">USDC</Typography>
+                              </Box>
+                              <Box onClick={(e) => setMpusdVal(e.target.innerText)} id="mpusd" className="dropMenuItem usdItem">
+                                <img id="mpusd" src={BUSD} />
+                                <Typography id="mpusd">BUSD</Typography>
+                              </Box>
+                              <Box onClick={(e) => setMpusdVal(e.target.innerText)} id="mpusd" className="dropMenuItem usdItem">
+                                <img id="mpusd" src={MATIC} />
+                                <Typography id="mpusd">MATIC</Typography>
+                              </Box>
+                              <Box onClick={(e) => setMpusdVal(e.target.innerText)} id="mpusd" className="dropMenuItem usdItem">
+                                <img id="mpusd" src={BNB} />
+                                <Typography id="mpusd">BNB</Typography>
+                              </Box>
                             </Box>
                           </Box>
                         </Box>

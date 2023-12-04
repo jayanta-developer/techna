@@ -255,6 +255,12 @@
   .MuiOutlinedInput-notchedOutline {
   border: none;
 }
+.obGraphBox {
+  height: 780px !important;
+}
+.braph_Box {
+  margin-bottom: 24px;
+}
 /* Tab view*/
 @media only screen and (min-width: 768px) {
   .dropTab {
@@ -262,11 +268,11 @@
   }
   .callBox {
     margin-top: 0;
-  }
-  .braph_Box {
+    max-width: 700px;
   }
   .callandGrapghBox {
     width: 100%;
+    align-items: center;
   }
   .OBUsdBox {
     height: 100px;
@@ -319,15 +325,25 @@
     margin-top: 0;
     flex-direction: row;
     justify-content: space-between;
+    align-items: start;
   }
   .braph_Box {
     width: 48%;
     margin-top: 0;
+    margin-bottom: 0;
   }
   .OBUsdBox {
     padding: 0 24px;
   }
   .GTPTabeItem {
     width: 122px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+}
+@media only screen and (min-width: 1200px) {
+  .callBox {
+    min-width: 680px;
+    max-width: 700px;
   }
 }
